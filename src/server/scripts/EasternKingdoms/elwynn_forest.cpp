@@ -228,7 +228,7 @@ public:
                 case EVENT_HEALED_1:
                     if (owner)
                     {
-                        switch (urand(0, 3))
+                        switch (urand(0, 5))
                         {
                         case 0:
                             me->MonsterSay("I will fear no evil!", 0, NULL);
@@ -241,6 +241,12 @@ public:
                             break;
                         case 3:
                             me->MonsterSay("You are $p! The hero that everyone has been talking about! Thank you!", 0, owner->GetGUID());
+                            break;
+                        case 4:
+                            me->MonsterSay("Thank the Light!", 0, NULL);
+                            break;
+                        case 5:
+                            me->MonsterSay("I live to fight another day!", 0, NULL);
                             break;
                         default:
                             break;
