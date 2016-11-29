@@ -455,7 +455,8 @@
     UPDATE `quest_template` SET `PrevQuestId` = 0, `NextQuestId` = 0, `ExclusiveGroup` = 0 WHERE `Id` = 24978;
     UPDATE `quest_template` SET `PrevQuestId` = 24978, `NextQuestId` = 0, `ExclusiveGroup` = 0 WHERE `Id` = 24980;
      
-    
+    REPLACE INTO `spell_area` (`spell`, `area`, `quest_start`, `quest_end`, `racemask`, `autocast`, `quest_start_status`, `quest_end_status`) VALUES ('73523', '5692', '0', '24959', '16', '1', '16', '9');
+     
     UPDATE `quest_template` SET `Flags` = 0 WHERE `Id` = 24959;
     -- Agatha
     SET @ENTRY := 49044;
