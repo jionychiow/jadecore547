@@ -10,29 +10,35 @@
 
 set(scripts_STAT_SRCS
   ${scripts_STAT_SRCS}
+# Magtheridon's Lair
   Outland/HellfireCitadel/MagtheridonsLair/magtheridons_lair.h
   Outland/HellfireCitadel/MagtheridonsLair/instance_magtheridons_lair.cpp
   Outland/HellfireCitadel/MagtheridonsLair/boss_magtheridon.cpp
+# Hellfire Ramparts
   Outland/HellfireCitadel/HellfireRamparts/instance_hellfire_ramparts.cpp
   Outland/HellfireCitadel/HellfireRamparts/boss_omor_the_unscarred.cpp
   Outland/HellfireCitadel/HellfireRamparts/boss_watchkeeper_gargolmar.cpp
   Outland/HellfireCitadel/HellfireRamparts/boss_vazruden_the_herald.cpp
   Outland/HellfireCitadel/HellfireRamparts/hellfire_ramparts.h
+# Blood Furnace
   Outland/HellfireCitadel/BloodFurnace/boss_the_maker.cpp
   Outland/HellfireCitadel/BloodFurnace/boss_kelidan_the_breaker.cpp
   Outland/HellfireCitadel/BloodFurnace/blood_furnace.h
   Outland/HellfireCitadel/BloodFurnace/instance_blood_furnace.cpp
   Outland/HellfireCitadel/BloodFurnace/boss_broggok.cpp
+# Shattered Halls
   Outland/HellfireCitadel/ShatteredHalls/shattered_halls.h
   Outland/HellfireCitadel/ShatteredHalls/boss_warchief_kargath_bladefist.cpp
   Outland/HellfireCitadel/ShatteredHalls/boss_nethekurse.cpp
   Outland/HellfireCitadel/ShatteredHalls/instance_shattered_halls.cpp
   Outland/HellfireCitadel/ShatteredHalls/boss_warbringer_omrogg.cpp
+# Steam Vault
   Outland/CoilfangReservoir/SteamVault/boss_mekgineer_steamrigger.cpp
   Outland/CoilfangReservoir/SteamVault/instance_steam_vault.cpp
   Outland/CoilfangReservoir/SteamVault/boss_hydromancer_thespia.cpp
   Outland/CoilfangReservoir/SteamVault/boss_warlord_kalithresh.cpp
   Outland/CoilfangReservoir/SteamVault/steam_vault.h
+# Serpent Shrine
   Outland/CoilfangReservoir/SerpentShrine/boss_hydross_the_unstable.cpp
   Outland/CoilfangReservoir/SerpentShrine/boss_fathomlord_karathress.cpp
   Outland/CoilfangReservoir/SerpentShrine/instance_serpent_shrine.cpp
@@ -41,8 +47,10 @@ set(scripts_STAT_SRCS
   Outland/CoilfangReservoir/SerpentShrine/boss_leotheras_the_blind.cpp
   Outland/CoilfangReservoir/SerpentShrine/boss_lurker_below.cpp
   Outland/CoilfangReservoir/SerpentShrine/boss_morogrim_tidewalker.cpp
-  Outland/CoilfangReservoir/underbog/boss_hungarfen.cpp
-  Outland/CoilfangReservoir/underbog/boss_the_black_stalker.cpp
+# Underbog
+  Outland/CoilfangReservoir/Underbog/boss_hungarfen.cpp
+  Outland/CoilfangReservoir/Underbog/boss_the_black_stalker.cpp
+# Mechanar
   Outland/TempestKeep/Mechanar/boss_mechano_lord_capacitus.cpp
   Outland/TempestKeep/Mechanar/boss_pathaleon_the_calculator.cpp
   Outland/TempestKeep/Mechanar/boss_nethermancer_sepethrea.cpp
@@ -51,6 +59,7 @@ set(scripts_STAT_SRCS
   Outland/TempestKeep/Mechanar/instance_mechanar.cpp
   Outland/TempestKeep/Mechanar/mechanar.cpp
   Outland/TempestKeep/Mechanar/boss_gatewatcher_ironhand.cpp
+# Eye
   Outland/TempestKeep/Eye/the_eye.h
   Outland/TempestKeep/Eye/instance_the_eye.cpp
   Outland/TempestKeep/Eye/boss_void_reaver.cpp
@@ -58,28 +67,35 @@ set(scripts_STAT_SRCS
   Outland/TempestKeep/Eye/boss_alar.cpp
   Outland/TempestKeep/Eye/boss_kaelthas.cpp
   Outland/TempestKeep/Eye/the_eye.cpp
-  Outland/TempestKeep/botanica/boss_high_botanist_freywinn.cpp
-  Outland/TempestKeep/botanica/boss_warp_splinter.cpp
-  Outland/TempestKeep/botanica/boss_laj.cpp
-  Outland/TempestKeep/arcatraz/boss_harbinger_skyriss.cpp
-  Outland/TempestKeep/arcatraz/instance_arcatraz.cpp
-  Outland/TempestKeep/arcatraz/arcatraz.h
-  Outland/TempestKeep/arcatraz/arcatraz.cpp
+# Botanica
+  Outland/TempestKeep/Botanica/boss_high_botanist_freywinn.cpp
+  Outland/TempestKeep/Botanica/boss_warp_splinter.cpp
+  Outland/TempestKeep/Botanica/boss_laj.cpp
+# Arcatraz
+  Outland/TempestKeep/Arcatraz/boss_harbinger_skyriss.cpp
+  Outland/TempestKeep/Arcatraz/instance_arcatraz.cpp
+  Outland/TempestKeep/Arcatraz/arcatraz.h
+  Outland/TempestKeep/Arcatraz/arcatraz.cpp
+# Auchenai Crypts
   Outland/Auchindoun/AuchenaiCrypts/boss_shirrak_the_dead_watcher.cpp
   Outland/Auchindoun/AuchenaiCrypts/boss_exarch_maladaar.cpp
+# Mana Tombs
   Outland/Auchindoun/ManaTombs/boss_pandemonius.cpp
   Outland/Auchindoun/ManaTombs/boss_nexusprince_shaffar.cpp
+# Sethekk Halls
   Outland/Auchindoun/SethekkHalls/boss_tailonking_ikiss.cpp
   Outland/Auchindoun/SethekkHalls/boss_darkweaver_syth.cpp
   Outland/Auchindoun/SethekkHalls/boss_anzu.cpp
   Outland/Auchindoun/SethekkHalls/instance_sethekk_halls.cpp
   Outland/Auchindoun/SethekkHalls/sethekk_halls.h
+# Shadow Labyrinth
   Outland/Auchindoun/ShadowLabyrinth/boss_murmur.cpp
   Outland/Auchindoun/ShadowLabyrinth/boss_ambassador_hellmaw.cpp
   Outland/Auchindoun/ShadowLabyrinth/boss_blackheart_the_inciter.cpp
   Outland/Auchindoun/ShadowLabyrinth/instance_shadow_labyrinth.cpp
   Outland/Auchindoun/ShadowLabyrinth/shadow_labyrinth.h
   Outland/Auchindoun/ShadowLabyrinth/boss_grandmaster_vorpil.cpp
+# Black Temple
   Outland/BlackTemple/boss_teron_gorefiend.cpp
   Outland/BlackTemple/black_temple.h
   Outland/BlackTemple/illidari_council.cpp
@@ -92,6 +108,7 @@ set(scripts_STAT_SRCS
   Outland/BlackTemple/boss_warlord_najentus.cpp
   Outland/BlackTemple/boss_bloodboil.cpp
   Outland/BlackTemple/boss_illidan.cpp
+# Gruul's Lair
   Outland/GruulsLair/boss_high_king_maulgar.cpp
   Outland/GruulsLair/boss_gruul.cpp
   Outland/GruulsLair/gruuls_lair.h
