@@ -8,15 +8,19 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-file(GLOB_RECURSE scripts_TheStonecore Maelstrom/TheStonecore/*.cpp Maelstrom/TheStonecore/*.h)
-file(GLOB_RECURSE scripts_Zones Maelstrom/*.cpp Maelstrom/*.h)
-
-source_group(Maelstrom\\TheStonecore FILES ${scripts_TheStonecore})
-source_group(Maelstrom\\Zones FILES ${scripts_Zones})
-
 set(scripts_STAT_SRCS
   ${scripts_STAT_SRCS}
-  ${scripts_Zones}
+  Maelstrom/TheStonecore/boss_corborus.cpp
+  Maelstrom/TheStonecore/boss_slabhide.cpp
+  Maelstrom/TheStonecore/boss_ozruk.cpp
+  Maelstrom/TheStonecore/boss_high_priestess_azil.cpp
+  Maelstrom/TheStonecore/instance_the_stonecore.cpp
+  Maelstrom/TheStonecore/the_stonecore.cpp
+  Maelstrom/TheStonecore/the_stonecore.h
+# Zones
+  Maelstrom/Zones/zone_deepholm.cpp
+  Maelstrom/Zones/zone_kezan.cpp
+  Maelstrom/Zones/zone_lost_isles.cpp
 )
 
 message("  -> Prepared: The Maelstrom")

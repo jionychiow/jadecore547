@@ -11,16 +11,6 @@
 set(scripts_STAT_SRCS
   ${scripts_STAT_SRCS}
 
-  Pandaria/WorldBosses/boss_sha_of_anger.cpp
-  Pandaria/WorldBosses/boss_galleon.cpp
-  Pandaria/WorldBosses/boss_nalak.cpp
-  Pandaria/WorldBosses/boss_ordos.cpp
-  Pandaria/WorldBosses/boss_oondasta.cpp
-  Pandaria/WorldBosses/AugustCelestials/boss_chi_ji.cpp
-  Pandaria/WorldBosses/AugustCelestials/boss_niuzao.cpp
-  Pandaria/WorldBosses/AugustCelestials/boss_xuen.cpp
-  Pandaria/WorldBosses/AugustCelestials/boss_yu_lon.cpp
-
   Pandaria/MogushanPalace/instance_mogu_shan_palace.cpp
   Pandaria/MogushanPalace/mogu_shan_palace.h
   Pandaria/MogushanPalace/boss_trial_of_the_king.cpp
@@ -131,14 +121,24 @@ set(scripts_STAT_SRCS
   Pandaria/WanderingIsland/WanderingIsland_East.cpp
   Pandaria/WanderingIsland/WanderingIsland_West.cpp
   Pandaria/WanderingIsland/WanderingIsland_South.cpp
-
-  Pandaria/townlong_steppes.cpp
-  Pandaria/dread_wastes.cpp
-  Pandaria/valley_of_the_four_winds.cpp
-  Pandaria/krasarang_wilds.cpp
-  Pandaria/kun_lai_summit.cpp
-  Pandaria/jade_forest.cpp
-  Pandaria/vale_of_eternal_blossoms.cpp
+# World Bosses
+  Pandaria/WorldBosses/boss_sha_of_anger.cpp
+  Pandaria/WorldBosses/boss_galleon.cpp
+  Pandaria/WorldBosses/boss_nalak.cpp
+  Pandaria/WorldBosses/boss_ordos.cpp
+  Pandaria/WorldBosses/boss_oondasta.cpp
+  Pandaria/WorldBosses/AugustCelestials/boss_chi_ji.cpp
+  Pandaria/WorldBosses/AugustCelestials/boss_niuzao.cpp
+  Pandaria/WorldBosses/AugustCelestials/boss_xuen.cpp
+  Pandaria/WorldBosses/AugustCelestials/boss_yu_lon.cpp
+# Zones
+  Pandaria/Zones/zone_townlong_steppes.cpp
+  Pandaria/Zones/zone_dread_wastes.cpp
+  Pandaria/Zones/zone_valley_of_the_four_winds.cpp
+  Pandaria/Zones/zone_krasarang_wilds.cpp
+  Pandaria/Zones/zone_kun_lai_summit.cpp
+  Pandaria/Zones/zone_jade_forest.cpp
+  Pandaria/Zones/zone_vale_of_eternal_blossoms.cpp
 )
 
 message("  -> Prepared: Pandaria")
