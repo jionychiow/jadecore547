@@ -10,6 +10,7 @@
 
 set(scripts_STAT_SRCS
   ${scripts_STAT_SRCS}
+# The Stonecore
   Maelstrom/TheStonecore/boss_corborus.cpp
   Maelstrom/TheStonecore/boss_slabhide.cpp
   Maelstrom/TheStonecore/boss_ozruk.cpp
