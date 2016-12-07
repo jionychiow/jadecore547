@@ -10,22 +10,23 @@
 
 set(scripts_STAT_SRCS
   ${scripts_STAT_SRCS}
-  Kalimdor/stonetalon_mountains.cpp
-  Kalimdor/silithus.cpp
-  Kalimdor/moonglade.cpp
+# Razorfen Downs
   Kalimdor/RazorfenDowns/razorfen_downs.cpp
   Kalimdor/RazorfenDowns/instance_razorfen_downs.cpp
   Kalimdor/RazorfenDowns/boss_amnennar_the_coldbringer.cpp
   Kalimdor/RazorfenDowns/razorfen_downs.h
+# Zul'Farrak
   Kalimdor/ZulFarrak/zulfarrak.h
   Kalimdor/ZulFarrak/zulfarrak.cpp
   Kalimdor/ZulFarrak/instance_zulfarrak.cpp
+# Escape from Durnholde Keep
   Kalimdor/CavernsOfTime/EscapeFromDurnholdeKeep/boss_epoch_hunter.cpp
   Kalimdor/CavernsOfTime/EscapeFromDurnholdeKeep/old_hillsbrad.h
   Kalimdor/CavernsOfTime/EscapeFromDurnholdeKeep/boss_leutenant_drake.cpp
   Kalimdor/CavernsOfTime/EscapeFromDurnholdeKeep/old_hillsbrad.cpp
   Kalimdor/CavernsOfTime/EscapeFromDurnholdeKeep/instance_old_hillsbrad.cpp
   Kalimdor/CavernsOfTime/EscapeFromDurnholdeKeep/boss_captain_skarloc.cpp
+# Battle for Mount Hyjal
   Kalimdor/CavernsOfTime/BattleForMountHyjal/boss_archimonde.cpp
   Kalimdor/CavernsOfTime/BattleForMountHyjal/hyjalAI.h
   Kalimdor/CavernsOfTime/BattleForMountHyjal/hyjal_trash.h
@@ -38,6 +39,7 @@ set(scripts_STAT_SRCS
   Kalimdor/CavernsOfTime/BattleForMountHyjal/hyjal.h
   Kalimdor/CavernsOfTime/BattleForMountHyjal/boss_azgalor.cpp
   Kalimdor/CavernsOfTime/BattleForMountHyjal/boss_anetheron.cpp
+# Culling of Stratholme
   Kalimdor/CavernsOfTime/CullingOfStratholme/boss_infinite.cpp
   Kalimdor/CavernsOfTime/CullingOfStratholme/boss_salramm.cpp
   Kalimdor/CavernsOfTime/CullingOfStratholme/boss_meathook.cpp
@@ -46,12 +48,14 @@ set(scripts_STAT_SRCS
   Kalimdor/CavernsOfTime/CullingOfStratholme/culling_of_stratholme.cpp
   Kalimdor/CavernsOfTime/CullingOfStratholme/instance_culling_of_stratholme.cpp
   Kalimdor/CavernsOfTime/CullingOfStratholme/culling_of_stratholme.h
+# Dark Portal
   Kalimdor/CavernsOfTime/DarkPortal/dark_portal.h
   Kalimdor/CavernsOfTime/DarkPortal/instance_dark_portal.cpp
   Kalimdor/CavernsOfTime/DarkPortal/boss_chrono_lord_deja.cpp
   Kalimdor/CavernsOfTime/DarkPortal/dark_portal.cpp
   Kalimdor/CavernsOfTime/DarkPortal/boss_aeonus.cpp
   Kalimdor/CavernsOfTime/DarkPortal/boss_temporus.cpp
+# End Time
   Kalimdor/CavernsOfTime/EndTime/boss_echo_of_tyrande.cpp
   Kalimdor/CavernsOfTime/EndTime/boss_echo_of_baine.cpp
   Kalimdor/CavernsOfTime/EndTime/boss_echo_of_sylvanas.cpp
@@ -61,6 +65,7 @@ set(scripts_STAT_SRCS
   Kalimdor/CavernsOfTime/EndTime/instance_end_time.cpp
   Kalimdor/CavernsOfTime/EndTime/end_time.cpp
   Kalimdor/CavernsOfTime/EndTime/end_time.h
+# Well of Eternity
   Kalimdor/CavernsOfTime/WellofEternity/boss_perotharn.cpp
   Kalimdor/CavernsOfTime/WellofEternity/boss_queen_azshara.cpp
   Kalimdor/CavernsOfTime/WellofEternity/boss_mannoroth.cpp
@@ -68,12 +73,14 @@ set(scripts_STAT_SRCS
   Kalimdor/CavernsOfTime/WellofEternity/well_of_eternity_teleport.cpp
   Kalimdor/CavernsOfTime/WellofEternity/well_of_eternity.cpp
   Kalimdor/CavernsOfTime/WellofEternity/well_of_eternity.h
+# Hour of Twilight
   Kalimdor/CavernsOfTime/HourofTwilight/boss_arcurion.cpp
   Kalimdor/CavernsOfTime/HourofTwilight/boss_asira_dawnslayer.cpp
   Kalimdor/CavernsOfTime/HourofTwilight/boss_archbishop_benedictus.cpp
   Kalimdor/CavernsOfTime/HourofTwilight/instance_hour_of_twilight.cpp
   Kalimdor/CavernsOfTime/HourofTwilight/hour_of_twilight.cpp
   Kalimdor/CavernsOfTime/HourofTwilight/hour_of_twilight.h
+# Dragon Soul
   Kalimdor/CavernsOfTime/DragonSoul/boss_morchok.cpp
   Kalimdor/CavernsOfTime/DragonSoul/boss_yorsahj_the_unsleeping.cpp
   Kalimdor/CavernsOfTime/DragonSoul/boss_warlord_zonozz.cpp
@@ -86,24 +93,24 @@ set(scripts_STAT_SRCS
   Kalimdor/CavernsOfTime/DragonSoul/instance_dragon_soul.cpp
   Kalimdor/CavernsOfTime/DragonSoul/dragon_soul.cpp
   Kalimdor/CavernsOfTime/DragonSoul/dragon_soul.h
+# Throne of the Four Winds
   Kalimdor/ThroneoftheFourWinds/boss_conclave_of_wind.cpp
   Kalimdor/ThroneoftheFourWinds/instance_throne_of_the_four_winds.cpp
   Kalimdor/ThroneoftheFourWinds/throne_of_the_four_winds.cpp
   Kalimdor/ThroneoftheFourWinds/throne_of_the_four_winds.h
+# Blackfathom Deeps
   Kalimdor/BlackfathomDeeps/boss_kelris.cpp
   Kalimdor/BlackfathomDeeps/instance_blackfathom_deeps.cpp
   Kalimdor/BlackfathomDeeps/boss_gelihast.cpp
   Kalimdor/BlackfathomDeeps/blackfathom_deeps.cpp
   Kalimdor/BlackfathomDeeps/boss_aku_mai.cpp
   Kalimdor/BlackfathomDeeps/blackfathom_deeps.h
-  Kalimdor/azuremyst_isle.cpp
-  Kalimdor/orgrimmar.cpp
-  Kalimdor/desolace.cpp
-  Kalimdor/feralas.cpp
+# Maraudon
   Kalimdor/Maraudon/boss_princess_theradras.cpp
   Kalimdor/Maraudon/boss_landslide.cpp
   Kalimdor/Maraudon/boss_celebras_the_cursed.cpp
   Kalimdor/Maraudon/boss_noxxion.cpp
+# Temple of Ahn'Qiraj
   Kalimdor/TempleOfAhnQiraj/boss_fankriss.cpp
   Kalimdor/TempleOfAhnQiraj/boss_huhuran.cpp
   Kalimdor/TempleOfAhnQiraj/instance_temple_of_ahnqiraj.cpp
@@ -116,7 +123,7 @@ set(scripts_STAT_SRCS
   Kalimdor/TempleOfAhnQiraj/boss_skeram.cpp
   Kalimdor/TempleOfAhnQiraj/boss_ouro.cpp
   Kalimdor/TempleOfAhnQiraj/boss_bug_trio.cpp
-  Kalimdor/darkshore.cpp
+# Ruins of Ahn'Qiraj
   Kalimdor/RuinsOfAhnQiraj/boss_buru.cpp
   Kalimdor/RuinsOfAhnQiraj/instance_ruins_of_ahnqiraj.cpp
   Kalimdor/RuinsOfAhnQiraj/boss_rajaxx.cpp
@@ -125,34 +132,33 @@ set(scripts_STAT_SRCS
   Kalimdor/RuinsOfAhnQiraj/boss_moam.cpp
   Kalimdor/RuinsOfAhnQiraj/ruins_of_ahnqiraj.h
   Kalimdor/RuinsOfAhnQiraj/boss_kurinnaxx.cpp
-  Kalimdor/mulgore.cpp
-  Kalimdor/bloodmyst_isle.cpp
-  Kalimdor/thunder_bluff.cpp
-  Kalimdor/azshara.cpp
+# Razorfen Kraul
   Kalimdor/RazorfenKraul/razorfen_kraul.h
   Kalimdor/RazorfenKraul/instance_razorfen_kraul.cpp
   Kalimdor/RazorfenKraul/razorfen_kraul.cpp
-  Kalimdor/the_barrens.cpp
-  Kalimdor/ungoro_crater.cpp
+# Wailing Caverns
   Kalimdor/WailingCaverns/wailing_caverns.h
   Kalimdor/WailingCaverns/instance_wailing_caverns.cpp
   Kalimdor/WailingCaverns/wailing_caverns.cpp
   Kalimdor/WailingCaverns/boss_lady_anacondra.cpp
   Kalimdor/WailingCaverns/boss_lord_cobrahn.cpp
   Kalimdor/WailingCaverns/boss_lord_pythas.cpp
+# The Vortex Pinnacle
   Kalimdor/TheVortexPinnacle/boss_grand_vizier_ertan.cpp
   Kalimdor/TheVortexPinnacle/boss_altairus.cpp
   Kalimdor/TheVortexPinnacle/boss_asaad.cpp
   Kalimdor/TheVortexPinnacle/instance_the_vortex_pinnacle.cpp
   Kalimdor/TheVortexPinnacle/the_vortex_pinnacle.cpp
   Kalimdor/TheVortexPinnacle/the_vortex_pinnacle.h
+# Lost City of the Tolvir
   Kalimdor/LostCityOfTheTolvir/boss_general_husam.cpp
   Kalimdor/LostCityOfTheTolvir/boss_lockmaw_augh.cpp
   Kalimdor/LostCityOfTheTolvir/boss_high_prophet_barim.cpp
   Kalimdor/LostCityOfTheTolvir/boss_siamat.cpp
   Kalimdor/LostCityOfTheTolvir/instance_lost_city_of_the_tolvir.cpp
   Kalimdor/LostCityOfTheTolvir/lost_city_of_the_tolvir.cpp
-  Kalimdor/LostCityOfTheTolvir/lost_city_of_the_tolvir.h 
+  Kalimdor/LostCityOfTheTolvir/lost_city_of_the_tolvir.h
+# Halls of Origination
   Kalimdor/HallsOfOrigination/boss_temple_guardian_anhuur.cpp
   Kalimdor/HallsOfOrigination/boss_earthrager_ptah.cpp
   Kalimdor/HallsOfOrigination/boss_anraphet.cpp
@@ -163,6 +169,7 @@ set(scripts_STAT_SRCS
   Kalimdor/HallsOfOrigination/instance_halls_of_origination.cpp
   Kalimdor/HallsOfOrigination/halls_of_origination.cpp
   Kalimdor/HallsOfOrigination/halls_of_origination.h
+# Firelands
   Kalimdor/Firelands/boss_shannox.cpp
   Kalimdor/Firelands/boss_lord_rhyolith.cpp
   Kalimdor/Firelands/boss_lord_rhyolith.h
@@ -175,22 +182,39 @@ set(scripts_STAT_SRCS
   Kalimdor/Firelands/instance_firelands.cpp
   Kalimdor/Firelands/firelands.cpp
   Kalimdor/Firelands/firelands.h
-  Kalimdor/durotar.cpp
-  Kalimdor/felwood.cpp
-  Kalimdor/tanaris.cpp
-  Kalimdor/dustwallow_marsh.cpp
-  Kalimdor/winterspring.cpp
-  Kalimdor/thousand_needles.cpp
-  Kalimdor/ashenvale.cpp
-  Kalimdor/teldrassil.cpp
+# Onyxias Lair
   Kalimdor/OnyxiasLair/boss_onyxia.cpp
   Kalimdor/OnyxiasLair/onyxias_lair.h
   Kalimdor/OnyxiasLair/instance_onyxias_lair.cpp
+# Rage Fire
   Kalimdor/RageFire/boss_adarogg.cpp
   Kalimdor/RageFire/boss_gordoth.cpp
   Kalimdor/RageFire/boss_koranthal.cpp
   Kalimdor/RageFire/boss_slagmaw.cpp
-  Kalimdor/southern_barrens.cpp
+# Zones
+  Kalimdor/Zones/zone_ashenvale.cpp
+  Kalimdor/Zones/zone_azshara.cpp
+  Kalimdor/Zones/zone_azuremyst_isle.cpp
+  Kalimdor/Zones/zone_bloodmyst_isle.cpp
+  Kalimdor/Zones/zone_darkshore.cpp
+  Kalimdor/Zones/zone_desolace.cpp
+  Kalimdor/Zones/zone_durotar.cpp
+  Kalimdor/Zones/zone_dustwallow_marsh.cpp
+  Kalimdor/Zones/zone_felwood.cpp
+  Kalimdor/Zones/zone_feralas.cpp
+  Kalimdor/Zones/zone_moonglade.cpp
+  Kalimdor/Zones/zone_mulgore.cpp
+  Kalimdor/Zones/zone_orgrimmar.cpp
+  Kalimdor/Zones/zone_silithus.cpp
+  Kalimdor/Zones/zone_southern_barrens.cpp
+  Kalimdor/Zones/zone_stonetalon_mountains.cpp
+  Kalimdor/Zones/zone_tanaris.cpp
+  Kalimdor/Zones/zone_teldrassil.cpp
+  Kalimdor/Zones/zone_the_barrens.cpp
+  Kalimdor/Zones/zone_thousand_needles.cpp
+  Kalimdor/Zones/zone_thunder_bluff.cpp
+  Kalimdor/Zones/zone_ungoro_crater.cpp
+  Kalimdor/Zones/zone_winterspring.cpp
 )
 
 message("  -> Prepared: Kalimdor")

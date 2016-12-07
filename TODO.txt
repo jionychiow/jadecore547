@@ -51,6 +51,8 @@ Mists of Pandaria Start Zones Quests ( 1-5 lvl ) TODO:
 
 Mists of Pandaria Misc TODO:
 
+-- Battle Pets
+-- Character Boost
 -- Mmaps
 -- Items: 112327, 112326
 -- Fix all DB Logs Errors

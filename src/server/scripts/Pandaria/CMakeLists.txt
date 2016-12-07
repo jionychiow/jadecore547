@@ -10,45 +10,35 @@
 
 set(scripts_STAT_SRCS
   ${scripts_STAT_SRCS}
-
-  Pandaria/WorldBosses/boss_sha_of_anger.cpp
-  Pandaria/WorldBosses/boss_galleon.cpp
-  Pandaria/WorldBosses/boss_nalak.cpp
-  Pandaria/WorldBosses/boss_ordos.cpp
-  Pandaria/WorldBosses/boss_oondasta.cpp
-  Pandaria/WorldBosses/AugustCelestials/boss_chi_ji.cpp
-  Pandaria/WorldBosses/AugustCelestials/boss_niuzao.cpp
-  Pandaria/WorldBosses/AugustCelestials/boss_xuen.cpp
-  Pandaria/WorldBosses/AugustCelestials/boss_yu_lon.cpp
-
+# Mogushan Palace
   Pandaria/MogushanPalace/instance_mogu_shan_palace.cpp
   Pandaria/MogushanPalace/mogu_shan_palace.h
   Pandaria/MogushanPalace/boss_trial_of_the_king.cpp
   Pandaria/MogushanPalace/boss_gekkan.cpp
   Pandaria/MogushanPalace/boss_xin_the_weaponmaster.cpp
-
-  Pandaria/TempleJadeSerpent/instance_temple_of_jade_serpent.cpp
-  Pandaria/TempleJadeSerpent/temple_of_jade_serpent.h
-  Pandaria/TempleJadeSerpent/boss_wise_mari.cpp
-  Pandaria/TempleJadeSerpent/boss_lorewalker_stonestep.cpp
-  Pandaria/TempleJadeSerpent/boss_liu_flameheart.cpp
-  Pandaria/TempleJadeSerpent/boss_sha_of_doubt.cpp
-
+# Temple of the Jade Serpent
+  Pandaria/TempleOfTheJadeSerpent/instance_temple_of_jade_serpent.cpp
+  Pandaria/TempleOfTheJadeSerpent/temple_of_jade_serpent.h
+  Pandaria/TempleOfTheJadeSerpent/boss_wise_mari.cpp
+  Pandaria/TempleOfTheJadeSerpent/boss_lorewalker_stonestep.cpp
+  Pandaria/TempleOfTheJadeSerpent/boss_liu_flameheart.cpp
+  Pandaria/TempleOfTheJadeSerpent/boss_sha_of_doubt.cpp
+# Stormstout Brewery
   Pandaria/StormstoutBrewery/instance_stormstout_brewery.cpp
   Pandaria/StormstoutBrewery/stormstout_brewery.cpp
   Pandaria/StormstoutBrewery/stormstout_brewery.h
   Pandaria/StormstoutBrewery/boss_hoptallus.cpp
   Pandaria/StormstoutBrewery/boss_ook_ook.cpp
   Pandaria/StormstoutBrewery/boss_yanzhu_the_uncasked.cpp
-
-  Pandaria/GateSettingSun/instance_gate_setting_sun.cpp
-  Pandaria/GateSettingSun/gate_setting_sun.cpp
-  Pandaria/GateSettingSun/gate_setting_sun.h
-  Pandaria/GateSettingSun/boss_saboteur_kiptilak.cpp
-  Pandaria/GateSettingSun/boss_striker_gadok.cpp
-  Pandaria/GateSettingSun/boss_commander_rimok.cpp
-  Pandaria/GateSettingSun/boss_raigonn.cpp
-
+# Gate of the Setting Sun
+  Pandaria/GateOfTheSettingSun/instance_gate_setting_sun.cpp
+  Pandaria/GateOfTheSettingSun/gate_setting_sun.cpp
+  Pandaria/GateOfTheSettingSun/gate_setting_sun.h
+  Pandaria/GateOfTheSettingSun/boss_saboteur_kiptilak.cpp
+  Pandaria/GateOfTheSettingSun/boss_striker_gadok.cpp
+  Pandaria/GateOfTheSettingSun/boss_commander_rimok.cpp
+  Pandaria/GateOfTheSettingSun/boss_raigonn.cpp
+# Shadopan Monastery
   Pandaria/ShadopanMonastery/instance_shadopan_monastery.cpp
   Pandaria/ShadopanMonastery/shadopan_monastery.cpp
   Pandaria/ShadopanMonastery/shadopan_monastery.h
@@ -56,7 +46,7 @@ set(scripts_STAT_SRCS
   Pandaria/ShadopanMonastery/boss_master_snowdrift.cpp
   Pandaria/ShadopanMonastery/boss_sha_of_violence.cpp
   Pandaria/ShadopanMonastery/boss_taran_zhu.cpp
-
+# Siege of Niuzao Temple
   Pandaria/SiegeOfNiuzaoTemple/instance_siege_of_niuzao_temple.cpp
   Pandaria/SiegeOfNiuzaoTemple/siege_of_niuzao_temple.cpp
   Pandaria/SiegeOfNiuzaoTemple/siege_of_niuzao_temple.h
@@ -64,7 +54,7 @@ set(scripts_STAT_SRCS
   Pandaria/SiegeOfNiuzaoTemple/boss_general_pavalak.cpp
   Pandaria/SiegeOfNiuzaoTemple/boss_commander_vojak.cpp
   Pandaria/SiegeOfNiuzaoTemple/boss_wing_leader_neronok.cpp
-
+# Mogushan Vaults
   Pandaria/MogushanVaults/instance_mogu_shan_vaults.cpp
   Pandaria/MogushanVaults/mogu_shan_vaults.cpp
   Pandaria/MogushanVaults/mogu_shan_vaults.h
@@ -74,7 +64,7 @@ set(scripts_STAT_SRCS
   Pandaria/MogushanVaults/boss_spirit_kings.cpp
   Pandaria/MogushanVaults/boss_elegon.cpp
   Pandaria/MogushanVaults/boss_will_of_emperor.cpp
-
+# Heart of Fear
   Pandaria/HeartOfFear/instance_heart_of_fear.cpp
   Pandaria/HeartOfFear/heart_of_fear.cpp
   Pandaria/HeartOfFear/heart_of_fear.h
@@ -84,7 +74,7 @@ set(scripts_STAT_SRCS
   Pandaria/HeartOfFear/boss_meljarak.cpp
   Pandaria/HeartOfFear/boss_unsok.cpp
   Pandaria/HeartOfFear/boss_shekzeer.cpp
-  
+# Terrace of Endless Spring
   Pandaria/TerraceOfEndlessSpring/instance_terrace_of_endless_spring.cpp
   Pandaria/TerraceOfEndlessSpring/terrace_of_endless_spring.cpp
   Pandaria/TerraceOfEndlessSpring/terrace_of_endless_spring.h
@@ -92,7 +82,7 @@ set(scripts_STAT_SRCS
   Pandaria/TerraceOfEndlessSpring/boss_tsulong.cpp
   Pandaria/TerraceOfEndlessSpring/boss_lei_shi.cpp
   Pandaria/TerraceOfEndlessSpring/boss_sha_of_fear.cpp
-
+# Throne of Thunder
   Pandaria/ThroneOfThunder/instance_throne_of_thunder.cpp
   Pandaria/ThroneOfThunder/throne_of_thunder.h
   Pandaria/ThroneOfThunder/boss_jin_rokh_breaker.cpp
@@ -108,7 +98,7 @@ set(scripts_STAT_SRCS
   Pandaria/ThroneOfThunder/boss_primordius.cpp
   Pandaria/ThroneOfThunder/boss_raden.cpp
   Pandaria/ThroneOfThunder/boss_twinconsorts.cpp
-
+# Siege of Orgrimmar
   Pandaria/SiegeOfOrgrimmar/instance_siege_of_orgrimmar.cpp
   Pandaria/SiegeOfOrgrimmar/siege_of_orgrimmar.cpp
   Pandaria/SiegeOfOrgrimmar/siege_of_orgrimmar.h
@@ -126,19 +116,29 @@ set(scripts_STAT_SRCS
   Pandaria/SiegeOfOrgrimmar/boss_siegecrafter_blackfuse.cpp
   Pandaria/SiegeOfOrgrimmar/boss_paragons_of_the_klaxxi.cpp
   Pandaria/SiegeOfOrgrimmar/boss_garrosh_hellscream.cpp
-
+# Wandering Island
   Pandaria/WanderingIsland/WanderingIsland_North.cpp
   Pandaria/WanderingIsland/WanderingIsland_East.cpp
   Pandaria/WanderingIsland/WanderingIsland_West.cpp
   Pandaria/WanderingIsland/WanderingIsland_South.cpp
-
-  Pandaria/townlong_steppes.cpp
-  Pandaria/dread_wastes.cpp
-  Pandaria/valley_of_the_four_winds.cpp
-  Pandaria/krasarang_wilds.cpp
-  Pandaria/kun_lai_summit.cpp
-  Pandaria/jade_forest.cpp
-  Pandaria/vale_of_eternal_blossoms.cpp
+# World Bosses
+  Pandaria/WorldBosses/boss_sha_of_anger.cpp
+  Pandaria/WorldBosses/boss_galleon.cpp
+  Pandaria/WorldBosses/boss_nalak.cpp
+  Pandaria/WorldBosses/boss_ordos.cpp
+  Pandaria/WorldBosses/boss_oondasta.cpp
+  Pandaria/WorldBosses/AugustCelestials/boss_chi_ji.cpp
+  Pandaria/WorldBosses/AugustCelestials/boss_niuzao.cpp
+  Pandaria/WorldBosses/AugustCelestials/boss_xuen.cpp
+  Pandaria/WorldBosses/AugustCelestials/boss_yu_lon.cpp
+# Zones
+  Pandaria/Zones/zone_townlong_steppes.cpp
+  Pandaria/Zones/zone_dread_wastes.cpp
+  Pandaria/Zones/zone_valley_of_the_four_winds.cpp
+  Pandaria/Zones/zone_krasarang_wilds.cpp
+  Pandaria/Zones/zone_kun_lai_summit.cpp
+  Pandaria/Zones/zone_jade_forest.cpp
+  Pandaria/Zones/zone_vale_of_eternal_blossoms.cpp
 )
 
 message("  -> Prepared: Pandaria")
