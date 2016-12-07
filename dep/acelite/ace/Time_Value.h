@@ -78,7 +78,7 @@ public:
   explicit ACE_Time_Value (const struct timeval &t);
 
   /// Construct the ACE_Time_Value object from a timespec_t.
-  explicit ACE_Time_Value (const timespec_t &t);
+  explicit ACE_Time_Value (const timespec &t);
 
   /// Destructor
   virtual ~ACE_Time_Value ();

@@ -534,7 +534,7 @@ void SmartScript::ProcessAction(SmartScriptHolder& e, Unit* unit, uint32 var0, u
 						if (me->GetDistance((*itr)->ToUnit()) > spellInfo->GetMaxRange(true) ||
 							me->GetDistance((*itr)->ToUnit()) < spellInfo->GetMinRange(true) ||
 							!me->ToUnit()->IsWithinLOSInMap((*itr)->ToUnit()) ||
-							mana < spellInfo->CalcPowerCost(me, spellInfo->GetSchoolMask(), me->GetSpellPowerEntryBySpell(spellInfo)))
+							mana < (int32)spellInfo->CalcPowerCost(me, spellInfo->GetSchoolMask(), me->GetSpellPowerEntryBySpell(spellInfo)))
 							_allowMove = true;
 
 						CAST_AI(SmartAI, me->AI())->SetCombatMove(_allowMove);

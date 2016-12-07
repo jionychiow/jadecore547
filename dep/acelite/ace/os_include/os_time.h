@@ -71,6 +71,10 @@ typedef struct timespec
 #  endif
 # endif /* !ACE_HAS_POSIX_TIME */
 
+ #if _MSC_VER >= 1900 // Visual Studio 2015
+ typedef timespec timespec_t;
+#endif
+
 # if defined(ACE_LACKS_TIMESPEC_T)
 typedef struct timespec timespec_t;
 # endif /* ACE_LACKS_TIMESPEC_T */

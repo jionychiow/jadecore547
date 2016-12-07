@@ -8,6 +8,7 @@
 #pragma warning(disable:4996)
 #pragma warning(disable:4312)
 #pragma warning(disable:4311)
+#pragma warning(disable:4091)
 #include <windows.h>
 #include <tlhelp32.h>
 #include <stdio.h>
@@ -990,7 +991,7 @@ PVOID pAddress)
             if (!IsBadStringPtr(*(PSTR*)pAddress, 32))
             {
                 pszCurrBuffer += sprintf(pszCurrBuffer, " = \"%.31s\"",
-                    *(PSTR)pAddress);
+                    *(PSTR*)pAddress);
             }
             else
                 pszCurrBuffer += sprintf(pszCurrBuffer, " = %X",

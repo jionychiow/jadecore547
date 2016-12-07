@@ -8,37 +8,30 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-if( CMAKE_COMPILER_IS_GNUCXX )
-  add_definitions(--no-warnings)
-elseif( MSVC )
+if( MSVC )
   add_definitions(/W0)
+else()
+  add_definitions(-w)
 endif()
 
-if(CMAKE_SYSTEM_NAME MATCHES "Linux")
-  if(SERVERS AND NOT NOJEM)
-    add_subdirectory(jemalloc)  
-  endif()
-endif()
 
-if(CMAKE_SYSTEM_NAME MATCHES "Windows")
-  if(SERVERS)
-    add_subdirectory(acelite)
-    if(USE_MYSQL_SOURCES)
-      add_subdirectory(mysqllite)
-    endif()
-  endif()
-  if(TOOLS)
-    add_subdirectory(bzip2)
-  endif()
+if(SERVERS OR TOOLS)
+  add_subdirectory(threads)
   add_subdirectory(zlib)
+  add_subdirectory(g3dlite)
+  add_subdirectory(jemalloc)
+  add_subdirectory(openssl)
+  add_subdirectory(mysql)
 endif()
-
-add_subdirectory(g3dlite)
-
+  
 if(SERVERS)
+  if(CMAKE_SYSTEM_NAME MATCHES "Windows")
+    add_subdirectory(acelite)
+  endif()
   add_subdirectory(gsoap)
 endif()
 
 if(TOOLS)
   add_subdirectory(StormLib)
+  add_subdirectory(bzip2)
 endif()

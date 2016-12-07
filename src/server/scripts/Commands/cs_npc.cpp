@@ -21,7 +21,7 @@ Name: npc_commandscript
 Comment: All npc related commands
 Category: commandscripts
 EndScriptData */
-
+#pragma warning(disable:4838)
 #include "ScriptMgr.h"
 #include "ObjectMgr.h"
 #include "Chat.h"

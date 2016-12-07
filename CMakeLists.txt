@@ -12,8 +12,16 @@
 project(MopCore547)
 
 # CMake policies (can not be handled elsewhere)
-cmake_minimum_required(VERSION 2.6)
+# We require CMake >= 3.0
+cmake_minimum_required(VERSION 3.0)
+
 cmake_policy(SET CMP0005 OLD)
+if(POLICY CMP0043)
+  cmake_policy(SET CMP0043 OLD) # Disable 'Ignore COMPILE_DEFINITIONS_<Config> properties'
+endif(POLICY CMP0043)
+
+# build static libraries
+set(BUILD_SHARED_LIBS OFF)
 
 # Set RPATH-handing (CMake parameters)
 set(CMAKE_SKIP_BUILD_RPATH 0)
@@ -51,19 +59,10 @@ endif()
 
 include(CheckPlatform)
 
-# basic packagesearching and setup (further support will be needed, this is a preliminary release!)
 find_package(PCHSupport)
 find_package(ACE REQUIRED)
+find_package(MySQL REQUIRED)
 find_package(OpenSSL REQUIRED)
-if( NOT USE_MYSQL_SOURCES )
-  find_package(MySQL REQUIRED)
-endif()
-
-if( UNIX )
-  find_package(Readline)
-  find_package(ZLIB)
-  find_package(BZip2)
-endif()
 
 # Find revision ID and hash of the sourcetree
 include(cmake/genrev.cmake)
