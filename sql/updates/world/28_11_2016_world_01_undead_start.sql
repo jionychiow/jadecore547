@@ -1,6 +1,6 @@
 
     DELETE FROM `creature_addon` WHERE (`guid`=45877);
-    REPLACE INTO `creature_addon` (`guid`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `auras`) VALUES (45877, '', 0, 50331648, 1, 0, '');
+    REPLACE INTO `creature_addon` (`guid`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `auras`) VALUES (45877, 0, 0, 50331648, 1, 0, '');
      
     -- http://www.wowhead.com/quest=24960  The Wakening
     -- remove the autocomplete flag
@@ -175,7 +175,7 @@
      
     -- http://www.wowhead.com/npc=38910    Lilian Voss
     -- has questgiver flag.. this is wrong and wrong gossip menu to..
-    UPDATE creature_template set npcflag=1,gossip_menu_id=15486 WHERE entry=38910;
+    UPDATE creature_template set npcflag=1, gossip_menu_id=15486 WHERE entry=38910;
     DELETE FROM creature_questrelation WHERE id=38910 and quest=24961;
      
      
@@ -196,8 +196,8 @@
     (@ENTRY,@SOURCETYPE,1,0,8,0,100,0,56641,0,0,0,33,44794,0,0,0,0,0,7,0,0,0,0.0,0.0,0.0,0.0,"Give credit for hunter");
      
      
-     REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES
-    (@ENTRY,@SOURCETYPE,0,0,8,0,100,0,100,0,0,0,33,44794,0,0,0,0,0,7,0,0,0,0.0,0.0,0.0,0.0,"Give credit for warrier"),
+    REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES
+    (@ENTRY,@SOURCETYPE,0,0,8,0,100,0,100,0,0,0,33,44794,0,0,0,0,0,7,0,0,0,0.0,0.0,0.0,0.0,"Give credit for Warrior"),
     (@ENTRY,@SOURCETYPE,1,0,8,0,100,0,56641,0,0,0,33,44794,0,0,0,0,0,7,0,0,0,0.0,0.0,0.0,0.0,"Give credit for hunter"),
     (@ENTRY,@SOURCETYPE,2,0,8,0,100,0,2098,0,0,0,33,44794,0,0,0,0,0,7,0,0,0,0.0,0.0,0.0,0.0,"Give credit for rogue"),
     (@ENTRY,@SOURCETYPE,3,0,8,0,100,0,115757,0,0,0,33,44794,0,0,0,0,0,7,0,0,0,0.0,0.0,0.0,0.0,"Give credit for Mage"),
@@ -487,7 +487,7 @@
      
      
     DELETE FROM `creature_template_addon` WHERE (`entry`=49213);
-    INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `auras`) VALUES (49213, '', 0,  33554432 , 1, 0, '');
+    INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `auras`) VALUES (49213, 0, 0,  33554432 , 1, 0, '');
      
     DELETE FROM `creature` WHERE `id`=51107;
     UPDATE `quest_template` SET `RewardSpellCast` = 0 WHERE `Id` = 24959;
@@ -2142,7 +2142,7 @@
      
     UPDATE `creature_template` SET `minlevel` = 10, `maxlevel` = 10, `faction_A` = 5, `faction_H` = 5, `mindmg` = 186, `maxdmg` = 191, `attackpower` = 191, `unit_class` = 2, `unit_flags` = 8 WHERE `entry` = 39038;
     DELETE FROM `creature_template_addon` WHERE (`entry`=39038);
-    INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `auras`) VALUES (39038, '', 0, 0, 0, 0, 73304);
+    INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `auras`) VALUES (39038, 0, 0, 0, 0, 0, 73304);
     UPDATE `creature_template` SET `VehicleId` = 665 WHERE `entry` = 1538;
     UPDATE `creature_template` SET `dynamicflags` = 0, `AIName` = 'SmartAI' WHERE `entry` = 1538;
     DELETE FROM `creature_template_addon` WHERE (`entry`=1538);
@@ -2311,17 +2311,17 @@
      
     DELETE FROM creature_text WHERE entry=39038;
     INSERT INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES
-    (39038, 0, 0, 'Father!', 12, 0, 100, 0, 0, 0, 'Лилиан Восс'),
-    (39038, 1, 0, 'Shut up.', 12, 0, 100, 0, 0, 0, 'Лилиан Восс'),
-    (39038, 2, 0, 'You raised me to be a killer. How am I doing, daddy?', 12, 0, 100, 0, 0, 0, 'Лилиан Восс'),
-    (39038, 3, 0, 'But wait... I remember now. You taught me to only kill the undead. So you do want me to kill myself, daddy?', 12, 0, 100, 0, 0, 0, 'Лилиан Восс'),
-    (39038, 4, 0, 'Then again, why kill myself... when I can kill YOU instead!', 12, 0, 100, 0, 0, 0, 'Лилиан Восс');
-     
+    (39038, 0, 0, 'Father!', 12, 0, 100, 0, 0, 0, ''),
+    (39038, 1, 0, 'Shut up.', 12, 0, 100, 0, 0, 0, ''),
+    (39038, 2, 0, 'You raised me to be a killer. How am I doing, daddy?', 12, 0, 100, 0, 0, 0, ''),
+    (39038, 3, 0, 'But wait... I remember now. You taught me to only kill the undead. So you do want me to kill myself, daddy?', 12, 0, 100, 0, 0, 0, ''),
+    (39038, 4, 0, 'Then again, why kill myself... when I can kill YOU instead!', 12, 0, 100, 0, 0, 0, '');
+
     DELETE FROM creature_text WHERE entry=39097;
     INSERT INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES
-    (39097, 0, 0, 'Lilian... you''re... it''s so nice to see you well.', 12, 0, 100, 0, 0, 0, 'Верховный жрец Бенедикт Восс to Лилиан Восс'),
-    (39097, 1, 0, 'I, ah...', 12, 0, 100, 0, 0, 0, 'Верховный жрец Бенедикт Восс to Лилиан Восс'),
-    (39097, 2, 0, 'Lilian, I...', 12, 0, 100, 0, 0, 0, 'Верховный жрец Бенедикт Восс to Лилиан Восс');
+    (39097, 0, 0, 'Lilian... you''re... it''s so nice to see you well.', 12, 0, 100, 0, 0, 0, ''),
+    (39097, 1, 0, 'I, ah...', 12, 0, 100, 0, 0, 0, ''),
+    (39097, 2, 0, 'Lilian, I...', 12, 0, 100, 0, 0, 0, '');
      
     DELETE FROM `creature` WHERE `id`=144952;
     INSERT INTO `creature` (`id`,`map`,`zoneId`,`areaId`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`,`npcflag`,`unit_flags`,`dynamicflags`) VALUES
@@ -3283,9 +3283,9 @@
     UPDATE `creature_template` SET `questItem1` = 60742 WHERE `entry` = 1765;
      
     REPLACE INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES
-    (44825, 0, 0, 'You better bring that bat back in one piece, $N!', 12, 0, 100, 25, 0, 0, 'Дрессировщик нетопырей Червебрех'),
-    (44821, 0, 0, 'Eliminate all murlocs by using the Blight Concoction!$B$B|r|TInterface\Icons\INV_ALCHEMY_POTION_05.BLP:24|t', 42, 1, 100, 0, 0, 0, 'Нетопырь Отрекшихся'),
-    (44821, 1, 0, 'Returning to Forsaken High Command!$B$B|r|TInterface\Icons\ACHIEVEMENT_ZONE_SILVERPINE_01.BLP:24|t', 42, 1, 100, 0, 0, 0, 'Нетопырь Отрекшихся');
+    (44825, 0, 0, 'You better bring that bat back in one piece, $N!', 12, 0, 100, 25, 0, 0, ''),
+    (44821, 0, 0, 'Eliminate all murlocs by using the Blight Concoction!$B$B|r|TInterface\Icons\INV_ALCHEMY_POTION_05.BLP:24|t', 42, 1, 100, 0, 0, 0, ''),
+    (44821, 1, 0, 'Returning to Forsaken High Command!$B$B|r|TInterface\Icons\ACHIEVEMENT_ZONE_SILVERPINE_01.BLP:24|t', 42, 1, 100, 0, 0, 0, '');
      
      
     UPDATE `creature_template` SET `gossip_menu_id` = 11892 WHERE `entry` = 44825;
@@ -3296,7 +3296,7 @@
      
     UPDATE `creature_template` SET `minlevel` = 11, `maxlevel` = 11, `faction_A` = 1610, `faction_H` = 1610, `npcflag` = 16777224, `VehicleId` = 1051 WHERE `entry` = 44821;
     DELETE FROM `creature_template_addon` WHERE (`entry`=44821);
-    INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `auras`) VALUES (44821, '', 0, 50331648, 0, 0, '');
+    INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `auras`) VALUES (44821, 0, 0, 50331648, 0, 0, '');
     -- Bat Handler Maggotbreath
     SET @ENTRY := 44825;
     SET @SOURCETYPE := 0;
@@ -3363,13 +3363,13 @@
      
     UPDATE `creature_template` SET `minlevel` = 15, `maxlevel` = 15, `faction_A` = 5, `faction_H` = 5, `npcflag` = 2, `unit_flags` = 32776, `equipment_id` = 44882 WHERE `entry` = 44882;
     DELETE FROM `creature_template_addon` WHERE (`entry`=44882);
-    INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `auras`) VALUES (44882, '', 0, 0, 1, 0, '');
+    INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `auras`) VALUES (44882, 0, 0, 0, 1, 0, '');
     UPDATE `creature_template` SET `unit_flags` = 537166596 WHERE `entry` = 39086;
     UPDATE `creature_template` SET `unit_flags` = 537166592 WHERE `entry` = 39087;
     REPLACE INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES
-    (44882, 0, 0, 'We haven''t got much time. Crowly will be arriving shortly.', 12, 0, 100, 5, 0, 0, 'Страж смерти Ран Йорик'),
-    (44882, 1, 0, 'THERE! Hide in the armoire! I''ll hide in the shadow next to you.', 12, 0, 100, 0, 0, 0, 'Страж смерти Ран Йорик to Вожак стаи Ивар Кровавый Клык'),
-    (44882, 2, 0, 'I live... and die... for the Banshee Queen.', 12, 0, 100, 0, 0, 0, 'Страж смерти Ран Йорик to Вожак стаи Ивар Кровавый Клык');
+    (44882, 0, 0, 'We haven''t got much time. Crowly will be arriving shortly.', 12, 0, 100, 5, 0, 0, ''),
+    (44882, 1, 0, 'THERE! Hide in the armoire! I''ll hide in the shadow next to you.', 12, 0, 100, 0, 0, 0, ''),
+    (44882, 2, 0, 'I live... and die... for the Banshee Queen.', 12, 0, 100, 0, 0, 0, '');
      
      
     -- Deathstalker Rane Yorick
@@ -3475,21 +3475,21 @@
     UPDATE `creature_template` SET `unit_flags` = 33536 WHERE `entry` = 44884;
      
     REPLACE INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES
-    (44883, 0, 0, 'Have you given any more thought to my proposal, Ivar?', 12, 0, 100, 6, 0, 0, 'Лорд Дарий Краули'),
-    (44883, 1, 0, 'If we''re to win this war we will need your help. Our packs must unite! The Forsaken will destroy us otherwise.', 12, 0, 100, 396, 0, 0, 'Лорд Дарий Краули to Вожак стаи Ивар Кровавый Клык'),
-    (44883, 2, 0, 'You are the alpha mate, Ivar. The rest of the ferals in Silverpine will do as you command.', 12, 0, 100, 397, 0, 0, 'Лорд Дарий Краули to Вожак стаи Ивар Кровавый Клык'),
-    (44883, 3, 0, 'So will you help?', 12, 0, 100, 6, 0, 0, 'Лорд Дарий Краули to Вожак стаи Ивар Кровавый Клык'),
-    (44884, 0, 0, 'Why trust you now, Crowley? You abandoned us. Left us to die.', 12, 0, 100, 6, 0, 0, 'Вожак стаи Ивар Кровавый Клык to Лорд Дарий Краули'),
-    (44884, 1, 0, 'I don''t care about your war, Crowley.', 12, 0, 100, 274, 0, 0, 'Вожак стаи Ивар Кровавый Клык to Лорд Дарий Краули'),
-    (44884, 2, 0, 'But...', 12, 0, 100, 1, 0, 0, 'Вожак стаи Ивар Кровавый Клык to Лорд Дарий Краули'),
-    (44884, 3, 0, 'I have seen firsthand what the Forsaken of capable of doing. It is true. They hunt us... slaughter the defenseless.', 12, 0, 100, 1, 0, 0, 'Вожак стаи Ивар Кровавый Клык to Лорд Дарий Краули'),
-    (44884, 4, 0, 'Aye, I will gather my pack... we...', 12, 0, 100, 1, 0, 0, 'Вожак стаи Ивар Кровавый Клык to Лорд Дарий Краули'),
-    (44884, 5, 0, '%s sniffs the air.', 16, 0, 100, 479, 0, 0, 'Вожак стаи Ивар Кровавый Клык to Лорд Дарий Краули'),
-    (44884, 6, 0, 'It would appear that we are being watched, Crowley. You have grown soft... Likely Greymane''s fault.', 12, 0, 100, 1, 0, 0, 'Вожак стаи Ивар Кровавый Клык to Лорд Дарий Краули'),
-    (44884, 7, 0, 'Treacherous little pup!', 12, 0, 100, 15, 0, 0, 'Вожак стаи Ивар Кровавый Клык to Лорд Дарий Краули'),
-    (44884, 8, 0, 'What say you now, spy?', 12, 0, 100, 0, 0, 0, 'Вожак стаи Ивар Кровавый Клык to Лорд Дарий Краули'),
-    (44884, 9, 0, 'I was hoping you''d say that...', 12, 0, 100, 0, 0, 0, 'Вожак стаи Ивар Кровавый Клык to Страж смерти Ран Йорик'),
-    (44884, 10, 0, 'I will prepare the pack. It will take some time to gather them all, but we will join... for now.', 12, 0, 100, 1, 0, 0, 'Вожак стаи Ивар Кровавый Клык to Страж смерти Ран Йорик');
+    (44883, 0, 0, 'Have you given any more thought to my proposal, Ivar?', 12, 0, 100, 6, 0, 0, ''),
+    (44883, 1, 0, 'If we''re to win this war we will need your help. Our packs must unite! The Forsaken will destroy us otherwise.', 12, 0, 100, 396, 0, 0, ''),
+    (44883, 2, 0, 'You are the alpha mate, Ivar. The rest of the ferals in Silverpine will do as you command.', 12, 0, 100, 397, 0, 0, ''),
+    (44883, 3, 0, 'So will you help?', 12, 0, 100, 6, 0, 0, ''),
+    (44884, 0, 0, 'Why trust you now, Crowley? You abandoned us. Left us to die.', 12, 0, 100, 6, 0, 0, ''),
+    (44884, 1, 0, 'I don''t care about your war, Crowley.', 12, 0, 100, 274, 0, 0, ''),
+    (44884, 2, 0, 'But...', 12, 0, 100, 1, 0, 0, ''),
+    (44884, 3, 0, 'I have seen firsthand what the Forsaken of capable of doing. It is true. They hunt us... slaughter the defenseless.', 12, 0, 100, 1, 0, 0, ''),
+    (44884, 4, 0, 'Aye, I will gather my pack... we...', 12, 0, 100, 1, 0, 0, ''),
+    (44884, 5, 0, '%s sniffs the air.', 16, 0, 100, 479, 0, 0, ''),
+    (44884, 6, 0, 'It would appear that we are being watched, Crowley. You have grown soft... Likely Greymane''s fault.', 12, 0, 100, 1, 0, 0, ''),
+    (44884, 7, 0, 'Treacherous little pup!', 12, 0, 100, 15, 0, 0, ''),
+    (44884, 8, 0, 'What say you now, spy?', 12, 0, 100, 0, 0, 0, ''),
+    (44884, 9, 0, 'I was hoping you''d say that...', 12, 0, 100, 0, 0, 0, ''),
+    (44884, 10, 0, 'I will prepare the pack. It will take some time to gather them all, but we will join... for now.', 12, 0, 100, 1, 0, 0, '');
      
      
      
@@ -3575,13 +3575,13 @@
     UPDATE `creature_template` SET `minlevel` = 9, `maxlevel` = 9, `faction_A` = 5, `faction_H` = 5, `unit_flags` = 33288, `VehicleId` = 1060, `HoverHeight` = 1 WHERE `entry` = 44914;
     DELETE FROM `creature_text` WHERE `entry`=44914;
     INSERT INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES
-    (44914, 0, 0, 'Dis not so bad. Maybe little heavy, but me ok.', 12, 0, 100, 66, 0, 0, 'Орк-юнга'),
-    (44914, 0, 1, 'Maybe captain carry one box too?', 12, 1, 100, 0, 0, 0, 'Орк-юнга to Орочий ящик'),
-    (44914, 0, 2, 'Ugh.. dese boxes too heavy. Dey might fall!', 12, 1, 100, 0, 0, 0, 'Орк-юнга to Орочий ящик'),
-    (44914, 0, 3, 'CAN NO SEE! WHERE TO GO!? WHAT DOING?!', 12, 1, 100, 0, 0, 0, 'Орк-юнга to Орочий ящик'),
-    (44914, 0, 4, 'НDis hurt so bad. Like da time poop came out sideways.!', 12, 1, 100, 0, 0, 0, 'Орк-юнга to Орочий ящик'),
-    (44914, 1, 0, 'Where to put? Dey falling! HELP!', 12, 1, 100, 0, 0, 0, 'Орк-юнга to Орочий ящик'),
-    (44914, 2, 0, 'OOF!', 12, 1, 100, 0, 0, 0, 'Орк-юнга');
+    (44914, 0, 0, 'Dis not so bad. Maybe little heavy, but me ok.', 12, 0, 100, 66, 0, 0, ''),
+    (44914, 0, 1, 'Maybe captain carry one box too?', 12, 1, 100, 0, 0, 0, ''),
+    (44914, 0, 2, 'Ugh.. dese boxes too heavy. Dey might fall!', 12, 1, 100, 0, 0, 0, ''),
+    (44914, 0, 3, 'CAN NO SEE! WHERE TO GO!? WHAT DOING?!', 12, 1, 100, 0, 0, 0, ''),
+    (44914, 0, 4, 'НDis hurt so bad. Like da time poop came out sideways.!', 12, 1, 100, 0, 0, 0, ''),
+    (44914, 1, 0, 'Where to put? Dey falling! HELP!', 12, 1, 100, 0, 0, 0, ''),
+    (44914, 2, 0, 'OOF!', 12, 1, 100, 0, 0, 0, '');
     DELETE FROM `conditions` WHERE `SourceTypeOrReferenceId`=13 AND SourceEntry=83838;
     INSERT INTO `conditions` (`SourceTypeOrReferenceId`, `SourceGroup`, `SourceEntry`, `ConditionTypeOrReference`, `ConditionValue1`, `ConditionValue2`) VALUES ('13', '1', '83838', '31', '3', '44914');
      
@@ -4443,9 +4443,9 @@
     DELETE FROM `gameobject` WHERE `id`=106319;
     DELETE FROM `creature_text` WHERE `entry`=44942;
     INSERT INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES
-    (44942, 0, 0, 'Thank you, friend. Let''ll end a couple of those ... Spider-age. Y-yes ... it sounds like something out loud is not very ...', 12, 0, 100, 5, 0, 0, 'Орк-морской волк'),
-    (44942, 0, 1, 'We will find the commander of the operation and finish!', 12, 0, 100, 5, 0, 0, 'Орк-морской волк'),
-    (44942, 0, 2, 'I need a drink!', 12, 0, 100, 5, 0, 0, 'Орк-морской волк');
+    (44942, 0, 0, 'Thank you, friend. Let''ll end a couple of those ... Spider-age. Y-yes ... it sounds like something out loud is not very ...', 12, 0, 100, 5, 0, 0, ''),
+    (44942, 0, 1, 'We will find the commander of the operation and finish!', 12, 0, 100, 5, 0, 0, ''),
+    (44942, 0, 2, 'I need a drink!', 12, 0, 100, 5, 0, 0, '');
      
      
     -- Webbed Victim
@@ -4531,25 +4531,25 @@
      
     DELETE FROM `creature_text` WHERE entry=44951;
     INSERT INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES
-    (44951, 0, 1, 'The warmth of this place sickens me.', 12, 0, 100, 0, 0, 0, 'Агата'),
-    (44951, 0, 0, 'I sense doom in your future, $n.', 12, 0, 100, 0, 0, 0, 'Агата'),
-    (44951, 1, 0, 'Rise and destroy our enemies!', 14, 0, 100, 0, 0, 0, 'Агата to Хилсбрадский беженец'),
-    (44951, 1, 1, 'Rise, Hillsbrad Refugee! Become Forsaken!', 14, 0, 100, 0, 0, 0, 'Агата to Хилсбрадский беженец'),
-    (44951, 0, 2, 'Waste no time, $n. We mustn''t keep the Banshee Queen waiting.', 12, 0, 100, 0, 0, 0, 'Агата'),
-    (44951, 1, 2, 'Bow before your new master!', 14, 0, 100, 0, 0, 0, 'Агата to Хилсбрадский беженец'),
-    (44951, 2, 0, 'This way, $n. We will take them by surprise.', 12, 0, 100, 457, 0, 0, 'Агата'),
-    (44951, 3, 0, 'Run...', 12, 0, 100, 457, 0, 0, 'Агата to Мировой судья Генри Малеб'),
-    (44951, 3, 1, 'RUN!', 12, 0, 100, 457, 0, 0, 'Агата to Мировой судья Генри Малеб');
+    (44951, 0, 1, 'The warmth of this place sickens me.', 12, 0, 100, 0, 0, 0, ''),
+    (44951, 0, 0, 'I sense doom in your future, $n.', 12, 0, 100, 0, 0, 0, ''),
+    (44951, 1, 0, 'Rise and destroy our enemies!', 14, 0, 100, 0, 0, 0, ''),
+    (44951, 1, 1, 'Rise, Hillsbrad Refugee! Become Forsaken!', 14, 0, 100, 0, 0, 0, ''),
+    (44951, 0, 2, 'Waste no time, $n. We mustn''t keep the Banshee Queen waiting.', 12, 0, 100, 0, 0, 0, ''),
+    (44951, 1, 2, 'Bow before your new master!', 14, 0, 100, 0, 0, 0, ''),
+    (44951, 2, 0, 'This way, $n. We will take them by surprise.', 12, 0, 100, 457, 0, 0, ''),
+    (44951, 3, 0, 'Run...', 12, 0, 100, 457, 0, 0, ''),
+    (44951, 3, 1, 'RUN!', 12, 0, 100, 457, 0, 0, '');
      
     DELETE FROM `creature_involvedrelation` WHERE id=44951;
     INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES ('44951', '27097');
      
     DELETE FROM `creature_text` WHERE entry=44963;
     INSERT INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES
-    (44963, 0, 0, 'To the glory of the Dark Lady!', 12, 1, 100, 15, 0, 0, 'Отрекшийся-боец to Хилсбрадский беженец'),
-    (44963, 0, 1, 'I am eternal... I am death.', 12, 1, 100, 273, 0, 0, 'Отрекшийся-боец to Хилсбрадский беженец'),
-    (44963, 0, 2, 'Wha... What has happened?', 12, 1, 100, 6, 0, 0, 'Отрекшийся-боец to Хилсбрадский беженец'),
-    (44963, 0, 3, 'I am Forsaken.', 12, 1, 100, 66, 0, 0, 'Отрекшийся-боец to Хилсбрадский беженец');
+    (44963, 0, 0, 'To the glory of the Dark Lady!', 12, 1, 100, 15, 0, 0, ''),
+    (44963, 0, 1, 'I am eternal... I am death.', 12, 1, 100, 273, 0, 0, ''),
+    (44963, 0, 2, 'Wha... What has happened?', 12, 1, 100, 6, 0, 0, ''),
+    (44963, 0, 3, 'I am Forsaken.', 12, 1, 100, 66, 0, 0, '');
     UPDATE `creature_template` SET `faction_A` = 68, `faction_H` = 68, `unit_flags` = 33536 WHERE `entry` = 44963;
      
      
@@ -4719,8 +4719,8 @@
     (1908, 0, 0, 0, 1, 1, 0, 0, 750.909, 275.238, 38.6943, 3.53114, 120, 0, 0, 1, 0, 0, 0, 0, 0),
     (1908, 0, 0, 0, 1, 1, 0, 0, 740.213, 307.378, 33.6491, 2.09507, 120, 0, 0, 1, 0, 0, 0, 0, 0);
      
-    DELETE FROM creature WHERE id=44966;
-    INSERT INTO creature(id, map, zoneId, areaId, spawnMask, phaseMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecs, spawndist, currentwaypoint, curhealth, curmana, MovementType, npcflag, unit_flags, dynamicflags) VALUES
+    DELETE FROM `creature` WHERE id=44966;
+    INSERT INTO `creature` (id, map, zoneId, areaId, spawnMask, phaseMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecs, spawndist, currentwaypoint, curhealth, curmana, MovementType, npcflag, unit_flags, dynamicflags) VALUES
     (44966, 0, 0, 0, 1, 1, 0, 0, 912.052, 680.637, 53.635, 3.19395, 120, 0, 0, 1, 0, 0, 0, 0, 0),
     (44966, 0, 0, 0, 1, 1, 0, 0, 912.061, 693.785, 53.6937, 3.15905, 120, 0, 0, 1, 0, 0, 0, 0, 0),
     (44966, 0, 0, 0, 1, 1, 0, 0, 854.613, 696.894, 53.6658, 3.35103, 120, 0, 0, 1, 0, 0, 0, 0, 0),
@@ -4748,7 +4748,7 @@
     SET @SOURCETYPE := 0;
      
     DELETE FROM `smart_scripts` WHERE `entryorguid`=@ENTRY AND `source_type`=@SOURCETYPE;
-    UPDATE creature_template SET AIName="SmartAI" WHERE entry=@ENTRY LIMIT 1;
+    UPDATE `creature_template` SET AIName="SmartAI" WHERE entry=@ENTRY LIMIT 1;
     INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES
     (@ENTRY,@SOURCETYPE,0,0,11,0,100,1,0,0,0,0,11,86237,0,0,0,0,0,1,0,0,0,0.0,0.0,0.0,0.0,"Cast Stalking on Spawn"),
     (@ENTRY,@SOURCETYPE,1,0,7,0,100,1,0,0,0,0,11,86237,0,0,0,0,0,1,0,0,0,0.0,0.0,0.0,0.0,"Cast Stalking on Evade"),
@@ -4757,10 +4757,10 @@
     (@ENTRY,@SOURCETYPE,4,0,6,0,100,0,0,0,0,0,7,27181,0,0,0,0,0,7,0,0,0,0.0,0.0,0.0,0.0,"on death add quest 27181");
      
      
-    DELETE FROM conditions WHERE SourceTypeOrReferenceId=22 AND ConditionTypeOrReference=8;
-    DELETE FROM conditions WHERE SourceTypeOrReferenceId=22 AND ConditionTypeOrReference=9;
-    DELETE FROM conditions WHERE SourceTypeOrReferenceId=22 AND ConditionTypeOrReference=28;
-    INSERT INTO conditions(SourceTypeOrReferenceId, SourceGroup, SourceEntry, SourceId, ElseGroup, ConditionTypeOrReference, ConditionTarget, ConditionValue1, ConditionValue2, ConditionValue3, NegativeCondition, ErrorType, ErrorTextId, ScriptName, Comment) VALUES
+    DELETE FROM `conditions` WHERE SourceTypeOrReferenceId=22 AND ConditionTypeOrReference=8;
+    DELETE FROM `conditions` WHERE SourceTypeOrReferenceId=22 AND ConditionTypeOrReference=9;
+    DELETE FROM `conditions` WHERE SourceTypeOrReferenceId=22 AND ConditionTypeOrReference=28;
+    INSERT INTO `conditions` (SourceTypeOrReferenceId, SourceGroup, SourceEntry, SourceId, ElseGroup, ConditionTypeOrReference, ConditionTarget, ConditionValue1, ConditionValue2, ConditionValue3, NegativeCondition, ErrorType, ErrorTextId, ScriptName, Comment) VALUES
     (22, 5, 45195, 0, 0, 8, 0, 27181, 0, 0, 1, 0, 0, '', null),
     (22, 5, 45195, 0, 0, 9, 0, 27181, 0, 0, 1, 0, 0, '', null),
     (22, 5, 45195, 0, 0, 28, 0, 27181, 0, 0, 1, 0, 0, '', null);
