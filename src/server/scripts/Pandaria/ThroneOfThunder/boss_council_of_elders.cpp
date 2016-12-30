@@ -120,9 +120,11 @@ enum Spells
 
     SPELL_OVERLOAD              = 137149, // Dummy duration aura, applies dummy aura on eff 0 for SPELL_OVERLOAD_REFLECT_DMG (40% dmg reflected). Boss should be "stunned" (passive). When Possesed.
     SPELL_OVERLOAD_REFLECT_DMG  = 137151, // Damage reflected spell.
+    SPELL_OVERLOAD_VISUAL       = 137163, // Visual on caster of spell that triggered mirror effect
 
     SPELL_DISCHARGE             = 137166, // HEROIC only. Replaces Overload. Dummy duration aura, applies dummy aura on eff 0 for SPELL_DISCHARGE_REFLECT_DMG (5% dmg reflected to raid). Boss "stunned" (passive). When Possesed.
     SPELL_DISCHARGE_REFLECT_DMG = 136935, // Damage reflected spell.
+    SPELL_DISCHARGE_VISUAL      = 137172, // Visual on all players when spell ticks
 
     // Sul the Sandcrawler - Mostly no tank needed, casts Sand Bolt all the time.
 
@@ -820,16 +822,16 @@ class boss_kazra_jin : public CreatureScript
                     if (me->HasAura(SPELL_OVERLOAD))
                     {
                         const SpellInfo* overloadSpell = sSpellMgr->GetSpellInfo(SPELL_OVERLOAD_REFLECT_DMG, me->GetMap()->GetDifficulty());
-                        me->DealDamage(doneBy, (uiDamage * 4) / 10, NULL, SPELL_DIRECT_DAMAGE, SPELL_SCHOOL_MASK_NATURE, overloadSpell);
+			int32 overload = (uiDamage * 4) / 10;
+			me->CastCustomSpell(doneBy, SPELL_OVERLOAD_REFLECT_DMG, NULL, &overload, NULL, true);
+			me->CastSpell(doneBy, SPELL_OVERLOAD_VISUAL, true);
                     }
                     else if (me->HasAura(SPELL_DISCHARGE))
                     {
                         const SpellInfo* dischargeSpell = sSpellMgr->GetSpellInfo(SPELL_DISCHARGE_REFLECT_DMG, me->GetMap()->GetDifficulty());
-                        Map::PlayerList const &PlayerList = me->GetMap()->GetPlayers();
-                        if (!PlayerList.isEmpty())
-                            for (Map::PlayerList::const_iterator i = PlayerList.begin(); i != PlayerList.end(); ++i)
-                                if (Player* player = i->getSource())
-                                    me->DealDamage(player, uiDamage / 20, NULL, SPELL_DIRECT_DAMAGE, SPELL_SCHOOL_MASK_NATURE, dischargeSpell);
+			int32 discharge = (uiDamage) / 20;
+			me->CastCustomSpell(doneBy, SPELL_DISCHARGE_REFLECT_DMG, NULL, &discharge, NULL, true);
+			me->CastSpell(doneBy, SPELL_DISCHARGE_VISUAL, true);
                     }
 
                     // Increase Possessed damage taken.
