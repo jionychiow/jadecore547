@@ -3775,6 +3775,205 @@ class spell_gen_balanced_trillium_ingot : public SpellScriptLoader
         }
 };
 
+enum JadeFlameCrackleSpell
+{
+    SPELL_JADE_TEMPEST          = 148583,
+    SPELL_MOLTEN_FIST           = 148517,
+    SPELL_RETURN_TO_STONE       = 145514,
+    SPELL_FRACTURE              = 148514,
+    SPELL_SHADOW_VOLLEY         = 148516
+};
+
+class spell_gen_jade_tempest : public SpellScriptLoader
+{
+    public:
+        spell_gen_jade_tempest() : SpellScriptLoader("spell_gen_jade_tempest") { }
+
+        class spell_gen_jade_tempest_SpellScript : public SpellScript
+        {
+            PrepareSpellScript(spell_gen_jade_tempest_SpellScript);
+
+            void HandleDummy(SpellEffIndex /*effIndex*/)
+            {
+                std::list<Unit*> TargetList;
+                WoWSource::AnyUnfriendlyUnitInObjectRangeCheck checker(GetCaster(), GetCaster(), 100.0f);
+                WoWSource::UnitListSearcher<Trinity::AnyUnfriendlyUnitInObjectRangeCheck> searcher(GetCaster(), TargetList, checker);
+                GetCaster()->VisitNearbyObject(100.0f, searcher);
+                for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
+                {
+                    Unit* target = *itr;
+                    if (!target || !target->IsAlive())
+                        continue;
+                    
+                    int32 damage = GetEffectValue();
+                    GetCaster()->CastCustomSpell(target, SPELL_JADE_TEMPEST, &damage, NULL, NULL, true);
+                }
+            }
+
+            void Register() 
+            {
+                OnEffectHitTarget += SpellEffectFn(spell_gen_jade_tempest_SpellScript::HandleDummy, EFFECT_0, SPELL_EFFECT_DUMMY);
+            }
+        };
+
+        SpellScript* GetSpellScript() const
+        {
+            return new spell_gen_jade_tempest_SpellScript();
+        }
+};
+
+class spell_gen_molten_fist : public SpellScriptLoader
+{
+    public:
+        spell_gen_molten_fist() : SpellScriptLoader("spell_gen_molten_fist") { }
+
+        class spell_gen_molten_fist_SpellScript : public SpellScript
+        {
+            PrepareSpellScript(spell_gen_molten_fist_SpellScript);
+
+            void HandleDummy(SpellEffIndex /*effIndex*/)
+            {
+                std::list<Unit*> TargetList;
+                WoWSource::AnyUnfriendlyUnitInObjectRangeCheck checker(GetCaster(), GetCaster(), 100.0f);
+                WoWSource::UnitListSearcher<Trinity::AnyUnfriendlyUnitInObjectRangeCheck> searcher(GetCaster(), TargetList, checker);
+                GetCaster()->VisitNearbyObject(100.0f, searcher);
+                for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
+                {
+                    Unit* target = *itr;
+                    if (!target || !target->IsAlive())
+                        continue;
+                    
+                    int32 damage = GetEffectValue();
+                    GetCaster()->CastCustomSpell(target, SPELL_MOLTEN_FIST, &damage, NULL, NULL, true);
+                }
+            }
+
+            void Register()
+            {
+                OnEffectHitTarget += SpellEffectFn(spell_gen_molten_fist_SpellScript::HandleDummy, EFFECT_0, SPELL_EFFECT_DUMMY);
+            }
+        };
+
+        SpellScript* GetSpellScript() const
+        {
+            return new spell_gen_molten_fist_SpellScript();
+        }
+};
+
+class spell_gen_return_to_stone : public SpellScriptLoader
+{
+    public:
+        spell_gen_return_to_stone() : SpellScriptLoader("spell_gen_return_to_stone") { }
+
+        class spell_gen_return_to_stone_SpellScript : public SpellScript
+        {
+            PrepareSpellScript(spell_gen_return_to_stone_SpellScript);
+
+            void HandleDummy(SpellEffIndex /*effIndex*/)
+            {
+                std::list<Unit*> TargetList;
+                WoWSource::AnyUnfriendlyUnitInObjectRangeCheck checker(GetCaster(), GetCaster(), 100.0f);
+                WoWSource::UnitListSearcher<Trinity::AnyUnfriendlyUnitInObjectRangeCheck> searcher(GetCaster(), TargetList, checker);
+                GetCaster()->VisitNearbyObject(100.0f, searcher);
+                for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
+                {
+                    Unit* target = *itr;
+                    if (!target || !target->IsAlive())
+                        continue;
+                    
+                    int32 damage = GetEffectValue();
+                    GetCaster()->CastCustomSpell(target, SPELL_RETURN_TO_STONE, &damage, NULL, NULL, true);
+                }
+            }
+
+            void Register()
+            {
+                OnEffectHitTarget += SpellEffectFn(spell_gen_return_to_stone_SpellScript::HandleDummy, EFFECT_0, SPELL_EFFECT_DUMMY);
+            }
+        };
+
+        SpellScript* GetSpellScript() const
+        {
+            return new spell_gen_return_to_stone_SpellScript();
+        }
+};
+
+class spell_gen_shadow_volley : public SpellScriptLoader
+{
+    public:
+        spell_gen_shadow_volley() : SpellScriptLoader("spell_gen_shadow_volley") { }
+
+        class spell_gen_shadow_volley_SpellScript : public SpellScript
+        {
+            PrepareSpellScript(spell_gen_shadow_volley_SpellScript);
+
+            void HandleDummy(SpellEffIndex /*effIndex*/)
+            {
+                std::list<Unit*> TargetList;
+                WoWSource::AnyUnfriendlyUnitInObjectRangeCheck checker(GetCaster(), GetCaster(), 100.0f);
+                WoWSource::UnitListSearcher<Trinity::AnyUnfriendlyUnitInObjectRangeCheck> searcher(GetCaster(), TargetList, checker);
+                GetCaster()->VisitNearbyObject(100.0f, searcher);
+                for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
+                {
+                    Unit* target = *itr;
+                    if (!target || !target->IsAlive())
+                        continue;
+                    
+                    int32 damage = GetEffectValue();
+                    GetCaster()->CastCustomSpell(target, SPELL_SHADOW_VOLLEY, &damage, NULL, NULL, true);
+                }
+            }
+
+            void Register()
+            {
+                OnEffectHitTarget += SpellEffectFn(spell_gen_shadow_volley_SpellScript::HandleDummy, EFFECT_0, SPELL_EFFECT_DUMMY);
+            }
+        };
+
+        SpellScript* GetSpellScript() const
+        {
+            return new spell_gen_shadow_volley_SpellScript();
+        }
+};
+
+class spell_gen_fracture : public SpellScriptLoader
+{
+    public:
+        spell_gen_fracture() : SpellScriptLoader("spell_gen_fracture") { }
+
+        class spell_gen_fracture_SpellScript : public SpellScript
+        {
+            PrepareSpellScript(spell_gen_fracture_SpellScript);
+
+            void HandleDummy(SpellEffIndex /*effIndex*/)
+            {
+                std::list<Unit*> TargetList;
+                WoWSource::AnyUnfriendlyUnitInObjectRangeCheck checker(GetCaster(), GetCaster(), 100.0f);
+                WoWSource::UnitListSearcher<Trinity::AnyUnfriendlyUnitInObjectRangeCheck> searcher(GetCaster(), TargetList, checker);
+                GetCaster()->VisitNearbyObject(100.0f, searcher);
+                for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
+                {
+                    Unit* target = *itr;
+                    if (!target || !target->IsAlive())
+                        continue;
+                    
+                    int32 damage = GetEffectValue();
+                    GetCaster()->CastCustomSpell(target, SPELL_FRACTURE, &damage, NULL, NULL, true);
+                }
+            }
+
+            void Register()
+            {
+                OnEffectHitTarget += SpellEffectFn(spell_gen_fracture_SpellScript::HandleDummy, EFFECT_0, SPELL_EFFECT_DUMMY);
+            }
+        };
+
+        SpellScript* GetSpellScript() const
+        {
+            return new spell_gen_fracture_SpellScript();
+        }
+};
+
 void AddSC_generic_spell_scripts()
 {
     new spell_gen_absorb0_hitlimit1();
@@ -3860,4 +4059,9 @@ void AddSC_generic_spell_scripts()
     new spell_gen_windsong();
     new spell_gen_alchemists_flask();
     new spell_gen_balanced_trillium_ingot();
+    new spell_gen_jade_tempest();
+    new spell_gen_molten_fist();
+    new spell_gen_return_to_stone();
+    new spell_gen_shadow_volley();
+    new spell_gen_fracture();
 }
