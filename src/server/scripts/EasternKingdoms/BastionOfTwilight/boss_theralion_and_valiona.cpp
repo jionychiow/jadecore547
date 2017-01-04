@@ -49,13 +49,13 @@ enum Spells
     SPELL_TWILIGHT_METEORITE_MARK    = 88518,
     SPELL_DEEP_BREATH                = 86059,
     SPELL_TWILIGHT_FLAMES_TRIGGER    = 86194,
-    SPELL_TWILIGHT_FLAME_DMG_1        = 86199, //áüåò ïî îáû÷íîìó ìèðó
-    SPELL_TWILIGHT_FLAME_DMG_25_1    = 92868, //áüåò ïî îáû÷íîìó ìèðó
-    SPELL_TWILIGHT_FLAME_DMG_10H_1    = 92869, //áüåò ïî îáû÷íîìó ìèðó
-    SPELL_TWILIGHT_FLAME_DMG_25H_1    = 92870, //áüåò ïî îáû÷íîìó ìèðó
-    SPELL_TWILIGHT_FLAME_DMG_2        = 86228, //áüåò ïî ñóìåðå÷íîìó ìèðó
-    SPELL_TWILIGHT_FLAME_DMG_25_2    = 92867, //áüåò ïî ñóìåðå÷íîìó ìèðó
-    SPELL_COSMETIC_TWILIGHT_BREATH    = 78954, //âîçìîæíî íåâåðíûé
+    SPELL_TWILIGHT_FLAME_DMG_1        = 86199, //Ã¡Ã¼Ã¥Ã² Ã¯Ã® Ã®Ã¡Ã»Ã·Ã­Ã®Ã¬Ã³ Ã¬Ã¨Ã°Ã³
+    SPELL_TWILIGHT_FLAME_DMG_25_1    = 92868, //Ã¡Ã¼Ã¥Ã² Ã¯Ã® Ã®Ã¡Ã»Ã·Ã­Ã®Ã¬Ã³ Ã¬Ã¨Ã°Ã³
+    SPELL_TWILIGHT_FLAME_DMG_10H_1    = 92869, //Ã¡Ã¼Ã¥Ã² Ã¯Ã® Ã®Ã¡Ã»Ã·Ã­Ã®Ã¬Ã³ Ã¬Ã¨Ã°Ã³
+    SPELL_TWILIGHT_FLAME_DMG_25H_1    = 92870, //Ã¡Ã¼Ã¥Ã² Ã¯Ã® Ã®Ã¡Ã»Ã·Ã­Ã®Ã¬Ã³ Ã¬Ã¨Ã°Ã³
+    SPELL_TWILIGHT_FLAME_DMG_2        = 86228, //Ã¡Ã¼Ã¥Ã² Ã¯Ã® Ã±Ã³Ã¬Ã¥Ã°Ã¥Ã·Ã­Ã®Ã¬Ã³ Ã¬Ã¨Ã°Ã³
+    SPELL_TWILIGHT_FLAME_DMG_25_2    = 92867, //Ã¡Ã¼Ã¥Ã² Ã¯Ã® Ã±Ã³Ã¬Ã¥Ã°Ã¥Ã·Ã­Ã®Ã¬Ã³ Ã¬Ã¨Ã°Ã³
+    SPELL_COSMETIC_TWILIGHT_BREATH    = 78954, //Ã¢Ã®Ã§Ã¬Ã®Ã¦Ã­Ã® Ã­Ã¥Ã¢Ã¥Ã°Ã­Ã»Ã©
 
     //theralion
     SPELL_ENGULFING_MAGIC                            = 86607,
@@ -100,14 +100,14 @@ enum Spells
 
     //twilight ream & mobs spells
     SPELL_TWILIGHT_PROTECTION_BUFF                    = 86415,
-    SPELL_TWILIGHT_SHIFT_AURA_1                        = 86202, //îò ãëóáîêîãî äûõàíèÿ
-    SPELL_TWILIGHT_SHIFT_AURA_25_1                    = 92889, //îò ãëóáîêîãî äûõàíèÿ
-    SPELL_TWILIGHT_SHIFT_AURA_10H_1                    = 92890, //îò ãëóáîêîãî äûõàíèÿ
-    SPELL_TWILIGHT_SHIFT_AURA_25H_1                    = 92891, //îò ãëóáîêîãî äûõàíèÿ
-    SPELL_TWILIGHT_SHIFT_AURA_2                        = 88436, //îò ðàçðóøåíèÿ
-    SPELL_TWILIGHT_SHIFT_AURA_25_2                    = 92892, //îò ðàçðóøåíèÿ
-    SPELL_TWILIGHT_SHIFT_AURA_10H_2                    = 92893, //îò ðàçðóøåíèÿ
-    SPELL_TWILIGHT_SHIFT_AURA_25H_2                    = 92894, //îò ðàçðóøåíèÿ
+    SPELL_TWILIGHT_SHIFT_AURA_1                        = 86202, //Ã®Ã² Ã£Ã«Ã³Ã¡Ã®ÃªÃ®Ã£Ã® Ã¤Ã»ÃµÃ Ã­Ã¨Ã¿
+    SPELL_TWILIGHT_SHIFT_AURA_25_1                    = 92889, //Ã®Ã² Ã£Ã«Ã³Ã¡Ã®ÃªÃ®Ã£Ã® Ã¤Ã»ÃµÃ Ã­Ã¨Ã¿
+    SPELL_TWILIGHT_SHIFT_AURA_10H_1                    = 92890, //Ã®Ã² Ã£Ã«Ã³Ã¡Ã®ÃªÃ®Ã£Ã® Ã¤Ã»ÃµÃ Ã­Ã¨Ã¿
+    SPELL_TWILIGHT_SHIFT_AURA_25H_1                    = 92891, //Ã®Ã² Ã£Ã«Ã³Ã¡Ã®ÃªÃ®Ã£Ã® Ã¤Ã»ÃµÃ Ã­Ã¨Ã¿
+    SPELL_TWILIGHT_SHIFT_AURA_2                        = 88436, //Ã®Ã² Ã°Ã Ã§Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¿
+    SPELL_TWILIGHT_SHIFT_AURA_25_2                    = 92892, //Ã®Ã² Ã°Ã Ã§Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¿
+    SPELL_TWILIGHT_SHIFT_AURA_10H_2                    = 92893, //Ã®Ã² Ã°Ã Ã§Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¿
+    SPELL_TWILIGHT_SHIFT_AURA_25H_2                    = 92894, //Ã®Ã² Ã°Ã Ã§Ã°Ã³Ã¸Ã¥Ã­Ã¨Ã¿
     SPELL_COLLAPSING_TWILIGHT_PORTAL_VISUAL            = 86291,
     SPELL_UNSTABLE_TWILIGHT_VISUAL                    = 86302,
     SPELL_UNSTABLE_TWILIGHT_DMG                        = 86305,
@@ -678,7 +678,7 @@ class boss_valiona : public CreatureScript
             {
                 _Reset();
 
-                //ïðàâêè îáùèõ ñïåëëîâ òîæå òóò
+                //Ã¯Ã°Ã Ã¢ÃªÃ¨ Ã®Ã¡Ã¹Ã¨Ãµ Ã±Ã¯Ã¥Ã«Ã«Ã®Ã¢ Ã²Ã®Ã¦Ã¥ Ã²Ã³Ã²
 
                 instance->DoRemoveAurasDueToSpellOnPlayers(SPELL_TWILIGHT_PROTECTION_BUFF);
                 instance->DoRemoveAurasDueToSpellOnPlayers(SPELL_TWILIGHT_SHIFT_AURA_1);
@@ -1603,6 +1603,43 @@ class spell_shifting_reality : public SpellScriptLoader
         }
 };
 
+// 86622 - Engulfing Magic.
+/* class spell_theralion_engulfing_magic : public SpellScriptLoader
+{
+    public:
+        spell_theralion_engulfing_magic() : SpellScriptLoader("spell_theralion_engulfing_magic") { }
+
+        class spell_theralion_engulfing_magic_AuraScript : public AuraScript
+        {
+            PrepareAuraScript(spell_theralion_engulfing_magic_AuraScript);
+
+            void OnProc(const AuraEffect* aurEff, ProcEventInfo& eventInfo)
+            {
+                Unit* caster = GetCaster();
+                int32 engulfingmagicdmg = int32(CalculatePct(eventInfo.GetDamageInfo()->GetDamage(), aurEff->GetAmount()));
+                caster->CastCustomSpell(SPELL_ENGULFING_MAGIC_DMG, SPELLVALUE_BASE_POINT0, engulfingmagic, caster, true, NULL, aurEff);
+            }
+
+            void OnProc(const AuraEffect* aurEff, ProcEventInfo& eventInfo)
+            {
+                Unit* caster = GetCaster();
+                int32 engulfingmagicheal = int32(CalculatePct(eventInfo.GetHealInfo()->GetHeal(), aurEff->GetAmount()));
+                caster->CastCustomSpell(SPELL_ENGULFING_MAGIC_DMG, SPELLVALUE_BASE_POINT0, engulfingmagicheal, caster, true, NULL, aurEff);
+            }
+            
+            void Register()
+            {
+                OnEffectProc += AuraEffectProcFn(spell_theralion_engulfing_magic_AuraScript::OnProc, EFFECT_0, SPELL_AURA_MOD_DAMAGE_PERCENT_DONE);
+                OnEffectProc += AuraEffectProcFn(spell_theralion_engulfing_magic_AuraScript::OnProc, EFFECT_1, SPELL_AURA_MOD_HEALING_DONE_PERCENT);
+            }
+        };
+
+        AuraScript* GetAuraScript() const
+        {
+            return new spell_theralion_engulfing_magic_AuraScript();
+        }
+}; */
+
 void AddSC_boss_theralion_and_valiona()
 {
     new boss_theralion();
@@ -1624,4 +1661,5 @@ void AddSC_boss_theralion_and_valiona()
     new spell_valiona_devouring_flames_dmg();
     new spell_twilight_shift_stack();
     new spell_shifting_reality();
+    //new spell_theralion_engulfing_magic();
 }
