@@ -25,6 +25,7 @@
 #include "ScriptMgr.h"
 #include "SpellScript.h"
 #include "SpellAuraEffects.h"
+#include "SpellHistory.h"
 #include "SkillDiscovery.h"
 #include "Cell.h"
 #include "CellImpl.h"
@@ -33,6 +34,7 @@
 #include "InstanceScript.h"
 #include "Group.h"
 #include "LFGMgr.h"
+#include "Unit.h"
 
 class spell_gen_absorb0_hitlimit1 : public SpellScriptLoader
 {
