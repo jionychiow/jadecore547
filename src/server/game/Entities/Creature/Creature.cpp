@@ -215,7 +215,7 @@ void Creature::DisappearAndDie()
     DestroyForNearbyPlayers();
     //SetVisibility(VISIBILITY_OFF);
     //ObjectAccessor::UpdateObjectVisibility(this);
-    if (isAlive())
+    if (IsAlive())
         setDeathState(JUST_DIED);
     RemoveCorpse(false);
 }
@@ -589,7 +589,7 @@ void Creature::Update(uint32 diff)
 
             // creature can be dead after Unit::Update call
             // CORPSE/DEAD state will processed at next tick (in other case death timer will be updated unexpectedly)
-            if (!isAlive())
+            if (!IsAlive())
                 break;
 
             // if creature is charmed, switch to charmed AI
@@ -610,7 +610,7 @@ void Creature::Update(uint32 diff)
 
             // creature can be dead after UpdateAI call
             // CORPSE/DEAD state will processed at next tick (in other case death timer will be updated unexpectedly)
-            if (!isAlive())
+            if (!IsAlive())
                 break;
 
             if (m_regenTimer > 0)
@@ -1611,7 +1611,7 @@ bool Creature::IsInvisibleDueToDespawn() const
     if (Unit::IsInvisibleDueToDespawn())
         return true;
 
-    if (isAlive() || isDying() || m_corpseRemoveTime > time(NULL))
+    if (IsAlive() || IsDying() || m_corpseRemoveTime > time(NULL))
         return false;
 
     return true;
@@ -1799,7 +1799,7 @@ void Creature::Respawn(bool force)
 
     if (force)
     {
-        if (isAlive())
+        if (IsAlive())
             setDeathState(JUST_DIED);
         else if (getDeathState() != CORPSE)
             setDeathState(CORPSE);
@@ -1866,7 +1866,7 @@ void Creature::ForcedDespawn(uint32 timeMSToDespawn)
         return;
     }
 
-    if (isAlive())
+    if (IsAlive())
         setDeathState(JUST_DIED);
 
     RemoveCorpse(false);
@@ -2219,7 +2219,7 @@ bool Creature::CanAssistTo(const Unit* u, const Unit* enemy, bool checkfaction /
         return false;
 
     // we don't need help from zombies :)
-    if (!isAlive())
+    if (!IsAlive())
         return false;
 
     // we don't need help from non-combatant ;)
@@ -2469,7 +2469,7 @@ void Creature::SetInCombatWithZone()
             if (player->isGameMaster())
                 continue;
 
-            if (player->isAlive())
+            if (player->IsAlive())
             {
                 this->SetInCombatWith(player);
                 player->SetInCombatWith(this);

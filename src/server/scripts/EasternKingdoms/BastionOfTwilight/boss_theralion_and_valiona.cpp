@@ -363,7 +363,7 @@ class boss_theralion : public CreatureScript
             {
                 if (!instance || static_cast<InstanceMap*>(me->GetMap())->GetScriptId() != sObjectMgr->GetScriptId(BTScriptName))
                     me->IsAIEnabled = false;
-                else if (!me->isDead())
+                else if (!me->IsDead())
                     Reset();
             }
 
@@ -392,7 +392,7 @@ class boss_theralion : public CreatureScript
 
             void DamageTaken(Unit* attacker, uint32& damage)
             {
-                if (!me || !me->isAlive())
+                if (!me || !me->IsAlive())
                     return;
                 if (attacker->GetGUID() == me->GetGUID())
                     return;
@@ -670,7 +670,7 @@ class boss_valiona : public CreatureScript
             {
                 if (!instance || static_cast<InstanceMap*>(me->GetMap())->GetScriptId() != sObjectMgr->GetScriptId(BTScriptName))
                     me->IsAIEnabled = false;
-                else if (!me->isDead())
+                else if (!me->IsDead())
                     Reset();
             }
 
@@ -706,7 +706,7 @@ class boss_valiona : public CreatureScript
 
             void DamageTaken(Unit* attacker, uint32& damage)
             {
-                if (!me || !me->isAlive())
+                if (!me || !me->IsAlive())
                     return;
                 if (attacker->GetGUID() == me->GetGUID())
                     return;

@@ -203,7 +203,7 @@ class boss_warmaster_blackhorn: public CreatureScript
             {
                 if (!instance || static_cast<InstanceMap*>(me->GetMap())->GetScriptId() != sObjectMgr->GetScriptId(DSScriptName))
                     me->IsAIEnabled = false;
-                else if (!me->isDead())
+                else if (!me->IsDead())
                     Reset();
             }
 
@@ -1078,7 +1078,7 @@ class npc_warmaster_blackhorn_skyfire_harpoon_gun: public CreatureScript
                 if (!creatures.empty())
                     for (std::list<Creature*>::const_iterator itr = creatures.begin(); itr != creatures.end(); ++itr)
                         if (npc_warmaster_blackhorn_twilight_assault_drake::npc_warmaster_blackhorn_twilight_assault_drakeAI* drakeAI = CAST_AI(npc_warmaster_blackhorn_twilight_assault_drake::npc_warmaster_blackhorn_twilight_assault_drakeAI, (*itr)->GetAI()))
-                            if (drakeAI->IsReady() && (*itr)->isAlive())
+                            if (drakeAI->IsReady() && (*itr)->IsAlive())
                                 return (*itr);
 
                 return NULL;
@@ -1621,7 +1621,7 @@ class npc_dragon_soul_sky_captain_swayze : public CreatureScript
                     AnyLivePlayerNoGmCheck(WorldObject const* obj, float range) : _obj(obj), _range(range) {}
                     bool operator()(Player* u)
                     {
-                        if (!u->isAlive())
+                        if (!u->IsAlive())
                             return false;
 
                         if (!_obj->IsWithinDistInMap(u, _range))

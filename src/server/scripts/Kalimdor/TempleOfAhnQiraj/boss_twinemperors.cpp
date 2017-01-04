@@ -322,7 +322,7 @@ struct boss_twinemperorsAI : public ScriptedAI
             Creature* c = *iter;
             if (c)
             {
-                if (c->isDead())
+                if (c->IsDead())
                 {
                     c->Respawn();
                     c->setFaction(7);

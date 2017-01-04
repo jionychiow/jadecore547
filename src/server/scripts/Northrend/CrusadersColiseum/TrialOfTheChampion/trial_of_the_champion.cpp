@@ -679,7 +679,7 @@ public:
                             defeatedCount = 0;
                             for (uint8 i=0; i<3; i++)
                                 if (Creature* add = me->GetCreature(*me, addsGUID[0][i]))
-                                    if (add->isDead())
+                                    if (add->IsDead())
                                         defeatedCount++;
 
                             if (defeatedCount>=3)
@@ -718,7 +718,7 @@ public:
                             defeatedCount = 0;
                             for (uint8 i=0; i<3; i++)
                                 if (Creature* add = me->GetCreature(*me, addsGUID[1][i]))
-                                    if (add->isDead())
+                                    if (add->IsDead())
                                         defeatedCount++;
 
                             if (defeatedCount>=3)
@@ -757,7 +757,7 @@ public:
                             defeatedCount = 0;
                             for (uint8 i=0; i<3; i++)
                                 if (Creature* add = me->GetCreature(*me, addsGUID[2][i]))
-                                    if (add->isDead())
+                                    if (add->IsDead())
                                         defeatedCount++;
 
                             if (defeatedCount>=3)
@@ -1197,7 +1197,7 @@ public:
                                 for (uint8 i=0; i<3; i++)
                                     if (Creature* add = me->GetCreature(*me, addsGUID[j][i]))
                                     {
-                                        if (add->isDead())
+                                        if (add->IsDead())
                                             defeatedCount++;
                                     } else defeatedCount++;
 
@@ -1372,7 +1372,7 @@ and teleporting and unmounting them after defeating the mounted waves.
                     if (player->isGameMaster())
                         continue;
 
-                    if (player->isAlive())
+                    if (player->IsAlive())
                     {
                         if (Creature* mount = player->GetVehicleCreatureBase())
                         {

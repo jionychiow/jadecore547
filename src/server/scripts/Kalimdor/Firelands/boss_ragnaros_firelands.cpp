@@ -303,7 +303,7 @@ class CloudburstCheck
             CloudburstCheck(WorldObject const* obj) : i_obj(obj) {}
             bool operator()(Unit* u)
             {
-                if (u->isAlive() && i_obj->GetDistance(u) <= 3.0f && u->HasAura(u->GetMap()->Is25ManRaid() ? SPELL_DELUGE_AURA_25H : SPELL_DELUGE_AURA_10H))
+                if (u->IsAlive() && i_obj->GetDistance(u) <= 3.0f && u->HasAura(u->GetMap()->Is25ManRaid() ? SPELL_DELUGE_AURA_25H : SPELL_DELUGE_AURA_10H))
                     return true;
 
                 return false;
@@ -347,7 +347,7 @@ class boss_ragnaros_firelands : public CreatureScript
             {
                 if (!instance || static_cast<InstanceMap*>(me->GetMap())->GetScriptId() != sObjectMgr->GetScriptId(FLScriptName))
                     me->IsAIEnabled = false;
-                else if (!me->isDead())
+                else if (!me->IsDead())
                     Reset();
             }
 

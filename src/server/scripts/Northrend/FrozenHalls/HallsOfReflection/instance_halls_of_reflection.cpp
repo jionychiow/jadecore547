@@ -464,7 +464,7 @@ public:
                     for (std::set<uint64>::const_iterator itr = waveGuidList[waveId].begin(); itr != waveGuidList[waveId].end(); ++itr)
                     {
                         Creature* npc = instance->GetCreature(*itr);
-                        if (!npc || !npc->isAlive())
+                        if (!npc || !npc->IsAlive())
                             ++deadNpcs;
                     }
 

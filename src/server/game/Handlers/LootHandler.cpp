@@ -108,7 +108,7 @@ void WorldSession::HandleAutostoreLootItemOpcode(WorldPacket & recvData)
         {
             Creature* creature = GetPlayer()->GetMap()->GetCreature(lguid);
 
-            bool lootAllowed = creature && creature->isAlive() == (player->getClass() == CLASS_ROGUE && creature->lootForPickPocketed);
+            bool lootAllowed = creature && creature->IsAlive() == (player->getClass() == CLASS_ROGUE && creature->lootForPickPocketed);
 
             if (!lootAllowed || (!creature->IsWithinDistInMap(_player, INTERACTION_DISTANCE) && !_player->HasSpell(125048)))
             {
@@ -187,11 +187,11 @@ void WorldSession::HandleLootMoneyOpcode(WorldPacket& /*recvData*/)
         case HIGHGUID_VEHICLE:
         {
             Creature* creature = player->GetMap()->GetCreature(guid);
-            bool lootAllowed = creature && creature->isAlive() == (player->getClass() == CLASS_ROGUE && creature->lootForPickPocketed);
+            bool lootAllowed = creature && creature->IsAlive() == (player->getClass() == CLASS_ROGUE && creature->lootForPickPocketed);
             if (lootAllowed && creature->IsWithinDistInMap(player, INTERACTION_DISTANCE))
             {
                 masterLoot = &creature->loot;
-                if (creature->isAlive())
+                if (creature->IsAlive())
                     shareMoney = false;
                 // Check creature around for radius loot
                 else
@@ -326,7 +326,7 @@ void WorldSession::HandleLootOpcode(WorldPacket & recvData)
     recvData.ReadBytesSeq(guid, byteOrder);
 
     // Check possible cheat
-    if (!GetPlayer()->isAlive() || !IS_CRE_OR_VEH_GUID(guid))
+    if (!GetPlayer()->IsAlive() || !IS_CRE_OR_VEH_GUID(guid))
         return;
 
     GetPlayer()->SendLoot(guid, LOOT_CORPSE);
@@ -501,7 +501,7 @@ void WorldSession::DoLootRelease(uint64 lguid)
     {
         Creature* creature = player->GetMap()->GetCreature(lguid);
 
-        bool lootAllowed = creature && creature->isAlive() == (player->getClass() == CLASS_ROGUE && creature->lootForPickPocketed);
+        bool lootAllowed = creature && creature->IsAlive() == (player->getClass() == CLASS_ROGUE && creature->lootForPickPocketed);
         if (!lootAllowed || !creature->IsWithinDistInMap(_player, INTERACTION_DISTANCE))
             return;
 
@@ -509,7 +509,7 @@ void WorldSession::DoLootRelease(uint64 lguid)
         if (loot->isLooted())
         {
             // skip pickpocketing loot for speed, skinning timer reduction is no-op in fact
-            if (!creature->isAlive())
+            if (!creature->IsAlive())
                 creature->AllLootRemovedFromCorpse();
 
             // New Loot-based Lockout system. Check and allow the player / group to loot the weekly boss just once, if it wasn't looted before.
@@ -556,7 +556,7 @@ void WorldSession::DoLootRelease(uint64 lguid)
                             continue;
 
                         // skip pickpocketing loot for speed, skinning timer reduction is no-op in fact
-                        if (!c->isAlive())
+                        if (!c->IsAlive())
                             c->AllLootRemovedFromCorpse();
 
                         c->RemoveFlag(OBJECT_FIELD_DYNAMIC_FLAGS, UNIT_DYNFLAG_LOOTABLE);

@@ -845,7 +845,7 @@ public:
             m_bIsMovingHome = true;
 
             Creature* mu_shiba = me->GetMap()->GetCreature(pet_guid);
-            if (mu_shiba && mu_shiba->isAlive())
+            if (mu_shiba && mu_shiba->IsAlive())
             {
                 mu_shiba->CastStop();
                 mu_shiba->GetMotionMaster()->MoveTargetedHome();

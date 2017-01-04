@@ -290,7 +290,7 @@ class boss_megaera : public CreatureScript
                 {
                     for (std::list<Creature*>::iterator summs = summonsList.begin(); summs != summonsList.end(); summs++)
                     {
-                        if ((*summs)->isAlive())
+                        if ((*summs)->IsAlive())
                         {
                             if (!(*summs)->HasAura(SPELL_CONCEALING_FOG))
                             {
@@ -318,7 +318,7 @@ class boss_megaera : public CreatureScript
 
                 if (!summonsList.empty())
                     for (std::list<Creature*>::iterator summs = summonsList.begin(); summs != summonsList.end(); summs++)
-                        if ((*summs)->isAlive())
+                        if ((*summs)->IsAlive())
                             count++;
 
                 // Check if we have a single head of that type, no counting needed.
@@ -348,7 +348,7 @@ class boss_megaera : public CreatureScript
                 {
                     for (std::list<Creature*>::iterator summs = summonsList.begin(); summs != summonsList.end(); summs++)
                     {
-                        if ((*summs)->isAlive())
+                        if ((*summs)->IsAlive())
                         {
                             if (entry == NPC_FLAMING_HEAD)
                             {
@@ -548,7 +548,7 @@ class boss_megaera : public CreatureScript
                 GetCreatureListWithEntryInGrid(summonsList, me, entry, 200.0f);
                 if (!summonsList.empty())
                     for (std::list<Creature*>::iterator summs = summonsList.begin(); summs != summonsList.end(); summs++)
-                        if ((*summs)->isAlive())
+                        if ((*summs)->IsAlive())
                             (*summs)->AddAura(spellId, *summs);
             }
 
@@ -559,7 +559,7 @@ class boss_megaera : public CreatureScript
                 GetCreatureListWithEntryInGrid(summonsList, me, entry, 200.0f);
                 if (!summonsList.empty())
                     for (std::list<Creature*>::iterator summs = summonsList.begin(); summs != summonsList.end(); summs++)
-                        if ((*summs)->isAlive())
+                        if ((*summs)->IsAlive())
                             (*summs)->RemoveAurasDueToSpell(spellId);
             }
 
@@ -572,7 +572,7 @@ class boss_megaera : public CreatureScript
                 {
                     for (std::list<Creature*>::iterator summs = summonsList.begin(); summs != summonsList.end(); summs++)
                     {
-                        if ((*summs)->isAlive())
+                        if ((*summs)->IsAlive())
                         {
                             if (randomTarget)
                             {
@@ -593,7 +593,7 @@ class boss_megaera : public CreatureScript
                 GetCreatureListWithEntryInGrid(summonsList, me, entry, 200.0f);
                 if (!summonsList.empty())
                     for (std::list<Creature*>::iterator summs = summonsList.begin(); summs != summonsList.end(); summs++)
-                        if ((*summs)->isAlive())
+                        if ((*summs)->IsAlive())
                             (*summs)->DespawnOrUnsummon();
             }
 

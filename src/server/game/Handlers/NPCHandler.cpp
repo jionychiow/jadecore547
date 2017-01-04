@@ -513,7 +513,7 @@ void WorldSession::HandleBinderActivateOpcode(WorldPacket& recvData)
     uint8 bytesOrder[8] = { 6, 3, 7, 4, 5, 0, 1, 2 };
     recvData.ReadBytesSeq(npcGUID, bytesOrder);
 
-    if (!GetPlayer()->IsInWorld() || !GetPlayer()->isAlive())
+    if (!GetPlayer()->IsInWorld() || !GetPlayer()->IsAlive())
         return;
 
     Creature* unit = GetPlayer()->GetNPCIfCanInteractWith(npcGUID, UNIT_NPC_FLAG_INNKEEPER);

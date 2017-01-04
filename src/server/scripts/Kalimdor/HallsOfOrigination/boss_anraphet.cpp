@@ -75,7 +75,7 @@ class boss_anraphet : public CreatureScript
             {
                 if (!instance || static_cast<InstanceMap*>(me->GetMap())->GetScriptId() != sObjectMgr->GetScriptId(HOScriptName))
                     me->IsAIEnabled = false;
-                else if (!me->isDead())
+                else if (!me->IsDead())
                     Reset();
             }
 

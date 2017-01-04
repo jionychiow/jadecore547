@@ -372,11 +372,11 @@ class boss_halion : public CreatureScript
                 instance->SendEncounterUnit(ENCOUNTER_FRAME_DISENGAGE, me);
 
                 if (Creature* twilightHalion = ObjectAccessor::GetCreature(*me, instance->GetData64(DATA_TWILIGHT_HALION)))
-                    if (twilightHalion->isAlive())
+                    if (twilightHalion->IsAlive())
                         twilightHalion->Kill(twilightHalion);
 
                 if (Creature* controller = ObjectAccessor::GetCreature(*me, instance->GetData64(DATA_HALION_CONTROLLER)))
-                    if (controller->isAlive())
+                    if (controller->IsAlive())
                         controller->Kill(controller);
             }
 
@@ -542,12 +542,12 @@ class boss_twilight_halion : public CreatureScript
                     if (me->IsDamageEnoughForLootingAndReward())
                         halion->LowerPlayerDamageReq(halion->GetMaxHealth());
 
-                    if (halion->isAlive())
+                    if (halion->IsAlive())
                         killer->Kill(halion);
                 }
 
                 if (Creature* controller = ObjectAccessor::GetCreature(*me, instance->GetData64(DATA_HALION_CONTROLLER)))
-                    if (controller->isAlive())
+                    if (controller->IsAlive())
                         controller->Kill(controller);
 
                 instance->SendEncounterUnit(ENCOUNTER_FRAME_DISENGAGE, me);
@@ -748,7 +748,7 @@ class npc_halion_controller : public CreatureScript
                     if (!i->getSource()->IsInMap(me) || i->getSource()->isGameMaster())
                         continue;
 
-                    if (i->getSource()->isAlive() && i->getSource()->IsWithinDistInMap(me, range) && i->getSource()->isInCombat())
+                    if (i->getSource()->IsAlive() && i->getSource()->IsWithinDistInMap(me, range) && i->getSource()->isInCombat())
                         return true;
                 }
                 return false;
@@ -994,7 +994,7 @@ class npc_halion_controller : public CreatureScript
                     if (Player* player = i->getSource())
                     {
                         player->SendUpdateWorldState(WORLDSTATE_CORPOREALITY_TOGGLE, 0);
-                        if (player->isAlive() && player->HasAura(SPELL_TWILIGHT_REALM))
+                        if (player->IsAlive() && player->HasAura(SPELL_TWILIGHT_REALM))
                             player->SendUpdateWorldState(WORLDSTATE_CORPOREALITY_TWILIGHT, 100 - value * 10);
                         else
                             player->SendUpdateWorldState(WORLDSTATE_CORPOREALITY_MATERIAL, value * 10);
@@ -1319,7 +1319,7 @@ class npc_living_inferno : public CreatureScript
                         for (std::list<Creature*>::iterator itr = livingEmbers.begin(); itr != livingEmbers.end(); ++itr)
                         {
                             Creature* livingEmber = *itr;
-                            if (livingEmber && livingEmber->isAlive() && livingEmber->GetHealthPct() > 2.0f)
+                            if (livingEmber && livingEmber->IsAlive() && livingEmber->GetHealthPct() > 2.0f)
                                 livingEmber->AddAura(SPELL_BLAZING_AURA_TRIGGERED, livingEmber);
                         }
                     }

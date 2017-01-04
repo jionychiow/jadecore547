@@ -2059,7 +2059,7 @@ class spell_pal_beacon_of_light : public SpellScriptLoader
                                 if (!_player->IsWithinLOSInMap(itr))
                                     continue;
 
-                                if (itr->isDead())
+                                if (itr->IsDead())
                                     continue;
 
                                 if (itr->HasAura(PALADIN_SPELL_BEACON_OF_LIGHT))

@@ -617,7 +617,7 @@ public:
                         DoCast(me, SPELL_SURGE);
                 }
                 if (Creature* vashj = Unit::GetCreature(*me, VashjGUID))
-                    if (!vashj->isInCombat() || CAST_AI(boss_lady_vashj::boss_lady_vashjAI, vashj->AI())->Phase != 2 || vashj->isDead())
+                    if (!vashj->isInCombat() || CAST_AI(boss_lady_vashj::boss_lady_vashjAI, vashj->AI())->Phase != 2 || vashj->IsDead())
                         me->Kill(me);
                 Move = 1000;
             } else Move -= diff;
@@ -777,7 +777,7 @@ public:
                 {
                     // check if vashj is death
                     Unit* Vashj = Unit::GetUnit(*me, instance->GetData64(DATA_LADYVASHJ));
-                    if (!Vashj || (Vashj && !Vashj->isAlive()) || (Vashj && CAST_AI(boss_lady_vashj::boss_lady_vashjAI, CAST_CRE(Vashj)->AI())->Phase != 3))
+                    if (!Vashj || (Vashj && !Vashj->IsAlive()) || (Vashj && CAST_AI(boss_lady_vashj::boss_lady_vashjAI, CAST_CRE(Vashj)->AI())->Phase != 3))
                     {
                         // remove
                         me->setDeathState(DEAD);
@@ -834,7 +834,7 @@ public:
             {
                 Unit* vashj = Unit::GetUnit(*me, instance->GetData64(DATA_LADYVASHJ));
 
-                if (vashj && vashj->isAlive())
+                if (vashj && vashj->IsAlive())
                 {
                     // start visual channel
                     if (!Casted || !vashj->HasAura(SPELL_MAGIC_BARRIER))

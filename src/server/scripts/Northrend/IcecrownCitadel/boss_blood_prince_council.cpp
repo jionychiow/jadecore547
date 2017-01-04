@@ -379,7 +379,7 @@ class boss_prince_keleseth_icc : public CreatureScript
                     if (data->curhealth)
                         _spawnHealth = data->curhealth;
 
-                if (!me->isDead())
+                if (!me->IsDead())
                     JustRespawned();
 
                 me->SetReactState(REACT_DEFENSIVE);
@@ -595,7 +595,7 @@ class boss_prince_taldaram_icc : public CreatureScript
                     if (data->curhealth)
                         _spawnHealth = data->curhealth;
 
-                if (!me->isDead())
+                if (!me->IsDead())
                     JustRespawned();
 
                 me->SetReactState(REACT_DEFENSIVE);
@@ -818,7 +818,7 @@ class boss_prince_valanar_icc : public CreatureScript
                     if (data->curhealth)
                         _spawnHealth = data->curhealth;
 
-                if (!me->isDead())
+                if (!me->IsDead())
                     JustRespawned();
 
                 me->SetReactState(REACT_DEFENSIVE);

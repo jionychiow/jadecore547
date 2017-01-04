@@ -124,7 +124,7 @@ public:
                 Unit* Temp =  Unit::GetUnit(*me, instance->GetData64(DATA_ALYTHESS));
                 if (Temp)
                 {
-                    if (Temp->isDead())
+                    if (Temp->IsDead())
                         CAST_CRE(Temp)->Respawn();
                     else if (Temp->getVictim())
                         me->getThreatManager().addThreat(Temp->getVictim(), 0.0f);
@@ -154,7 +154,7 @@ public:
             if (instance)
             {
                 Unit* Temp =  Unit::GetUnit(*me, instance->GetData64(DATA_ALYTHESS));
-                if (Temp && Temp->isAlive() && !(Temp->getVictim()))
+                if (Temp && Temp->IsAlive() && !(Temp->getVictim()))
                     CAST_CRE(Temp)->AI()->AttackStart(who);
             }
 
@@ -237,7 +237,7 @@ public:
                 {
                     Unit* Temp = NULL;
                     Temp = Unit::GetUnit(*me, instance->GetData64(DATA_ALYTHESS));
-                    if (Temp && Temp->isDead())
+                    if (Temp && Temp->IsDead())
                     {
                         DoScriptText(YELL_SISTER_ALYTHESS_DEAD, me);
                         DoCast(me, SPELL_EMPOWER);
@@ -402,7 +402,7 @@ public:
                 Unit* Temp =  Unit::GetUnit(*me, instance->GetData64(DATA_SACROLASH));
                 if (Temp)
                 {
-                    if (Temp->isDead())
+                    if (Temp->IsDead())
                         CAST_CRE(Temp)->Respawn();
                     else if (Temp->getVictim())
                         me->getThreatManager().addThreat(Temp->getVictim(), 0.0f);
@@ -433,7 +433,7 @@ public:
             if (instance)
             {
                 Unit* Temp =  Unit::GetUnit(*me, instance->GetData64(DATA_SACROLASH));
-                if (Temp && Temp->isAlive() && !(Temp->getVictim()))
+                if (Temp && Temp->IsAlive() && !(Temp->getVictim()))
                     CAST_CRE(Temp)->AI()->AttackStart(who);
             }
 
@@ -590,7 +590,7 @@ public:
                 {
                     Unit* Temp = NULL;
                     Temp = Unit::GetUnit(*me, instance->GetData64(DATA_SACROLASH));
-                    if (Temp && Temp->isDead())
+                    if (Temp && Temp->IsDead())
                     {
                         DoScriptText(YELL_SISTER_SACROLASH_DEAD, me);
                         DoCast(me, SPELL_EMPOWER);
@@ -604,7 +604,7 @@ public:
                 if (instance)
                 {
                     Creature* sisiter = Unit::GetCreature((*me), instance->GetData64(DATA_SACROLASH));
-                    if (sisiter && !sisiter->isDead() && sisiter->getVictim())
+                    if (sisiter && !sisiter->IsDead() && sisiter->getVictim())
                     {
                         me->AddThreat(sisiter->getVictim(), 0.0f);
                         DoStartNoMovement(sisiter->getVictim());

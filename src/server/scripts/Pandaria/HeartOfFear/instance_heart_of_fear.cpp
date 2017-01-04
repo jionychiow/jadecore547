@@ -238,7 +238,7 @@ class instance_heart_of_fear : public InstanceMapScript
                     if (!player)
                         continue;
 
-                    if (player->isAlive() && !player->isGameMaster())
+                    if (player->IsAlive() && !player->isGameMaster())
                         return false;
                 }
 

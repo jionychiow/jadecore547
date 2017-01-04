@@ -98,7 +98,7 @@ class boss_sha_of_anger : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 

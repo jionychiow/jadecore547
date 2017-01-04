@@ -448,7 +448,7 @@ class ShadowTrapSearcher
 
         bool operator()(Unit* unit)
         {
-            if (!unit->isAlive() || unit->GetEntry() != NPC_SHADOW_TRAP || !unit->IsWithinDist(_source, _range, false))
+            if (!unit->IsAlive() || unit->GetEntry() != NPC_SHADOW_TRAP || !unit->IsWithinDist(_source, _range, false))
                 return false;
 
             return true;
@@ -594,7 +594,7 @@ class boss_the_lich_king : public CreatureScript
                     if (!player)
                         continue;
 
-                    if (!player->isAlive())
+                    if (!player->IsAlive())
                         continue;
 
                     if (!player->GetVehicle() && !player->HasUnitMovementFlag(MOVEMENTFLAG_FALLING) && player->GetPositionZ() >= 835.0f && player->GetPositionZ() <= 870.0f && !me->IsWithinLOS(player->GetPositionX(), player->GetPositionY(), player->GetPositionZ()))
@@ -2065,7 +2065,7 @@ class npc_terenas_menethil : public CreatureScript
             void EnterEvadeMode()
             {
                 // no running back home
-                if (!me->isAlive())
+                if (!me->IsAlive())
                     return;
 
                 me->DeleteThreatList();

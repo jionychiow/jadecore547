@@ -384,9 +384,9 @@ void AreaTrigger::Update(uint32 p_time)
                 {
                     if (player->IsWithinDist(caster, 40.0f, false))
                     {
-                        if (player->isAlive() && !player->hasForcedMovement)
+                        if (player->IsAlive() && !player->hasForcedMovement)
                             player->SendApplyMovementForce(true, pos, -3.0f);
-                        else if (!player->isAlive() && player->hasForcedMovement)
+                        else if (!player->IsAlive() && player->hasForcedMovement)
                             player->SendApplyMovementForce(false, pos);
                     }
                     else if (player->hasForcedMovement)

@@ -82,7 +82,7 @@ public:
             IsBanished = true;
             Enraged = false;
 
-            if (instance && me->isAlive())
+            if (instance && me->IsAlive())
             {
                 if (instance->GetData(TYPE_OVERSEER) != DONE)
                     DoCast(me, SPELL_BANISH, true);

@@ -148,7 +148,7 @@ class boss_ick : public CreatureScript
             {
                 if (!instance || static_cast<InstanceMap*>(me->GetMap())->GetScriptId() != sObjectMgr->GetScriptId(PoSScriptName))
                     me->IsAIEnabled = false;
-                else if (!me->isDead())
+                else if (!me->IsDead())
                     Reset();
             }
 
@@ -302,7 +302,7 @@ class boss_krick : public CreatureScript
             {
                 if (!_instanceScript || static_cast<InstanceMap*>(me->GetMap())->GetScriptId() != sObjectMgr->GetScriptId(PoSScriptName))
                     me->IsAIEnabled = false;
-                else if (!me->isDead())
+                else if (!me->IsDead())
                     Reset();
             }
 

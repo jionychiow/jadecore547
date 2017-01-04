@@ -265,7 +265,7 @@ class spell_pri_psyfiend_hit_me_driver : public SpellScriptLoader
 
                     for (auto itr : tempList)
                     {
-                        if (!itr->isAlive())
+                        if (!itr->IsAlive())
                             continue;
 
                         if (!itr->GetOwner())
@@ -2441,7 +2441,7 @@ class spell_pri_penance : public SpellScriptLoader
                 {
                     if (Unit* unitTarget = GetHitUnit())
                     {
-                        if (!unitTarget->isAlive())
+                        if (!unitTarget->IsAlive())
                             return;
 
                         uint8 rank = sSpellMgr->GetSpellRank(GetSpellInfo()->Id);
@@ -2736,7 +2736,7 @@ class spell_pri_shadow_word_death : public SpellScriptLoader
 
             void HandleDamage()
             {
-                if (!GetExplTargetUnit() || GetExplTargetUnit()->isDead())
+                if (!GetExplTargetUnit() || GetExplTargetUnit()->IsDead())
                     return;
 
                 int32 damage = GetHitDamage();

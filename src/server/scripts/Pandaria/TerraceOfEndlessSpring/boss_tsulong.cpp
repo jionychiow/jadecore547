@@ -483,7 +483,7 @@ class boss_tsulong : public CreatureScript
                 {
                     if (Player* pPlayer = itr->getSource())
                     {
-                        if (pPlayer->isAlive() && pPlayer->IsWithinDist(me, 40.f))
+                        if (pPlayer->IsAlive() && pPlayer->IsWithinDist(me, 40.f))
                             return;
                     }
                 }

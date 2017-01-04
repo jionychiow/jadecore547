@@ -30,7 +30,7 @@ void HomeMovementGenerator<Creature>::DoInitialize(Creature* owner)
     if (!owner)
         return;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     _setTargetLocation(owner);

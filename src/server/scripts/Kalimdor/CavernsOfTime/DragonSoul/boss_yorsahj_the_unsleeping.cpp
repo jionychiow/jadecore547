@@ -169,7 +169,7 @@ class boss_yorsahj_the_unsleeping: public CreatureScript
             {
                 if (!instance || static_cast<InstanceMap*>(me->GetMap())->GetScriptId() != sObjectMgr->GetScriptId(DSScriptName))
                     me->IsAIEnabled = false;
-                else if (!me->isDead())
+                else if (!me->IsDead())
                     Reset();
             }
 
@@ -527,7 +527,7 @@ class boss_yorsahj_the_unsleeping: public CreatureScript
                             u->GetEntry() == NPC_DARK_GLOBULE || 
                             u->GetEntry() == NPC_SHADOWED_GLOBULE ||
                             u->GetEntry() == NPC_COBALT_GLOBULE) && 
-                            u->isAlive())
+                            u->IsAlive())
                             return true;
                         return false;
                     }

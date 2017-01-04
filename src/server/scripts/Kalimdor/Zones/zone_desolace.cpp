@@ -152,7 +152,7 @@ public:
             //timer should always be == 0 unless we already updated entry of creature. Then not expect this updated to ever be in combat.
             if (DespawnTimer && DespawnTimer <= diff)
             {
-                if (!me->getVictim() && me->isAlive())
+                if (!me->getVictim() && me->IsAlive())
                 {
                     Reset();
                     me->setDeathState(JUST_DIED);

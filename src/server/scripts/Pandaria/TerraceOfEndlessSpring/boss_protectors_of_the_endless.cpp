@@ -150,15 +150,15 @@ uint8 ProtectorsAlive(InstanceScript* instance, Creature* me)
         return count;
 
     Creature* asani = instance->instance->GetCreature(instance->GetData64(NPC_ANCIENT_ASANI));
-    if (asani && asani->isAlive())
+    if (asani && asani->IsAlive())
         ++count;
 
     Creature* regail = instance->instance->GetCreature(instance->GetData64(NPC_ANCIENT_REGAIL));
-    if (regail && regail->isAlive())
+    if (regail && regail->IsAlive())
         ++count;
 
     Creature* kaolan = instance->instance->GetCreature(instance->GetData64(NPC_PROTECTOR_KAOLAN));
-    if (kaolan && kaolan->isAlive())
+    if (kaolan && kaolan->IsAlive())
         ++count;
 
     return count;
@@ -230,7 +230,7 @@ bool IntroDone(InstanceScript* instance, Creature* me)
     bool done = true;
     for (auto itr : fear)
     {
-        if (itr->isAlive())
+        if (itr->IsAlive())
         {
             done = false;
             break;
@@ -239,7 +239,7 @@ bool IntroDone(InstanceScript* instance, Creature* me)
 
     for (auto itr : terror)
     {
-        if (itr->isAlive())
+        if (itr->IsAlive())
         {
             done = false;
             break;
@@ -369,13 +369,13 @@ class boss_ancient_regail : public CreatureScript
                     {
                         case 2:
                         {
-                            if (asani && asani->isAlive())
+                            if (asani && asani->IsAlive())
                             {
                                 asani->AI()->DoAction(ACTION_FIRST_PROTECTOR_DIED);
                                 me->CastSpell(asani, SPELL_SHA_CORRUPTION, true);
                             }
 
-                            if (kaolan && kaolan->isAlive())
+                            if (kaolan && kaolan->IsAlive())
                             {
                                 kaolan->AI()->DoAction(ACTION_FIRST_PROTECTOR_DIED);
                                 me->CastSpell(kaolan, SPELL_SHA_CORRUPTION, true);
@@ -386,7 +386,7 @@ class boss_ancient_regail : public CreatureScript
                         }
                         case 1:
                         {
-                            if (asani && asani->isAlive())
+                            if (asani && asani->IsAlive())
                             {
                                 asani->AI()->DoAction(ACTION_SECOND_PROTECTOR_DIED);
                                 asani->AI()->Talk(TALK_REGAIL_DIES_SECOND_ASANI);
@@ -396,7 +396,7 @@ class boss_ancient_regail : public CreatureScript
                                         corruptionCaster->CastSpell(asani, SPELL_SHA_CORRUPTION, true);
                             }
 
-                            if (kaolan && kaolan->isAlive())
+                            if (kaolan && kaolan->IsAlive())
                             {
                                 kaolan->AI()->DoAction(ACTION_SECOND_PROTECTOR_DIED);
                                 kaolan->AI()->Talk(TALK_REGAIL_DIES_SECOND_KAOLAN);
@@ -655,14 +655,14 @@ class boss_ancient_asani : public CreatureScript
                     {
                         case 2:
                         {
-                            if (regail && regail->isAlive())
+                            if (regail && regail->IsAlive())
                             {
                                 regail->AI()->DoAction(ACTION_FIRST_PROTECTOR_DIED);
                                 regail->AI()->Talk(TALK_ASANI_DIES_FIRST_REGAIL);
                                 me->CastSpell(regail, SPELL_SHA_CORRUPTION, true);
                             }
 
-                            if (kaolan && kaolan->isAlive())
+                            if (kaolan && kaolan->IsAlive())
                             {
                                 kaolan->AI()->DoAction(ACTION_FIRST_PROTECTOR_DIED);
                                 kaolan->AI()->Talk(TALK_ASANI_DIES_FIRST_KAOLAN);
@@ -674,7 +674,7 @@ class boss_ancient_asani : public CreatureScript
                         }
                         case 1:
                         {
-                            if (regail && regail->isAlive())
+                            if (regail && regail->IsAlive())
                             {
                                 regail->AI()->DoAction(ACTION_SECOND_PROTECTOR_DIED);
                                 regail->AI()->Talk(TALK_ASANI_DIES_SECOND_REGAIL);
@@ -684,7 +684,7 @@ class boss_ancient_asani : public CreatureScript
                                         corruptionCaster->CastSpell(regail, SPELL_SHA_CORRUPTION, true);
                             }
 
-                            if (kaolan && kaolan->isAlive())
+                            if (kaolan && kaolan->IsAlive())
                             {
                                 kaolan->AI()->DoAction(ACTION_SECOND_PROTECTOR_DIED);
                                 kaolan->AI()->Talk(TALK_ASANI_DIES_SECOND_KAOLAN);
@@ -945,14 +945,14 @@ class boss_protector_kaolan : public CreatureScript
                     {
                         case 2:
                         {
-                            if (regail && regail->isAlive())
+                            if (regail && regail->IsAlive())
                             {
                                 regail->AI()->DoAction(ACTION_FIRST_PROTECTOR_DIED);
                                 regail->AI()->Talk(TALK_KAOLAN_DIES_FIRST_REGAIL);
                                 me->CastSpell(regail, SPELL_SHA_CORRUPTION, true);
                             }
 
-                            if (asani && asani->isAlive())
+                            if (asani && asani->IsAlive())
                             {
                                 asani->AI()->DoAction(ACTION_FIRST_PROTECTOR_DIED);
                                 asani->AI()->Talk(TALK_KAOLAN_DIES_FIRST_ASANI);
@@ -964,7 +964,7 @@ class boss_protector_kaolan : public CreatureScript
                         }
                         case 1:
                         {
-                            if (regail && regail->isAlive())
+                            if (regail && regail->IsAlive())
                             {
                                 regail->AI()->DoAction(ACTION_SECOND_PROTECTOR_DIED);
 
@@ -973,7 +973,7 @@ class boss_protector_kaolan : public CreatureScript
                                         corruptionCaster->CastSpell(regail, SPELL_SHA_CORRUPTION, true);
                             }
 
-                            if (asani && asani->isAlive())
+                            if (asani && asani->IsAlive())
                             {
                                 asani->AI()->DoAction(ACTION_SECOND_PROTECTOR_DIED);
 
@@ -1274,13 +1274,13 @@ class mob_minion_of_fear : public CreatureScript
                     std::list<Creature*> targets;
 
                     if (Creature* asani = pInstance->instance->GetCreature(pInstance->GetData64(NPC_ANCIENT_ASANI)))
-                        if (asani->isAlive())
+                        if (asani->IsAlive())
                             targets.push_back(asani);
                     if (Creature* kaolan = pInstance->instance->GetCreature(pInstance->GetData64(NPC_PROTECTOR_KAOLAN)))
-                        if (kaolan->isAlive())
+                        if (kaolan->IsAlive())
                             targets.push_back(kaolan);
                     if (Creature* regail = pInstance->instance->GetCreature(pInstance->GetData64(NPC_ANCIENT_REGAIL)))
-                        if (regail->isAlive())
+                        if (regail->IsAlive())
                             targets.push_back(regail);
 
                     if (targets.empty())

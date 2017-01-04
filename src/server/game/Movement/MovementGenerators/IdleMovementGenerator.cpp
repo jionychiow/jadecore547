@@ -59,7 +59,7 @@ void RotateMovementGenerator::Initialize(Unit* owner)
     if (!owner->IsStopped())
         owner->StopMoving();
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     if (owner->getVictim())
@@ -83,7 +83,7 @@ bool RotateMovementGenerator::Update(Unit* owner, uint32 diff)
     if (!owner)
         return false;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return false;
 
     float angle = owner->GetOrientation();
@@ -127,7 +127,7 @@ void DistractMovementGenerator::Initialize(Unit* owner)
     if (!owner)
         return;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     owner->AddUnitState(UNIT_STATE_DISTRACTED);

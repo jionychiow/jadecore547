@@ -296,7 +296,7 @@ class npc_ook_barrel : public CreatureScript
 
             void MovementInform(uint32 type, uint32 id)
             {
-                if (!me->isAlive() || type != POINT_MOTION_TYPE || id != 1)
+                if (!me->IsAlive() || type != POINT_MOTION_TYPE || id != 1)
                     return;
 
                 // We call a move stop and inform once a player boards it, so let's prevent it from exploding.

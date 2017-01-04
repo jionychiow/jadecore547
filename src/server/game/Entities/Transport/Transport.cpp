@@ -589,7 +589,7 @@ void Transport::TeleportTransport(uint32 newMapid, float x, float y, float z)
         Player* player = *itr;
         ++itr;
 
-        if (player->isDead() && !player->HasFlag(PLAYER_FLAGS, PLAYER_FLAGS_GHOST))
+        if (player->IsDead() && !player->HasFlag(PLAYER_FLAGS, PLAYER_FLAGS_GHOST))
             player->ResurrectPlayer(1.0f);
 
         player->TeleportTo(newMapid, x, y, z, GetOrientation(), TELE_TO_NOT_LEAVE_TRANSPORT);

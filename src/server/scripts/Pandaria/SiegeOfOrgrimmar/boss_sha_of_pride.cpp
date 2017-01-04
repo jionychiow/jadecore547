@@ -1051,7 +1051,7 @@ public:
 
             if (TempSummon* tempo = me->ToTempSummon())
                 if (Unit* summoner = tempo->GetSummoner())
-                    if (summoner->IsInWorld() && summoner->isAlive())
+                    if (summoner->IsInWorld() && summoner->IsAlive())
                     {
                         me->CastSpell(summoner, Spells::SPELL_PROJECTION_WARNING);
                     }
@@ -1076,7 +1076,7 @@ public:
             // Projectile
             if (TempSummon* tempo = me->ToTempSummon())
                 if (Unit* summoner = tempo->GetSummoner())
-                    if (summoner->IsInWorld() && summoner->isAlive())
+                    if (summoner->IsInWorld() && summoner->IsAlive())
                     {
                         summoner->CastSpell(me, Spells::SPELL_PROJECTION_PROJECTILE);
                     }
@@ -1477,7 +1477,7 @@ public:
 
         void HandleCorruptedPrison()
         {
-            if (!GetHitUnit() && GetHitUnit()->GetTypeId() != TYPEID_PLAYER && !GetHitUnit()->isAlive())
+            if (!GetHitUnit() && GetHitUnit()->GetTypeId() != TYPEID_PLAYER && !GetHitUnit()->IsAlive())
                 return;
 
             if (!GetCaster())

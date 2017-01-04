@@ -860,7 +860,7 @@ void WorldSession::HandleListInventoryOpcode(WorldPacket& recvData)
     uint8 bytesOrder[8] = { 0, 5, 6, 7, 1, 3, 4, 2 };
     recvData.ReadBytesSeq(guid, bytesOrder);
 
-    if (!GetPlayer()->isAlive())
+    if (!GetPlayer()->IsAlive())
         return;
 
     sLog->outDebug(LOG_FILTER_NETWORKIO, "WORLD: Recvd CMSG_LIST_INVENTORY");

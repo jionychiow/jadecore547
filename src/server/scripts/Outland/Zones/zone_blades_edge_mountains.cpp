@@ -507,7 +507,7 @@ public:
 
         void MoveInLineOfSight(Unit* who)
         {
-            if (!who || (!who->isAlive()))
+            if (!who || (!who->IsAlive()))
                 return;
 
             if (me->IsWithinDistInMap(who, 50.0f))
@@ -1072,7 +1072,7 @@ class npc_simon_bunny : public CreatureScript
             {
                 if (Player* player = me->GetPlayer(*me, playerGUID))
                 {
-                    if (player->isDead())
+                    if (player->IsDead())
                         return false;
                     if (player->GetDistance2d(me) >= 2.0f*searchDistance)
                     {

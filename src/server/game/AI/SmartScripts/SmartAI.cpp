@@ -450,7 +450,7 @@ void SmartAI::RemoveAuras()
 
 void SmartAI::EnterEvadeMode()
 {
-    if (!me->isAlive() || me->IsInEvadeMode())
+    if (!me->IsAlive() || me->IsInEvadeMode())
         return;
 
     RemoveAuras();
@@ -709,7 +709,7 @@ void SmartAI::PassengerBoarded(Unit* who, int8 seatId, bool apply)
 void SmartAI::InitializeAI()
 {
     GetScript()->OnInitialize(me);
-    if (!me->isDead())
+    if (!me->IsDead())
         mJustReset = true;
     JustReachedHome();
     GetScript()->ProcessEventsFor(SMART_EVENT_RESPAWN);
@@ -963,7 +963,7 @@ class SmartTrigger : public AreaTriggerScript
 
         bool OnTrigger(Player* player, AreaTriggerEntry const* trigger)
         {
-            if (!player->isAlive())
+            if (!player->IsAlive())
                 return false;
 
             sLog->outDebug(LOG_FILTER_DATABASE_AI, "AreaTrigger %u is using SmartTrigger script", trigger->id);

@@ -742,7 +742,7 @@ public:
                 return false;
         }
 
-        if (target->isAlive())
+        if (target->IsAlive())
         {
             if (sWorld->getBoolConfig(CONFIG_DIE_COMMAND_MODE))
                 handler->GetSession()->GetPlayer()->Kill(target);
@@ -1038,7 +1038,7 @@ public:
             return false;
         }
 
-        if (player->isDead() || player->HasFlag(PLAYER_FLAGS, PLAYER_FLAGS_GHOST))
+        if (player->IsDead() || player->HasFlag(PLAYER_FLAGS, PLAYER_FLAGS_GHOST))
         {
             // if player is dead and stuck, send ghost to graveyard
             player->RepopAtGraveyard();
@@ -1806,7 +1806,7 @@ public:
                 return false;
             }
 
-            if (target->isDead())
+            if (target->IsDead())
                 target->ToCreature()->Respawn();
             return true;
         }
@@ -2305,7 +2305,7 @@ public:
                 return false;
         }
 
-        if (!target->isAlive())
+        if (!target->IsAlive())
             return true;
 
         char* damageStr = strtok((char*)args, " ");
@@ -2852,7 +2852,7 @@ public:
                 {
                     pet->SavePetToDB(PET_SLOT_ACTUAL_PET_SLOT);
                  // not let dismiss dead pet
-                 if (pet && pet->isAlive())
+                 if (pet && pet->IsAlive())
                     player->RemovePet(pet, PET_SLOT_HUNTER_FIRST, false, pet->m_Stampeded);
                 }
             }

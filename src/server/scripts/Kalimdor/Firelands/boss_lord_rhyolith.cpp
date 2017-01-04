@@ -144,7 +144,7 @@ class boss_lord_rhyolith : public CreatureScript
             {
                 if (!instance || static_cast<InstanceMap*>(me->GetMap())->GetScriptId() != sObjectMgr->GetScriptId(FLScriptName))
                     me->IsAIEnabled = false;
-                else if (!me->isDead())
+                else if (!me->IsDead())
                     Reset();
             }
 
@@ -557,7 +557,7 @@ class npc_lord_rhyolith_rhyolith : public CreatureScript
             {
                 if (!pInstance || static_cast<InstanceMap*>(me->GetMap())->GetScriptId() != sObjectMgr->GetScriptId(FLScriptName))
                     me->IsAIEnabled = false;
-                else if (!me->isDead())
+                else if (!me->IsDead())
                     Reset();
             }
 
@@ -686,7 +686,7 @@ class npc_lord_rhyolith_right_foot : public CreatureScript
 
             void DamageTaken(Unit* who, uint32 &damage)
             {
-                if (!me || !me->isAlive())
+                if (!me || !me->IsAlive())
                     return;
 
                 if (who->GetGUID() == me->GetGUID())
@@ -787,7 +787,7 @@ class npc_lord_rhyolith_left_foot : public CreatureScript
 
             void DamageTaken(Unit* who, uint32 &damage)
             {
-                if (!me || !me->isAlive())
+                if (!me || !me->IsAlive())
                     return;
 
                 if (who->GetGUID() == me->GetGUID())

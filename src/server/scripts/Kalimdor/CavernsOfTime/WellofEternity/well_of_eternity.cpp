@@ -957,7 +957,7 @@ class TrashRespawnWorker
                 case NPC_ABYSSAL:
                 case NPC_VAROTHEN:
                 case NPC_DOOMGUARD:
-                    if (!creature->isAlive())
+                    if (!creature->IsAlive())
                         creature->Respawn(true);
                     break;
             }

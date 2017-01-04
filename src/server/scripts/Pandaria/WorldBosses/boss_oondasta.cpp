@@ -87,7 +87,7 @@ class boss_oondasta : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 

@@ -2191,7 +2191,7 @@ class spell_warl_nightfall : public SpellScriptLoader
                         if (roll_chance_i(10))
                             _player->SetPower(POWER_SOUL_SHARDS, _player->GetPower(POWER_SOUL_SHARDS) + 100);
 
-                    if (_player->HasAura(WARLOCK_GLYPH_OF_SIPHON_LIFE) && _player->isAlive())
+                    if (_player->HasAura(WARLOCK_GLYPH_OF_SIPHON_LIFE) && _player->IsAlive())
                         _player->HealBySpell(_player, sSpellMgr->GetSpellInfo(WARLOCK_GLYPH_OF_SIPHON_LIFE), int32(_player->GetMaxHealth() / 200), false);
                 }
             }
@@ -2771,7 +2771,7 @@ class spell_warl_soul_harverst : public SpellScriptLoader
                 {
                     if (Player* _player = GetCaster()->ToPlayer())
                     {
-                        if (!_player->isInCombat() && !_player->InArena() && _player->isAlive())
+                        if (!_player->isInCombat() && !_player->InArena() && _player->IsAlive())
                         {
                             _player->SetHealth(_player->GetHealth() + int32(_player->GetMaxHealth() / 50));
 

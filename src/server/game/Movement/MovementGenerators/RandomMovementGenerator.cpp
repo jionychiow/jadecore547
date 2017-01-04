@@ -123,7 +123,7 @@ void RandomMovementGenerator<Creature>::DoInitialize(Creature* owner)
     if (!owner)
         return;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     if (!wander_distance)
@@ -145,7 +145,7 @@ bool RandomMovementGenerator<Creature>::DoUpdate(Creature* owner, uint32 diff)
     if (!owner)
         return false;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return false;
 
     if (owner->HasUnitState(UNIT_STATE_ROOT | UNIT_STATE_STUNNED | UNIT_STATE_DISTRACTED))
@@ -173,7 +173,7 @@ void RandomMovementGenerator<Creature>::DoFinalize(Creature* owner)
 
     owner->ClearUnitState(UNIT_STATE_ROAMING | UNIT_STATE_ROAMING_MOVE);
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     owner->SetWalk(false);

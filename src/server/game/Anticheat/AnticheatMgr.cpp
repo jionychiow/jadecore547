@@ -37,7 +37,7 @@ void AnticheatMgr::WalkOnWaterHackDetection(Player* player, MovementInfo movemen
         return;
 
     // if we are a ghost we can walk on water
-    if (!player->isAlive())
+    if (!player->IsAlive())
         return;
 
     if (player->HasAuraType(SPELL_AURA_FEATHER_FALL) ||

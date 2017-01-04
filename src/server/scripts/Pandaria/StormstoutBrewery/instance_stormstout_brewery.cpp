@@ -336,7 +336,7 @@ class instance_stormstout_brewery : public InstanceMapScript
                     for (Map::PlayerList::const_iterator i = PlayerList.begin(); i != PlayerList.end(); ++i)
                     {
                         if (Player* plr = i->getSource())
-                            if (plr->isAlive() && !plr->isGameMaster())
+                            if (plr->IsAlive() && !plr->isGameMaster())
                                 return false;
                     }
                 }

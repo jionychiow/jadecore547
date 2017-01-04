@@ -3797,7 +3797,7 @@ class spell_gen_jade_tempest : public SpellScriptLoader
             {
                 std::list<Unit*> TargetList;
                 WoWSource::AnyUnfriendlyUnitInObjectRangeCheck checker(GetCaster(), GetCaster(), 100.0f);
-                WoWSource::UnitListSearcher<Trinity::AnyUnfriendlyUnitInObjectRangeCheck> searcher(GetCaster(), TargetList, checker);
+                WoWSource::UnitListSearcher<WoWSource::AnyUnfriendlyUnitInObjectRangeCheck> searcher(GetCaster(), TargetList, checker);
                 GetCaster()->VisitNearbyObject(100.0f, searcher);
                 for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
                 {
@@ -3835,7 +3835,7 @@ class spell_gen_molten_fist : public SpellScriptLoader
             {
                 std::list<Unit*> TargetList;
                 WoWSource::AnyUnfriendlyUnitInObjectRangeCheck checker(GetCaster(), GetCaster(), 100.0f);
-                WoWSource::UnitListSearcher<Trinity::AnyUnfriendlyUnitInObjectRangeCheck> searcher(GetCaster(), TargetList, checker);
+                WoWSource::UnitListSearcher<WoWSource::AnyUnfriendlyUnitInObjectRangeCheck> searcher(GetCaster(), TargetList, checker);
                 GetCaster()->VisitNearbyObject(100.0f, searcher);
                 for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
                 {
@@ -3873,7 +3873,7 @@ class spell_gen_return_to_stone : public SpellScriptLoader
             {
                 std::list<Unit*> TargetList;
                 WoWSource::AnyUnfriendlyUnitInObjectRangeCheck checker(GetCaster(), GetCaster(), 100.0f);
-                WoWSource::UnitListSearcher<Trinity::AnyUnfriendlyUnitInObjectRangeCheck> searcher(GetCaster(), TargetList, checker);
+                WoWSource::UnitListSearcher<WoWSource::AnyUnfriendlyUnitInObjectRangeCheck> searcher(GetCaster(), TargetList, checker);
                 GetCaster()->VisitNearbyObject(100.0f, searcher);
                 for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
                 {
@@ -3911,7 +3911,7 @@ class spell_gen_shadow_volley : public SpellScriptLoader
             {
                 std::list<Unit*> TargetList;
                 WoWSource::AnyUnfriendlyUnitInObjectRangeCheck checker(GetCaster(), GetCaster(), 100.0f);
-                WoWSource::UnitListSearcher<Trinity::AnyUnfriendlyUnitInObjectRangeCheck> searcher(GetCaster(), TargetList, checker);
+                WoWSource::UnitListSearcher<WoWSource::AnyUnfriendlyUnitInObjectRangeCheck> searcher(GetCaster(), TargetList, checker);
                 GetCaster()->VisitNearbyObject(100.0f, searcher);
                 for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
                 {
@@ -3949,7 +3949,7 @@ class spell_gen_fracture : public SpellScriptLoader
             {
                 std::list<Unit*> TargetList;
                 WoWSource::AnyUnfriendlyUnitInObjectRangeCheck checker(GetCaster(), GetCaster(), 100.0f);
-                WoWSource::UnitListSearcher<Trinity::AnyUnfriendlyUnitInObjectRangeCheck> searcher(GetCaster(), TargetList, checker);
+                WoWSource::UnitListSearcher<WoWSource::AnyUnfriendlyUnitInObjectRangeCheck> searcher(GetCaster(), TargetList, checker);
                 GetCaster()->VisitNearbyObject(100.0f, searcher);
                 for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
                 {

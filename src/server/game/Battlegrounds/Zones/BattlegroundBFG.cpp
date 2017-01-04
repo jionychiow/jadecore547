@@ -214,7 +214,7 @@ void BattlegroundBFG::HandleAreaTrigger(Player* Source, uint32 Trigger)
     if (GetStatus() != STATUS_IN_PROGRESS)
         return;
 
-    if (!Source->isAlive())
+    if (!Source->IsAlive())
         return;
 
     switch(Trigger)

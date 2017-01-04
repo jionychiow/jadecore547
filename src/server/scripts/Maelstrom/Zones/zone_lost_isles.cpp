@@ -1172,7 +1172,7 @@ public:
 
     bool operator()(Unit* unit)
     {
-        if (!unit->isAlive())
+        if (!unit->IsAlive())
             return false;
 
         switch (unit->GetEntry())
@@ -1301,7 +1301,7 @@ public:
 
     bool operator()(Unit* unit)
     {
-        if (!unit->isAlive())
+        if (!unit->IsAlive())
             return false;
 
         switch (unit->GetEntry())
@@ -2311,7 +2311,7 @@ public:
         if (!object)
             return true;
         Unit* unit = object->ToUnit();
-        if (!unit || !unit->isAlive() || unit->GetTypeId() == TYPEID_PLAYER)
+        if (!unit || !unit->IsAlive() || unit->GetTypeId() == TYPEID_PLAYER)
             return true;
 
         if (unit->ToCreature())

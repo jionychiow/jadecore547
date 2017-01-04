@@ -174,7 +174,7 @@ class FreezeTrapSearcher
 
         bool operator()(Unit* unit)
         {
-            if (!unit->isAlive() || (unit->GetEntry() != NPC_ICE_BLOCK && unit->GetEntry() != NPC_FLASH_FREEZE) || !unit->IsWithinDist(_source, _range, false))
+            if (!unit->IsAlive() || (unit->GetEntry() != NPC_ICE_BLOCK && unit->GetEntry() != NPC_FLASH_FREEZE) || !unit->IsWithinDist(_source, _range, false))
                 return false;
 
             return true;
@@ -215,7 +215,7 @@ class npc_flash_freeze : public CreatureScript
                 if (checkDespawnTimer <= diff)
                 {
                     if (Unit* target = ObjectAccessor::GetUnit(*me, targetGUID))
-                        if (!target->isAlive())
+                        if (!target->IsAlive())
                             me->DisappearAndDie();
                     checkDespawnTimer = 2.5*IN_MILLISECONDS;
                 }
@@ -567,7 +567,7 @@ class boss_hodir : public CreatureScript
                 for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
                 {
                     Unit* target = *itr;
-                    if (!target || !target->isAlive() || GetClosestCreatureWithEntry(target, NPC_SNOWPACKED_ICICLE, 5.0f))
+                    if (!target || !target->IsAlive() || GetClosestCreatureWithEntry(target, NPC_SNOWPACKED_ICICLE, 5.0f))
                         continue;
 
                     if (!me->IsWithinLOSInMap(target))

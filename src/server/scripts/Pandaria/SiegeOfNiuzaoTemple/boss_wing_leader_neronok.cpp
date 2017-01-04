@@ -237,7 +237,7 @@ class boss_wing_leader_neronok : public CreatureScript
 
             void MovementInform(uint32 type, uint32 pointId)
             {
-                if (!me->isAlive() || type != POINT_MOTION_TYPE)
+                if (!me->IsAlive() || type != POINT_MOTION_TYPE)
                     return;
             
                 switch (pointId)

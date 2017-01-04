@@ -458,7 +458,7 @@ public:
                 {
                     if (Unit* unit = sObjectAccessor->FindUnit(guidMob[i]))
                     {
-                        if(unit->isAlive())
+                        if(unit->IsAlive())
                             HasRemainingAttacker = true;
                     }
                     else
@@ -1069,7 +1069,7 @@ public:
                         GetPlayerListInGrid(playerList, me, 30.0f);
                         for (auto player: playerList)
                         {
-                            if (!player->isAlive())
+                            if (!player->IsAlive())
                             {
                                 me->DespawnOrUnsummon(1000);
                                 playerGuid = 0;

@@ -84,7 +84,7 @@ class boss_ordos : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 

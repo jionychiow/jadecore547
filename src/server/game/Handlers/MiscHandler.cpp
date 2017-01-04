@@ -65,7 +65,7 @@ void WorldSession::HandleRepopRequestOpcode(WorldPacket& recvData)
 
     bool unk = recvData.ReadBit();
 
-    if (GetPlayer()->isAlive() || GetPlayer()->HasFlag(PLAYER_FLAGS, PLAYER_FLAGS_GHOST))
+    if (GetPlayer()->IsAlive() || GetPlayer()->HasFlag(PLAYER_FLAGS, PLAYER_FLAGS_GHOST))
         return;
 
     if (GetPlayer()->HasAuraType(SPELL_AURA_PREVENT_RESURRECTION))
@@ -677,7 +677,7 @@ void WorldSession::HandleZoneUpdateOpcode(WorldPacket& recvData)
 
 void WorldSession::HandleReturnToGraveyard(WorldPacket& /*recvPacket*/)
 {
-    if (GetPlayer()->isAlive() || !GetPlayer()->HasFlag(PLAYER_FLAGS, PLAYER_FLAGS_GHOST))
+    if (GetPlayer()->IsAlive() || !GetPlayer()->HasFlag(PLAYER_FLAGS, PLAYER_FLAGS_GHOST))
         return;
     //TODO: unk32, unk32
     GetPlayer()->RepopAtGraveyard();
@@ -965,7 +965,7 @@ void WorldSession::HandleReclaimCorpseOpcode(WorldPacket& recvData)
     uint8 bytesOrder[8] = { 5, 4, 3, 1, 7, 0, 2, 6 };
     recvData.ReadBytesSeq(guid, bytesOrder);
 
-    if (GetPlayer()->isAlive())
+    if (GetPlayer()->IsAlive())
         return;
 
     // do not allow corpse reclaim in arena
@@ -1016,7 +1016,7 @@ void WorldSession::HandleResurrectResponseOpcode(WorldPacket& recvData)
     uint8 bytesOrder[8] = { 7, 5, 1, 2, 0, 3, 6, 4 };
     recvData.ReadBytesSeq(guid, bytesOrder);
 
-    if (GetPlayer()->isAlive())
+    if (GetPlayer()->IsAlive())
         return;
 
     if (status == 1)
@@ -1117,7 +1117,7 @@ void WorldSession::HandleAreaTriggerOpcode(WorldPacket& recvData)
     if (sScriptMgr->OnAreaTrigger(player, atEntry))
         return;
 
-    if (player->isAlive())
+    if (player->IsAlive())
         if (uint32 questId = sObjectMgr->GetQuestForAreaTrigger(triggerId))
             if (player->GetQuestStatus(questId) == QUEST_STATUS_INCOMPLETE)
                 player->AreaExploredOrEventHappens(questId);

@@ -565,7 +565,7 @@ class mob_scrapbot : public CreatureScript
                 {
                     if (Creature* xt002 = ObjectAccessor::GetCreature(*me, instance->GetData64(BOSS_XT002)))
                     {
-                        if (!casted && xt002->isAlive())
+                        if (!casted && xt002->IsAlive())
                             if (me->IsWithinMeleeRange(xt002))
                             {
                                 casted = true;

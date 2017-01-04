@@ -192,7 +192,7 @@ public:
 
         void InitializeAI()
         {
-            if (!me->isDead())
+            if (!me->IsDead())
                 Reset();
         }
 

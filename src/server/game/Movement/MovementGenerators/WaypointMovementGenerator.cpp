@@ -35,7 +35,7 @@ void WaypointMovementGenerator<Creature>::DoInitialize(Creature* owner)
     if (!owner)
         return;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     LoadPath(owner);
@@ -47,7 +47,7 @@ void WaypointMovementGenerator<Creature>::DoReset(Creature* owner)
     if (!owner)
         return;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     owner->AddUnitState(UNIT_STATE_ROAMING | UNIT_STATE_ROAMING_MOVE);
@@ -71,7 +71,7 @@ void WaypointMovementGenerator<Creature>::LoadPath(Creature* owner)
         return;
     }
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     StartMoveNow(owner);
@@ -125,7 +125,7 @@ bool WaypointMovementGenerator<Creature>::StartMove(Creature* owner)
         i_currentNode = (i_currentNode+1) % i_path->size();
     }
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return false;
 
     WaypointData const* node = i_path->at(i_currentNode);
@@ -156,7 +156,7 @@ bool WaypointMovementGenerator<Creature>::DoUpdate(Creature* owner, uint32 diff)
     if (!owner)
         return false;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return false;
 
     // Waypoint movement can be switched on / off. This is quite handy for escort quests and other stuff.
@@ -196,7 +196,7 @@ void WaypointMovementGenerator<Creature>::DoFinalize(Creature* owner)
 
     owner->ClearUnitState(UNIT_STATE_ROAMING | UNIT_STATE_ROAMING_MOVE);
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     owner->SetWalk(false);
@@ -247,7 +247,7 @@ void FlightPathMovementGenerator::DoInitialize(Player* owner)
     if (!owner)
         return;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     Reset(owner);
@@ -259,7 +259,7 @@ void FlightPathMovementGenerator::DoReset(Player* owner)
     if (!owner)
         return;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     float playerFlightSpeed = 32.0f;
@@ -294,7 +294,7 @@ bool FlightPathMovementGenerator::DoUpdate(Player* owner, uint32 diff)
     if (!owner)
         return false;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return false;
 
     uint32 pointId = (uint32)owner->movespline->currentPathIdx();

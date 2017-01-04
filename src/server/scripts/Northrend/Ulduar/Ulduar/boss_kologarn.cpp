@@ -365,7 +365,7 @@ class boss_kologarn : public CreatureScript
                     {
                         if (Player* player = itr->getSource())
                         {
-                            if (player->isDead() || player->HasAura(SPELL_STONE_GRIP_DOT) || player->isGameMaster())
+                            if (player->IsDead() || player->HasAura(SPELL_STONE_GRIP_DOT) || player->isGameMaster())
                                 continue;
 
                             if (me->getVictim())

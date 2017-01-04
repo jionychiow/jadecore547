@@ -824,7 +824,7 @@ public:
                     pPrisoner = go->FindNearestCreature(NPC_EBON_BLADE_PRISONER_NE, 5.0f, true);
             }
         }
-        if (!pPrisoner || !pPrisoner->isAlive())
+        if (!pPrisoner || !pPrisoner->IsAlive())
             return false;
 
         pPrisoner->DisappearAndDie();
@@ -1027,7 +1027,7 @@ public:
             }
         }
 
-        if (!pPrisoner || !pPrisoner->isAlive())
+        if (!pPrisoner || !pPrisoner->IsAlive())
             return true;
 
         Quest const* qInfo = sObjectMgr->GetQuestTemplate(QUEST_PRISONERS_OF_WYRMSKULL);

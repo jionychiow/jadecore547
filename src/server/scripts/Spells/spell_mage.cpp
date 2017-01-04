@@ -1491,7 +1491,7 @@ class spell_mage_alter_time : public SpellScriptLoader
                     for (std::list<Creature*>::const_iterator itr = mirrorList.begin(); itr != mirrorList.end(); ++itr)
                         if (Creature* pMirror = (*itr)->ToCreature())
                             if (TempSummon* pastSelf = pMirror->ToTempSummon())
-                                if (pastSelf->isAlive() && pastSelf->IsInWorld())
+                                if (pastSelf->IsAlive() && pastSelf->IsInWorld())
                                     if (pastSelf->GetSummoner() && pastSelf->GetSummoner()->GetGUID() == _player->GetGUID())
                                         pastSelf->AI()->DoAction(1);
                     // Hackfix to prevent usebug

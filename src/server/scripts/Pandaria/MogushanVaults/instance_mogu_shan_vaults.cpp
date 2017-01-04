@@ -574,7 +574,7 @@ class instance_mogu_shan_vaults : public InstanceMapScript
                     if (!player)
                         continue;
 
-                    if (player->isAlive() && !player->isGameMaster() && !player->HasAura(115877)) // Aura 115877 = Totaly Petrified
+                    if (player->IsAlive() && !player->isGameMaster() && !player->HasAura(115877)) // Aura 115877 = Totaly Petrified
                         return false;
                 }
 

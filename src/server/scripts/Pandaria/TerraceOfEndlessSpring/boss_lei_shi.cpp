@@ -397,7 +397,7 @@ class boss_lei_shi : public CreatureScript
                         {
                             if (Creature* elemental = me->GetMap()->GetCreature(itr))
                             {
-                                if (!elemental->isAlive())
+                                if (!elemental->IsAlive())
                                     protector = elemental;
 
                                 elemental->RemoveAura(SPELL_PROTECT_VISUAL);

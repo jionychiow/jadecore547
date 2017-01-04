@@ -86,7 +86,7 @@ class boss_galleon : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 

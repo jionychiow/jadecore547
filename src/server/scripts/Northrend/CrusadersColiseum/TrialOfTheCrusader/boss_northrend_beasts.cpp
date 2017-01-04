@@ -351,7 +351,7 @@ class mob_snobold_vassal : public CreatureScript
             void JustDied(Unit* /*killer*/)
             {
                 if (Unit* target = Unit::GetPlayer(*me, _targetGUID))
-                    if (target->isAlive())
+                    if (target->IsAlive())
                         target->RemoveAurasDueToSpell(SPELL_SNOBOLLED);
                 if (_instance)
                     _instance->SetData(DATA_SNOBOLD_COUNT, DECREASE);
@@ -379,12 +379,12 @@ class mob_snobold_vassal : public CreatureScript
 
                 if (Unit* target = Unit::GetPlayer(*me, _targetGUID))
                 {
-                    if (!target->isAlive())
+                    if (!target->IsAlive())
                     {
                         if (_instance)
                         {
                             Unit* gormok = ObjectAccessor::GetCreature(*me, _instance->GetData64(NPC_GORMOK));
-                            if (gormok && gormok->isAlive())
+                            if (gormok && gormok->IsAlive())
                             {
                                 SetCombatMovement(false);
                                 _targetDied = true;
@@ -519,7 +519,7 @@ struct boss_jormungarAI : public BossAI
         {
             if (Creature* otherWorm = Unit::GetCreature(*me, instance->GetData64(OtherWormEntry)))
             {
-                if (!otherWorm->isAlive())
+                if (!otherWorm->IsAlive())
                 {
                     instance->SetData(TYPE_NORTHREND_BEASTS, SNAKES_DONE);
 
@@ -1081,7 +1081,7 @@ class boss_icehowl : public CreatureScript
                             {
                                 if (Unit* player = itr->getSource())
                                 {
-                                    if (player->isAlive() && player->IsWithinDistInMap(me, 6.0f))
+                                    if (player->IsAlive() && player->IsWithinDistInMap(me, 6.0f))
                                     {
                                         DoCastAOE(SPELL_TRAMPLE);
                                         events.ScheduleEvent(EVENT_TRAMPLE, 4*IN_MILLISECONDS);

@@ -94,7 +94,7 @@ class boss_hoptallus : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 
@@ -122,7 +122,7 @@ class boss_hoptallus : public CreatureScript
 
             void MovementInform(uint32 type, uint32 id)
             {
-                if (!me->isAlive() || type != POINT_MOTION_TYPE || id != 1)
+                if (!me->IsAlive() || type != POINT_MOTION_TYPE || id != 1)
                     return;
 
                 events.ScheduleEvent(EVENT_SET_COMBAT, 200);

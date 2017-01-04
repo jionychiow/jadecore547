@@ -695,7 +695,7 @@ void WorldSession::HandleAddonMessagechatOpcode(WorldPacket& recvData)
 
 void WorldSession::HandleEmoteOpcode(WorldPacket& recvData)
 {
-    if (!GetPlayer()->isAlive() || GetPlayer()->HasUnitState(UNIT_STATE_DIED))
+    if (!GetPlayer()->IsAlive() || GetPlayer()->HasUnitState(UNIT_STATE_DIED))
         return;
 
     if (!GetPlayer()->CanSpeak())
@@ -783,7 +783,7 @@ namespace WoWSource
 
 void WorldSession::HandleTextEmoteOpcode(WorldPacket & recvData)
 {
-    if (!GetPlayer()->isAlive())
+    if (!GetPlayer()->IsAlive())
         return;
 
     if (!GetPlayer()->CanSpeak())

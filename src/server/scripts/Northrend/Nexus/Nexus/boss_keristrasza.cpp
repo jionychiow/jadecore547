@@ -207,7 +207,7 @@ public:
         InstanceScript* instance = pGO->GetInstanceScript();
 
         Creature* pKeristrasza = Unit::GetCreature(*pGO, instance ? instance->GetData64(DATA_KERISTRASZA) : 0);
-        if (pKeristrasza && pKeristrasza->isAlive())
+        if (pKeristrasza && pKeristrasza->IsAlive())
         {
             // maybe these are hacks :(
             pGO->SetFlag(GAMEOBJECT_FLAGS, GO_FLAG_NOT_SELECTABLE);

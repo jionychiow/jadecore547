@@ -26,7 +26,7 @@ class isProtectorDeadPredicate
 public:
     bool operator()(Unit* target) const
     {
-        return target && !target->isAlive();
+        return target && !target->IsAlive();
     }
 };
 
@@ -155,7 +155,7 @@ class instance_terrace_of_endless_spring : public InstanceMapScript
                         pureLightTerraceGuid = creature->GetGUID();
                         break;
                     case NPC_CORRUPTED_PROTECTOR:
-                        if (creature->isAlive())
+                        if (creature->IsAlive())
                             protectorList.push_back(creature);
                         break;
                     case NPC_ANIMATED_PROTECTOR:

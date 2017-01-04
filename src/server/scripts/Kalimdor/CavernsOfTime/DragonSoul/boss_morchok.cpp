@@ -114,7 +114,7 @@ class boss_morchok: public CreatureScript
             {
                 if (!instance || static_cast<InstanceMap*>(me->GetMap())->GetScriptId() != sObjectMgr->GetScriptId(DSScriptName))
                     me->IsAIEnabled = false;
-                else if (!me->isDead())
+                else if (!me->IsDead())
                     Reset();
             }
 
@@ -270,11 +270,11 @@ class boss_morchok: public CreatureScript
                     switch (eventId)
                     {
                         case EVENT_UPDATE_HEALTH:
-                            if (me->isAlive())
+                            if (me->IsAlive())
                             {
                                 if (Creature* pKohcrom = ObjectAccessor::GetCreature(*me, instance->GetData64(DATA_KOHCROM)))
                                 {
-                                    if (!pKohcrom->isAlive())
+                                    if (!pKohcrom->IsAlive())
                                         break;
 
                                     if (me->GetHealth() < 500000 || pKohcrom->GetHealth() < 500000)

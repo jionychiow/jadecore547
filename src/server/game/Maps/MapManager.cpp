@@ -203,7 +203,7 @@ bool MapManager::CanPlayerEnter(uint32 mapid, Player* player, bool loginCheck)
 
     char const* mapName = entry->name;
 
-    if (!player->isAlive())
+    if (!player->IsAlive())
     {
         if (Corpse* corpse = player->GetCorpse())
         {
@@ -359,7 +359,7 @@ bool MapManager::CanPlayerEnter(uint32 mapid, Player* player, bool loginCheck)
             instanceIdToCheck = save->GetInstanceId();
 
         // InstanceId can never be 0 - will not be found.
-        if (!player->CheckInstanceCount(instanceIdToCheck) && !player->isDead())
+        if (!player->CheckInstanceCount(instanceIdToCheck) && !player->IsDead())
         {
             player->SendTransferAborted(mapid, TRANSFER_ABORT_TOO_MANY_INSTANCES);
             return false;

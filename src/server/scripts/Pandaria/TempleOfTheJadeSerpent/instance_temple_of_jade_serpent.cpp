@@ -290,7 +290,7 @@ public:
                         if (!wiseMari)
                         	continue;
 
-                        if (!wiseMari->isAlive() || !wiseMari->isInCombat())
+                        if (!wiseMari->IsAlive() || !wiseMari->isInCombat())
                         	continue;
 
                         // position : center of the wise mari's room
@@ -720,7 +720,7 @@ public:
             {
                 if (Creature* peril = instance->GetCreature(guidPeril))
                 {
-                    if (peril->isDead())
+                    if (peril->IsDead())
                     {
                         GameObject* go = instance->GetGameObject(door_lorewalker);
                         if (go != nullptr)
@@ -747,7 +747,7 @@ public:
             {
                 if (Creature* strife = instance->GetCreature(guidStrife))
                 {
-                    if (strife->isDead())
+                    if (strife->IsDead())
                     {
                         GameObject* go = instance->GetGameObject(door_lorewalker);
                         if (go != nullptr)

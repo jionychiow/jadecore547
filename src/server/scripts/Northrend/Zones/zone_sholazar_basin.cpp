@@ -307,7 +307,7 @@ public:
 
         void InitializeAI()
         {
-            if (me->isDead())
+            if (me->IsDead())
                 return;
 
             if (TempSummon* summ = me->ToTempSummon())
@@ -716,7 +716,7 @@ public:
                     for (std::list<Creature*>::iterator itr = servants.begin(); itr != servants.end(); ++itr)
                     {
                         // Couldn't find a spell that does this
-                        if ((*itr)->isDead())
+                        if ((*itr)->IsDead())
                             (*itr)->Respawn(true);
 
                         (*itr)->CastSpell(*itr, SPELL_FREYA_DUMMY_TRIGGER, true);
@@ -731,7 +731,7 @@ public:
                     std::list<Creature*> saboteurs;
                     caster->GetCreatureListWithEntryInGrid(saboteurs, NPC_SABOTEUR, 200.0f);
                     for (std::list<Creature*>::iterator itr = saboteurs.begin(); itr != saboteurs.end(); ++itr)
-                        if ((*itr)->isAlive())
+                        if ((*itr)->IsAlive())
                             // Lifeforce has a cast duration, it should be cast at all saboteurs one by one
                             presence->CastSpell((*itr), SPELL_LIFEFORCE, false);
                 }

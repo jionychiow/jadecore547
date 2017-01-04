@@ -146,7 +146,7 @@ public:
                 case 22:
                     if (Creature* Mrfloppy = Unit::GetCreature(*me, MrfloppyGUID))
                     {
-                        if (Mrfloppy->isDead())
+                        if (Mrfloppy->IsDead())
                         {
                             if (Creature* RWORG = Unit::GetCreature(*me, RWORGGUID))
                                 RWORG->DisappearAndDie();

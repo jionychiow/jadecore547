@@ -856,7 +856,7 @@ class spell_final_destination : public SpellScriptLoader
                         if (!PlayerList.isEmpty())
                             for (Map::PlayerList::const_iterator i = PlayerList.begin(); i != PlayerList.end(); ++i)
                                 if (Player* player = i->getSource())
-                                    if (player->isAlive())
+                                    if (player->IsAlive())
                                         Garajal->CastSpell(player, SPELL_INSTANTLY_DEATH, true);
                     }
                 }
@@ -887,7 +887,7 @@ class spell_soul_death : public SpellScriptLoader
             void OnRemove(constAuraEffectPtr aurEff, AuraEffectHandleModes /*mode*/)
             {
                 Unit* caster = GetCaster();
-                if (caster && caster->isAlive() && GetTargetApplication()->GetRemoveMode() == AURA_REMOVE_BY_EXPIRE)
+                if (caster && caster->IsAlive() && GetTargetApplication()->GetRemoveMode() == AURA_REMOVE_BY_EXPIRE)
                     caster->CastSpell(caster,116325,true); // suicide
 
             }

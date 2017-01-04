@@ -387,7 +387,7 @@ class boss_hagara_the_stormbinder: public CreatureScript
             {
                 if (!instance || static_cast<InstanceMap*>(me->GetMap())->GetScriptId() != sObjectMgr->GetScriptId(DSScriptName))
                     me->IsAIEnabled = false;
-                else if (!me->isDead())
+                else if (!me->IsDead())
                     Reset();
             }
 
@@ -1353,7 +1353,7 @@ class npc_hagara_the_stormbinder_icy_tomb : public CreatureScript
                 if (existenceCheckTimer <= diff)
                 {
                     Player* player = ObjectAccessor::GetPlayer(*me, trappedPlayer);
-                    if (!player || player->isDead() || !player->HasAura(SPELL_ICY_TOMB))
+                    if (!player || player->IsDead() || !player->HasAura(SPELL_ICY_TOMB))
                     {
                         JustDied(me);
                         me->DespawnOrUnsummon();
@@ -2103,7 +2103,7 @@ class spell_hagara_the_stormbinder_lightning_conduit : public SpellScriptLoader
                         if (u->HasAura(SPELL_LIGHTNING_CONDUIT_DUMMY_1))
                             return false;
 
-                        if (!u->isAlive())
+                        if (!u->IsAlive())
                             return false;
 
                         if (!_obj->IsWithinDistInMap(u, _range))

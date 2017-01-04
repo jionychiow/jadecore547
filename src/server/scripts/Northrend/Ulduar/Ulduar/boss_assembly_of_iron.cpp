@@ -202,15 +202,15 @@ bool IsEncounterComplete(InstanceScript* instance, Creature* me)
         return false;
 
     if (Creature* boss = ObjectAccessor::GetCreature(*me, instance->GetData64(BOSS_STEELBREAKER)))
-        if (boss->isAlive())
+        if (boss->IsAlive())
             return false;
 
     if (Creature* boss = ObjectAccessor::GetCreature(*me, instance->GetData64(BOSS_BRUNDIR)))
-        if (boss->isAlive())
+        if (boss->IsAlive())
             return false;
 
     if (Creature* boss = ObjectAccessor::GetCreature(*me, instance->GetData64(BOSS_MOLGEIM)))
-        if (boss->isAlive())
+        if (boss->IsAlive())
             return false;
 
     return true;
@@ -222,21 +222,21 @@ void RespawnEncounter(InstanceScript* instance, Creature* me)
         return;
 
     if (Creature* boss = ObjectAccessor::GetCreature(*me, instance->GetData64(BOSS_STEELBREAKER)))
-        if (!boss->isAlive())
+        if (!boss->IsAlive())
         {
             boss->Respawn();
             boss->GetMotionMaster()->MoveTargetedHome();
         }
 
     if (Creature* boss = ObjectAccessor::GetCreature(*me, instance->GetData64(BOSS_BRUNDIR)))
-        if (!boss->isAlive())
+        if (!boss->IsAlive())
         {
             boss->Respawn();
             boss->GetMotionMaster()->MoveTargetedHome();
         }
 
     if (Creature* boss = ObjectAccessor::GetCreature(*me, instance->GetData64(BOSS_MOLGEIM)))
-        if (!boss->isAlive())
+        if (!boss->IsAlive())
         {
             boss->Respawn();
             boss->GetMotionMaster()->MoveTargetedHome();
@@ -253,7 +253,7 @@ void ResetEncounter(InstanceScript* instance, Creature* me)
 
     if (me->GetGUID() != steelbreaker)
         if (Creature* boss = ObjectAccessor::GetCreature(*me, steelbreaker))
-            if (boss->isAlive() && boss->AI() && boss->isInCombat())
+            if (boss->IsAlive() && boss->AI() && boss->isInCombat())
                 boss->AI()->EnterEvadeMode();
             else
             {
@@ -263,7 +263,7 @@ void ResetEncounter(InstanceScript* instance, Creature* me)
 
     if (me->GetGUID() != brundir)
         if (Creature* boss = ObjectAccessor::GetCreature(*me, brundir))
-            if (boss->isAlive() && boss->AI() && boss->isInCombat())
+            if (boss->IsAlive() && boss->AI() && boss->isInCombat())
                 boss->AI()->EnterEvadeMode();
             else
             {
@@ -273,7 +273,7 @@ void ResetEncounter(InstanceScript* instance, Creature* me)
 
     if (me->GetGUID() != molgeim)
         if (Creature* boss = ObjectAccessor::GetCreature(*me, molgeim))
-            if (boss->isAlive() && boss->AI() && boss->isInCombat())
+            if (boss->IsAlive() && boss->AI() && boss->isInCombat())
                 boss->AI()->EnterEvadeMode();
             else
             {
@@ -290,21 +290,21 @@ void StartEncounter(InstanceScript* instance, Creature* caller)
     instance->SetBossState(BOSS_ASSEMBLY_OF_IRON, IN_PROGRESS);
 
     if (Creature* boss = ObjectAccessor::GetCreature(*caller, instance->GetData64(BOSS_STEELBREAKER)))
-        if (boss->isAlive() && caller->GetGUID() != boss->GetGUID()) // Avoid redundant calls
+        if (boss->IsAlive() && caller->GetGUID() != boss->GetGUID()) // Avoid redundant calls
         {
             boss->SetInCombatWithZone();
             boss->AI()->EnterCombat(caller->getVictim());
         }
 
     if (Creature* boss = ObjectAccessor::GetCreature(*caller, instance->GetData64(BOSS_BRUNDIR)))
-        if (boss->isAlive() && caller->GetGUID() != boss->GetGUID()) // Avoid redundant calls
+        if (boss->IsAlive() && caller->GetGUID() != boss->GetGUID()) // Avoid redundant calls
         {
             boss->SetInCombatWithZone();
             boss->AI()->EnterCombat(caller->getVictim());
         }
 
     if (Creature* boss = ObjectAccessor::GetCreature(*caller, instance->GetData64(BOSS_MOLGEIM)))
-        if (boss->isAlive() && caller->GetGUID() != boss->GetGUID()) // Avoid redundant calls
+        if (boss->IsAlive() && caller->GetGUID() != boss->GetGUID()) // Avoid redundant calls
         {
             boss->SetInCombatWithZone();
             boss->AI()->EnterCombat(caller->getVictim());
@@ -452,7 +452,7 @@ class boss_steelbreaker : public CreatureScript
                     {
                         if (Player* player = itr->getSource())
                         {
-                            if (player->isDead() || player->HasAura(SPELL_STATIC_DISRUPTION) || player->isGameMaster())
+                            if (player->IsDead() || player->HasAura(SPELL_STATIC_DISRUPTION) || player->isGameMaster())
                                 continue;
 
                             float Distance = player->GetDistance(me->GetPositionX(), me->GetPositionY(), me->GetPositionZ());

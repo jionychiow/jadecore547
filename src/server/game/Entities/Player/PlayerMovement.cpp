@@ -325,7 +325,7 @@ void Player::HandleFall(MovementInfo const& movementInfo)
     float z_diff = m_lastFallZ - movementInfo.pos.GetPositionZ();
 
     // Players with low fall distance, Feather Fall or physical immunity (charges used) are ignored. 14.57 can be calculated by resolving damageperc formula below to 0.
-    if (z_diff >= 14.57f && !isDead() && !isGameMaster() &&
+    if (z_diff >= 14.57f && !IsDead() && !isGameMaster() &&
         !HasAuraType(SPELL_AURA_HOVER) && !HasAuraType(SPELL_AURA_FEATHER_FALL) &&
         !HasAuraType(SPELL_AURA_FLY) && !IsImmunedToDamage(SPELL_SCHOOL_MASK_NORMAL) &&
         !(getClass() == CLASS_DEATH_KNIGHT && HasAura(59307) && HasAura(3714)))
@@ -360,7 +360,7 @@ void Player::HandleFall(MovementInfo const& movementInfo)
                 uint32 final_damage = EnvironmentalDamage(DAMAGE_FALL, damage);
 
                 // Recheck alive, might have died of EnvironmentalDamage, avoid cases when player die in fact like Spirit of Redemption case.
-                if (isAlive() && final_damage < original_health)
+                if (IsAlive() && final_damage < original_health)
                     UpdateAchievementCriteria(ACHIEVEMENT_CRITERIA_TYPE_FALL_WITHOUT_DYING, uint32(z_diff*100));
             }
 

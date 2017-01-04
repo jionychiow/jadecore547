@@ -181,7 +181,7 @@ class npc_air_force_bots : public CreatureScript
             {
                 Creature* creature = Unit::GetCreature(*me, SpawnedGUID);
 
-                if (creature && creature->isAlive())
+                if (creature && creature->IsAlive())
                     return creature;
 
                 return NULL;
@@ -200,7 +200,7 @@ class npc_air_force_bots : public CreatureScript
                     if (!playerTarget)
                         return;
 
-                    if (!playerTarget->isAlive())
+                    if (!playerTarget->IsAlive())
                         return;
 
                     Creature* lastSpawnedGuard = SpawnedGUID == 0 ? NULL : GetSummonedGuard();
@@ -762,7 +762,7 @@ class npc_injured_patient : public CreatureScript
 
             void SpellHit(Unit* caster, SpellInfo const* spell)
             {
-                if (caster->GetTypeId() == TYPEID_PLAYER && me->isAlive() && spell->Id == 20804)
+                if (caster->GetTypeId() == TYPEID_PLAYER && me->IsAlive() && spell->Id == 20804)
                 {
                     if ((CAST_PLR(caster)->GetQuestStatus(6624) == QUEST_STATUS_INCOMPLETE) || (CAST_PLR(caster)->GetQuestStatus(6622) == QUEST_STATUS_INCOMPLETE))
                         if (DoctorGUID)
@@ -802,10 +802,10 @@ class npc_injured_patient : public CreatureScript
             void UpdateAI(uint32 const /*diff*/)
             {
                 //lower HP on every world tick makes it a useful counter, not officlone though
-                if (me->isAlive() && me->GetHealth() > 6)
+                if (me->IsAlive() && me->GetHealth() > 6)
                     me->ModifyHealth(-5);
 
-                if (me->isAlive() && me->GetHealth() <= 6)
+                if (me->IsAlive() && me->GetHealth() <= 6)
                 {
                     me->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_IN_COMBAT);
                     me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_SELECTABLE);
@@ -1954,7 +1954,7 @@ public:
         // Do not reload Creature templates on evade mode enter - prevent visual lost
         void EnterEvadeMode()
         {
-            if (me->IsInEvadeMode() || !me->isAlive())
+            if (me->IsInEvadeMode() || !me->IsAlive())
                 return;
 
             Unit* owner = me->GetCharmerOrOwner();
@@ -2077,7 +2077,7 @@ public:
         // Fly away when dismissed
         void SpellHit(Unit* source, SpellInfo const* spell)
         {
-            if (spell->Id != 50515 || !me->isAlive())
+            if (spell->Id != 50515 || !me->IsAlive())
                 return;
 
             Unit* owner = me->GetOwner();
@@ -2173,7 +2173,7 @@ class npc_new_lightwell : public CreatureScript
 
             void EnterEvadeMode()
             {
-                if (!me->isAlive())
+                if (!me->IsAlive())
                     return;
 
                 me->DeleteThreatList();
@@ -2274,7 +2274,7 @@ class npc_lightwell : public CreatureScript
 
             void EnterEvadeMode()
             {
-                if (!me->isAlive())
+                if (!me->IsAlive())
                     return;
 
                 me->DeleteThreatList();
@@ -4736,7 +4736,7 @@ class npc_past_self : public CreatureScript
                         {
                             if (m_owner->ToPlayer())
                             {
-                                if (!m_owner->isAlive())
+                                if (!m_owner->IsAlive())
                                     return;
 
                                 m_owner->RemoveNonPassivesAuras();
@@ -5310,7 +5310,7 @@ class npc_custom_caster_guard : public CreatureScript
                    
                     bool operator()(Unit* u)
                     {
-                        if (!u->isAlive())
+                        if (!u->IsAlive())
                             return false;
 
                         if (!i_obj->IsWithinDistInMap(u, 100.0f))
@@ -5694,7 +5694,7 @@ class npc_monk_spirit : public CreatureScript
             void UpdateAI(const uint32 diff)
             {
                 if (targetGuid)
-                    if (!me->getVictim() || me->getVictim() && (!me->getVictim()->isAlive() || me->getVictim()->GetGUID() != targetGuid))
+                    if (!me->getVictim() || me->getVictim() && (!me->getVictim()->IsAlive() || me->getVictim()->GetGUID() != targetGuid))
                         DoAction(0);
 
                 if (!me->GetOwner() || me->GetOwner() && me->GetDistance(me->GetOwner()) > 200.0f)
@@ -5864,7 +5864,7 @@ public:
 
         void EnterEvadeMode()
         {
-            if (me->IsInEvadeMode() || !me->isAlive())
+            if (me->IsInEvadeMode() || !me->IsAlive())
                 return;
 
             Unit* owner = me->GetCharmerOrOwner();

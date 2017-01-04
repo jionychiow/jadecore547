@@ -346,7 +346,7 @@ public:
                         {
                             for (auto itr : l_ListPlayers)
                             {
-                                if (itr->IsInWorld() && itr->isAlive())
+                                if (itr->IsInWorld() && itr->IsAlive())
                                 {
                                     itr->CastSpell(i_Trigger, eSpells::SPELL_NORUSHEN_COLOR, true);
                                 }
@@ -644,7 +644,7 @@ public:
             events.Reset();
             summons.DespawnAll();
 
-            if (me->isDead())
+            if (me->IsDead())
                 me->Respawn(true);
          
             m_Battle = false;          

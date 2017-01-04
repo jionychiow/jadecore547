@@ -438,7 +438,7 @@ class npc_water_warden_water_bubble : public CreatureScript
                 if (!me->GetOwner())
                     me->DespawnOrUnsummon();
 
-                if (me->GetOwner()->isAlive())
+                if (me->GetOwner()->IsAlive())
                     me->DespawnOrUnsummon();
 
                 if (!me->GetOwner()->HasAura(SPELL_BUBBLE_BOUND) &&

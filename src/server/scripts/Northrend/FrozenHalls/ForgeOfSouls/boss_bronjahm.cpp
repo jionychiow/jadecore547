@@ -81,7 +81,7 @@ class boss_bronjahm : public CreatureScript
             {
                 if (!instance || static_cast<InstanceMap*>(me->GetMap())->GetScriptId() != sObjectMgr->GetScriptId(FoSScriptName))
                     me->IsAIEnabled = false;
-                else if (!me->isDead())
+                else if (!me->IsDead())
                     Reset();
             }
 
@@ -154,7 +154,7 @@ class boss_bronjahm : public CreatureScript
 
             void DoAction(const int32 param)
             {
-                if (!me->isAlive())
+                if (!me->IsAlive())
                     return;
 
                 if (param == ACTION_SUMMON_DIE)

@@ -537,7 +537,7 @@ public:
 
                 if (!bForceRespawn)
                 {
-                    if (pBoss->isDead())
+                    if (pBoss->IsDead())
                     {
                         // respawn but avoid to be looted again
                         pBoss->Respawn();
@@ -659,7 +659,7 @@ public:
                 if (player->isGameMaster())
                     continue;
 
-                if (player->isAlive())
+                if (player->IsAlive())
                     return false;
             }
 

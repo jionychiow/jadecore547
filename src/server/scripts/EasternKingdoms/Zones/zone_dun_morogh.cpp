@@ -504,7 +504,7 @@ public:
                     if (Creature* pCreature = me->FindNearestCreature(42852, 40.0f, false))
                         me->AI()->Reset();
 
-                    if (me->isDead())
+                    if (me->IsDead())
                     {
                         Creature* pCreature = me->FindNearestCreature(42852, 40.0f, false);
                         if (pCreature)

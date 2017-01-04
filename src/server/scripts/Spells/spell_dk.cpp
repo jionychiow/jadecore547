@@ -1676,7 +1676,7 @@ class spell_dk_corpse_explosion : public SpellScriptLoader
                         if (c->GetCreatureTemplate() && (c->GetCreatureTemplate()->type == CREATURE_TYPE_MECHANICAL || c->GetCreatureTemplate()->type == CREATURE_TYPE_ELEMENTAL || c->IsDungeonBoss()))
                             return SPELL_FAILED_BAD_TARGETS;
 
-                    if (target->GetTypeId() == TYPEID_PLAYER || target->isAlive() || target->HasAura(127344))
+                    if (target->GetTypeId() == TYPEID_PLAYER || target->IsAlive() || target->HasAura(127344))
                         return SPELL_FAILED_BAD_TARGETS;
 
                     return SPELL_CAST_OK;
@@ -1753,7 +1753,7 @@ class spell_dk_death_pact : public SpellScriptLoader
                 if (Player* player = GetCaster()->ToPlayer())
                     for (Unit::ControlList::const_iterator itr = player->m_Controlled.begin(); itr != player->m_Controlled.end(); ++itr)
                         if (Creature* undeadPet = (*itr)->ToCreature())
-                            if (undeadPet->isAlive() &&
+                            if (undeadPet->IsAlive() &&
                                 undeadPet->GetOwnerGUID() == player->GetGUID() &&
                                 undeadPet->GetCreatureType() == CREATURE_TYPE_UNDEAD &&
                                 undeadPet->IsWithinDist(player, 100.0f, false))

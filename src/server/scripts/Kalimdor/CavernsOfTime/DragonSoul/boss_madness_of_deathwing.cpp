@@ -841,7 +841,7 @@ class boss_madness_of_deathwing : public CreatureScript
                 if (platform)
                 {
                     if (Creature* pLimb = ObjectAccessor::GetCreature(*me, limbsGuids[platform - 1]))
-                        if (pLimb->isAlive())
+                        if (pLimb->IsAlive())
                             return pLimb;
                 }
 
@@ -1082,7 +1082,7 @@ class npc_dragon_soul_thrall_1 : public CreatureScript
                     AnyLivePlayerNoGmCheck(WorldObject const* obj, float range) : _obj(obj), _range(range) {}
                     bool operator()(Player* u)
                     {
-                        if (!u->isAlive())
+                        if (!u->IsAlive())
                             return false;
 
                         if (!_obj->IsWithinDistInMap(u, _range))
@@ -2674,7 +2674,7 @@ class npc_madness_of_deathwing_jump_pad : public CreatureScript
                     PlayerCheck(WorldObject const* obj, uint32 spellEx1, uint32 spellEx2) : _obj(obj), _spellEx1(spellEx2), _spellEx2(spellEx2) {}
                     bool operator()(Player* u)
                     {
-                        if (!u->isAlive())
+                        if (!u->IsAlive())
                             return false;
 
                         if (!u->IsFalling() || _obj->GetPositionZ() < (u->GetPositionZ() + 3.0f))

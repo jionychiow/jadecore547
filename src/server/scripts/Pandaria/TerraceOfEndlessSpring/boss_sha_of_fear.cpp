@@ -444,7 +444,7 @@ class boss_sha_of_fear : public CreatureScript
                         {
                             pPlayer->CastSpell(pPlayer, SPELL_FEARLESS, true);
 
-                            if (pPlayer->isAlive())
+                            if (pPlayer->IsAlive())
                                 pPlayer->Kill(pPlayer, false);
                             // No durability loss for a wipe in a case like this
 
@@ -1640,7 +1640,7 @@ public:
             {
                 pUnit->CastSpell(pUnit, SPELL_TELEPORT_PLAYER, true);
 
-                if (pUnit->isAlive())
+                if (pUnit->IsAlive())
                     pUnit->CastSpell(pUnit, SPELL_FADING_LIGHT, true);
 
                 pUnit->CastSpell(pUnit, SPELL_DREAD_EXPANSE, true);

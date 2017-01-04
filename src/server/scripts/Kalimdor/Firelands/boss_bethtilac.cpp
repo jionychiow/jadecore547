@@ -151,7 +151,7 @@ class boss_bethtilac : public CreatureScript
             {
                 if (!instance || static_cast<InstanceMap*>(me->GetMap())->GetScriptId() != sObjectMgr->GetScriptId(FLScriptName))
                     me->IsAIEnabled = false;
-                else if (!me->isDead())
+                else if (!me->IsDead())
                     Reset();
             }
 
@@ -750,7 +750,7 @@ class npc_bethtilac_cinderweb_spiderling : public CreatureScript
                     switch (eventId)
                     {
                         case EVENT_CHECK_DRONE:
-                            if (!pDrone || !pDrone->isAlive())
+                            if (!pDrone || !pDrone->IsAlive())
                             {
                                 if (Creature* pTarget = me->FindNearestCreature(NPC_CINDERWEB_DRONE, 500.0f))
                                 {

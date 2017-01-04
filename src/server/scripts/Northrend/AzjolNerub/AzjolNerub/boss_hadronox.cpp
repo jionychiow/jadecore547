@@ -479,7 +479,7 @@ class spell_hadronox_leech_poison : public SpellScriptLoader
             void OnRemove(constAuraEffectPtr /*aurEff*/, AuraEffectHandleModes /*mode*/)
             {
                 Unit* caster = GetCaster();
-                if (caster && caster->isAlive() && GetTargetApplication()->GetRemoveMode() == AURA_REMOVE_BY_DEATH)
+                if (caster && caster->IsAlive() && GetTargetApplication()->GetRemoveMode() == AURA_REMOVE_BY_DEATH)
                     caster->CastSpell(caster, SPELL_LEECH_POISON_PCT, true);
             }
 

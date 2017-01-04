@@ -99,7 +99,7 @@ public:
             if (waypointId == 7 && instance)
             {
                 Unit* target = Unit::GetUnit(*me, instance->GetData64(DATA_THRALL));
-                if (target && target->isAlive())
+                if (target && target->IsAlive())
                     me->AddThreat(target, 0.0f);
             }
         }
@@ -251,7 +251,7 @@ public:
                 if (AzgalorGUID)
                 {
                     Creature* boss = Unit::GetCreature((*me), AzgalorGUID);
-                    if (!boss || (boss && boss->isDead()))
+                    if (!boss || (boss && boss->IsDead()))
                     {
                         me->setDeathState(JUST_DIED);
                         me->RemoveCorpse();

@@ -501,7 +501,7 @@ public:
                 return livingAdds;
 
             for (std::list<Creature*>::iterator iter = allAdds.begin(); iter != allAdds.end(); iter++)
-                if ((*iter)->isAlive())
+                if ((*iter)->IsAlive())
                     livingAdds++;
 
             return livingAdds;
@@ -561,7 +561,7 @@ public:
 
             // Only need to check one, as their health is shared.
             std::list<Creature*>::iterator iter = battleMasters.begin();
-            if ((*iter)->isAlive())
+            if ((*iter)->IsAlive())
                 return true;
 
             return false; // default.
@@ -578,7 +578,7 @@ public:
 
             // Only need to check one, as their health is shared.
             std::list<Creature*>::iterator iter = amberTrappers.begin();
-            if ((*iter)->isAlive())
+            if ((*iter)->IsAlive())
                 return true;
 
             return false; // default.
@@ -595,7 +595,7 @@ public:
 
             // Only need to check one, as their health is shared.
             std::list<Creature*>::iterator iter = battleMenders.begin();
-            if ((*iter)->isAlive())
+            if ((*iter)->IsAlive())
                 return true;
 
             return false; // default.
@@ -682,7 +682,7 @@ public:
 
             // Cast it.
             for (std::list<Creature*>::iterator iter = battleMasters.begin(); iter != battleMasters.end(); ++iter)
-                if ((*iter)->isAlive())
+                if ((*iter)->IsAlive())
                     (*iter)->CastSpell(target, SPELL_KORTHIK_STRIKE, false);
         }
     };
@@ -1076,7 +1076,7 @@ public:
 
             for (auto itr : tmpTargets)
             {
-                if (!itr->isAlive())
+                if (!itr->IsAlive())
                     continue;
 
                 if (itr->GetHealthPct() < percentLife)

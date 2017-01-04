@@ -185,7 +185,7 @@ class boss_maloriak : public CreatureScript
             {
                 if (!instance || static_cast<InstanceMap*>(me->GetMap())->GetScriptId() != sObjectMgr->GetScriptId(BDScriptName))
                     me->IsAIEnabled = false;
-                else if (!me->isDead())
+                else if (!me->IsDead())
                     Reset();
             }
 
@@ -592,7 +592,7 @@ class npc_maloriak_flash_freeze : public CreatureScript
                 if (existenceCheckTimer <= diff)
                 {
                     Player* player = ObjectAccessor::GetPlayer(*me, trappedPlayer);
-                    if (!player || player->isDead() || !player->HasAura(SPELL_FLASH_FREEZE))
+                    if (!player || player->IsDead() || !player->HasAura(SPELL_FLASH_FREEZE))
                     {
                         JustDied(me);
                         me->DespawnOrUnsummon();

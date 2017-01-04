@@ -419,25 +419,25 @@ class boss_spirit_of_gara_jal_council : public CreatureScript
                 if (Creature* kaz = me->FindNearestCreature(BOSS_KAZRAJIN, 200.0f, false))
                 {
                     kaz->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);
-                    if (kaz->isDead())
+                    if (kaz->IsDead())
                         kaz->Respawn();
                 }
                 if (Creature* sul = me->FindNearestCreature(BOSS_SUL_THE_SANDCRAWLER, 200.0f, false))
                 {
                     sul->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);
-                    if (sul->isDead())
+                    if (sul->IsDead())
                         sul->Respawn();
                 }
                 if (Creature* mal = me->FindNearestCreature(BOSS_FROST_KING_MALAKK, 200.0f, false))
                 {
                     mal->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);
-                    if (mal->isDead())
+                    if (mal->IsDead())
                         mal->Respawn();
                 }
                 if (Creature* mar = me->FindNearestCreature(BOSS_HIGH_PRIESTESS_MARLI, 200.0f, false))
                 {
                     mar->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);
-                    if (mar->isDead())
+                    if (mar->IsDead())
                         mar->Respawn();
                 }
 

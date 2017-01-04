@@ -3077,7 +3077,7 @@ class spell_dru_swiftmend : public SpellScriptLoader
                     if (GetTargetApplication()->GetRemoveMode() == AURA_REMOVE_BY_DEATH)
                         return;
 
-                    if (!caster->ToPlayer() && caster->IsInWorld() && caster->isAlive())
+                    if (!caster->ToPlayer() && caster->IsInWorld() && caster->IsAlive())
                         caster->CastSpell(caster, SPELL_DRUID_SWIFTMEND, true);
                 }
             }
@@ -4066,7 +4066,7 @@ class spell_dru_yseras_gift : public SpellScriptLoader
             PreventDefaultAction();
 
             auto const caster = GetCaster();
-            if (!caster || caster->isDead() || caster->GetTypeId() != TYPEID_PLAYER)
+            if (!caster || caster->IsDead() || caster->GetTypeId() != TYPEID_PLAYER)
                 return;
 
 

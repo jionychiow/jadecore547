@@ -1005,7 +1005,7 @@ class TrashRespawnWorker
                 case NPC_EGG_PILE:
                 case NPC_HARBINGER_OF_FLAME:
                 case NPC_MOLTEN_EGG_TRASH:
-                    if (!creature->isAlive())
+                    if (!creature->IsAlive())
                         creature->Respawn(true);
                     break;
                 case NPC_SMOULDERING_HATCHLING:

@@ -307,7 +307,7 @@ class boss_lady_deathwhisper : public CreatureScript
                 // Full House achievement
                 for (SummonList::iterator itr = summons.begin(); itr != summons.end(); ++itr)
                     if (Unit* unit = ObjectAccessor::GetUnit(*me, *itr))
-                        if (unit->isAlive() && unit->GetEntry() != NPC_VENGEFUL_SHADE)
+                        if (unit->IsAlive() && unit->GetEntry() != NPC_VENGEFUL_SHADE)
                             livingAddEntries.insert(unit->GetEntry());
 
                 if (livingAddEntries.size() >= 5)
@@ -315,7 +315,7 @@ class boss_lady_deathwhisper : public CreatureScript
 
                 if (Creature* darnavan = ObjectAccessor::GetCreature(*me, _darnavanGUID))
                 {
-                    if (darnavan->isAlive())
+                    if (darnavan->IsAlive())
                     {
                         darnavan->setFaction(35);
                         darnavan->CombatStop(true);
@@ -387,7 +387,7 @@ class boss_lady_deathwhisper : public CreatureScript
 
                     for (SummonList::iterator itr = summons.begin(); itr != summons.end(); ++itr)
                         if (Creature* unit = ObjectAccessor::GetCreature(*me, *itr))
-                            if (unit->isAlive() && (unit->GetEntry() == NPC_CULT_FANATIC || unit->GetEntry() == NPC_CULT_ADHERENT))
+                            if (unit->IsAlive() && (unit->GetEntry() == NPC_CULT_FANATIC || unit->GetEntry() == NPC_CULT_ADHERENT))
                                 unit->AI()->DoAction(DATA_CANCEL_MARTYRDOM_P2);
                 }
             }
@@ -609,7 +609,7 @@ class boss_lady_deathwhisper : public CreatureScript
                 std::list<Creature*> temp;
                 for (SummonList::iterator itr = summons.begin(); itr != summons.end(); ++itr)
                     if (Creature* cre = ObjectAccessor::GetCreature(*me, *itr))
-                        if (cre->isAlive() && (cre->GetEntry() == NPC_CULT_FANATIC || cre->GetEntry() == NPC_CULT_ADHERENT))
+                        if (cre->IsAlive() && (cre->GetEntry() == NPC_CULT_FANATIC || cre->GetEntry() == NPC_CULT_ADHERENT))
                             temp.push_back(cre);
 
                 // noone to empower

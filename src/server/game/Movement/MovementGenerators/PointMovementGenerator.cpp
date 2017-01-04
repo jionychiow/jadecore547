@@ -33,7 +33,7 @@ void PointMovementGenerator<T>::DoInitialize(T* owner)
     if (!owner)
         return;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     if (!owner->IsStopped())
@@ -55,7 +55,7 @@ void PointMovementGenerator<T>::DoReset(T* owner)
     if (!owner)
         return;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     if (!owner->IsStopped())
@@ -70,7 +70,7 @@ bool PointMovementGenerator<T>::DoUpdate(T* owner, uint32 diff)
     if (!owner)
         return false;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return false;
 
     if (owner->HasUnitState(UNIT_STATE_ROOT | UNIT_STATE_STUNNED))
@@ -124,7 +124,7 @@ template <> void PointMovementGenerator<Creature>::MovementInform(Creature* owne
     if (!owner)
         return;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     if (owner->AI())
@@ -145,7 +145,7 @@ template <> void PointMovementGenerator<Player>::MovementInform(Player* owner)
     if (!owner)
         return;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     switch (id)
@@ -174,12 +174,12 @@ void AssistanceMovementGenerator::DoFinalize(Unit* owner)
     if (!owner)
         return;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     owner->ToCreature()->SetNoCallAssistance(false);
     owner->ToCreature()->CallAssistance();
-    if (owner->isAlive())
+    if (owner->IsAlive())
         owner->GetMotionMaster()->MoveSeekAssistanceDistract(sWorld->getIntConfig(CONFIG_CREATURE_FAMILY_ASSISTANCE_DELAY));
 }
 
@@ -190,7 +190,7 @@ bool EffectMovementGenerator::Update(Unit* owner, uint32 diff)
     if (!owner)
         return false;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return false;
 
     return !owner->movespline->Finalized();
@@ -209,7 +209,7 @@ void EffectMovementGenerator::MovementInform(Unit* owner)
     if (owner->GetTypeId() == TYPEID_UNIT)
     {
         // We need to restore previous movement since we have no proper states system.
-        if (owner->isAlive() && !owner->HasUnitState(UNIT_STATE_CONFUSED | UNIT_STATE_FLEEING))
+        if (owner->IsAlive() && !owner->HasUnitState(UNIT_STATE_CONFUSED | UNIT_STATE_FLEEING))
         {
             if (Unit* victim = owner->getVictim())
                 owner->GetMotionMaster()->MoveChase(victim);

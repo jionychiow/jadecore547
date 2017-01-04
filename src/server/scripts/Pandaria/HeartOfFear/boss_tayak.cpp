@@ -344,7 +344,7 @@ class boss_tayak : public CreatureScript
                 Map::PlayerList const &PlayerList = me->GetMap()->GetPlayers();
                 for (Map::PlayerList::const_iterator i = PlayerList.begin(); i != PlayerList.end(); ++i)
                     if (Player* playr = i->getSource())
-                        if (playr->isAlive())
+                        if (playr->IsAlive())
                             playr->TeleportTo(me->GetMapId(), PlayerTelePos.GetPositionX(), PlayerTelePos.GetPositionY(), PlayerTelePos.GetPositionZ(), PlayerTelePos.GetOrientation(), TELE_TO_NOT_LEAVE_COMBAT | TELE_TO_NOT_UNSUMMON_PET);
             }
 
@@ -486,7 +486,7 @@ class boss_tayak : public CreatureScript
                                 me->SetReactState(REACT_AGGRESSIVE);
                                 if (Player* unseenTarget = ObjectAccessor::FindPlayer(unseenTank))
                                 {
-                                    if (unseenTarget->isAlive())
+                                    if (unseenTarget->IsAlive())
                                         AttackStart(unseenTarget);
                                     else
                                         SetAggro();
@@ -514,7 +514,7 @@ class boss_tayak : public CreatureScript
                             // Return to old target
                             /*if (Player* currentVictim = ObjectAccessor::FindPlayer(currentTank))
                             {
-                                if (currentVictim->isAlive())
+                                if (currentVictim->IsAlive())
                                     DoCast(currentVictim, SPELL_WIND_STEP_TP_BACK);
                                 else
                                     SetAggro();
@@ -979,10 +979,10 @@ class mob_gale_winds_stalker : public CreatureScript
                         if (player->GetPositionX() > -2109.51f || player->GetPositionX() < -2129.05f)
                         {
                             // Player doesn't have forcedMovement
-                            if (player->isAlive() && !player->hasForcedMovement)
+                            if (player->IsAlive() && !player->hasForcedMovement)
                                 player->SendApplyMovementForce(true, pos, -7.0f);
                             // Dead player has forcedMovement
-                            else if (!player->isAlive() && player->hasForcedMovement)
+                            else if (!player->IsAlive() && player->hasForcedMovement)
                                 player->SendApplyMovementForce(false, pos);
                         }
                         // player not in wind gale

@@ -943,7 +943,7 @@ public:
                                         break;
                                     ++mobCounter;
                                     Unit* temp = Unit::GetCreature(*me, uiWaveGUID[i]);
-                                    if (!temp || temp->isDead())
+                                    if (!temp || temp->IsDead())
                                         ++deadCounter;
                                 }
 

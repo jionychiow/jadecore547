@@ -1559,7 +1559,7 @@ class npc_jaina_and_sylvana_hor_part2 : public CreatureScript
 
                         if (Creature* wallTarget = _instance->instance->GetCreature(wallTargetGUID))
                         {
-                            if(wallTarget->isAlive())
+                            if(wallTarget->IsAlive())
                             {
                                 wallTarget->DespawnOrUnsummon();
                                 wallTargetGUID = 0;
@@ -1590,7 +1590,7 @@ class npc_jaina_and_sylvana_hor_part2 : public CreatureScript
 
                         if (Creature* wallTarget = _instance->instance->GetCreature(wallTargetGUID))
                         {
-                            if (wallTarget->isAlive())
+                            if (wallTarget->IsAlive())
                             {
                                 wallTarget->DespawnOrUnsummon();
                                 wallTargetGUID = 0;
@@ -1621,7 +1621,7 @@ class npc_jaina_and_sylvana_hor_part2 : public CreatureScript
 
                         if (Creature* wallTarget = _instance->instance->GetCreature(wallTargetGUID))
                         {
-                            if (wallTarget->isAlive())
+                            if (wallTarget->IsAlive())
                             {
                                 wallTarget->DespawnOrUnsummon();
                                 wallTargetGUID = 0;
@@ -1650,7 +1650,7 @@ class npc_jaina_and_sylvana_hor_part2 : public CreatureScript
 
                         if (Creature* wallTarget = _instance->instance->GetCreature(wallTargetGUID))
                         {
-                            if (wallTarget->isAlive())
+                            if (wallTarget->IsAlive())
                             {
                                 wallTarget->DespawnOrUnsummon();
                                 wallTargetGUID = 0;
@@ -1999,7 +1999,7 @@ class npc_jaina_and_sylvana_hor_part2 : public CreatureScript
                         case 5:
                             if (Creature* lichking = ObjectAccessor::GetCreature(*me, _instance ? _instance->GetData64(DATA_LICH_LING_PART2) : 0))
                             {
-                                if (lichking->isAlive())
+                                if (lichking->IsAlive())
                                 {
                                     lichking->RemoveAurasDueToSpell(SPELL_REMORSELESS_WINTER);
                                     lichking->SetSpeed(MOVE_WALK, 2.5f, true);

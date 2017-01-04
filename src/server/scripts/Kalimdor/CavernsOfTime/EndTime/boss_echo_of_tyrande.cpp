@@ -150,7 +150,7 @@ class boss_echo_of_tyrande : public CreatureScript
             {
                 if (!instance || static_cast<InstanceMap*>(me->GetMap())->GetScriptId() != sObjectMgr->GetScriptId(ETScriptName))
                     me->IsAIEnabled = false;
-                else if (!me->isDead())
+                else if (!me->IsDead())
                     Reset();
             }
 
@@ -355,7 +355,7 @@ class boss_echo_of_tyrande : public CreatureScript
                             if (!playerList.isEmpty())
                                 for (Map::PlayerList::const_iterator itr = playerList.begin(); itr != playerList.end(); ++itr)
                                     if (Player* pPlayer = itr->getSource())
-                                        if (pPlayer->GetAreaId() == AREA_EMERALD && pPlayer->isAlive())
+                                        if (pPlayer->GetAreaId() == AREA_EMERALD && pPlayer->IsAlive())
                                             num++;
                             
                             if (!num)

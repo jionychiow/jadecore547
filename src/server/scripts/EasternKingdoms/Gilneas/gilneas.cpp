@@ -2764,7 +2764,7 @@ class npc_cannon_camera  : public CreatureScript
 
                     for (SummonList::const_iterator itr = summons.begin(); itr != summons.end(); ++itr)
                         if (Creature * worgen = ObjectAccessor::GetCreature(*me, *itr))
-                            if (worgen->isAlive())
+                            if (worgen->IsAlive())
                                 worgen->Kill(worgen);
 
                     summons.DespawnAll();
@@ -4764,7 +4764,7 @@ class spell_call_attack_mastiffs  : public SpellScriptLoader
                 Unit* caster = GetCaster();
                 Creature* target = GetHitCreature();
 
-                if (!(caster && target && target->isAlive()))
+                if (!(caster && target && target->IsAlive()))
                     return;
 
                 float angle = target->GetHomePosition().GetOrientation();
@@ -6301,7 +6301,7 @@ class npc_koroth_the_hillbreaker_friend  : public CreatureScript
 //                {
 //                    if (Creature* member = ObjectAccessor::GetCreature(*me, itr->minionGUID))
 //                    {
-//                        if (!member->isAlive() || member->isInCombat())
+//                        if (!member->IsAlive() || member->isInCombat())
 //                            continue;
 //
 //                        float dx = x - cos(itr->angle + pathangle) * itr->dist;
@@ -8013,7 +8013,7 @@ class npc_krennan_aranas_tbfgc  : public CreatureScript
 //        {
 //            if (Creature* militia = ObjectAccessor::GetCreature(*me, itr->guid))
 //            {
-//                if (!militia->isAlive() || militia->getVictim())
+//                if (!militia->IsAlive() || militia->getVictim())
 //                    continue;
 //
 //                float angle = itr->angle;
@@ -8103,7 +8103,7 @@ class npc_krennan_aranas_tbfgc  : public CreatureScript
 //        {
 //            if (Creature* militia = ObjectAccessor::GetCreature(*me, itr->guid))
 //            {
-//                if (!militia->isAlive())
+//                if (!militia->IsAlive())
 //                    continue;
 //
 //                if (militia->getVictim())
@@ -8128,7 +8128,7 @@ class npc_krennan_aranas_tbfgc  : public CreatureScript
 //            {
 //                if (Creature* militia = ObjectAccessor::GetCreature(*me, itr->guid))
 //                {
-//                    if (!militia->isAlive() || !militia->IsAIEnabled)
+//                    if (!militia->IsAlive() || !militia->IsAIEnabled)
 //                        continue;
 //
 //                    if (Unit* victim = militia->getVictim())
@@ -9700,7 +9700,7 @@ class npc_gorerot_tbfgc  : public CreatureScript
                                         {
                                             if (Creature* worgen = *itr)
                                             {
-                                                if (!worgen->GetVehicle() && worgen->isAlive())
+                                                if (!worgen->GetVehicle() && worgen->IsAlive())
                                                 {
                                                     worgen->EnterVehicle(me, seatId);
                                                     ++seatId;

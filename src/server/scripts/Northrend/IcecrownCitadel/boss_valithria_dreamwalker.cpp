@@ -156,7 +156,7 @@ class RisenArchmageCheck
         // look for all permanently spawned Risen Archmages that are not yet in combat
         bool operator()(Creature* creature)
         {
-            return creature->isAlive() && creature->GetEntry() == NPC_RISEN_ARCHMAGE &&
+            return creature->IsAlive() && creature->GetEntry() == NPC_RISEN_ARCHMAGE &&
                 creature->GetDBTableGUIDLow() && !creature->isInCombat();
         }
 };
@@ -292,7 +292,7 @@ class boss_valithria_dreamwalker : public CreatureScript
           else
              _spawnHealth = 6000000;
 
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 
@@ -508,7 +508,7 @@ class npc_green_dragon_combat_trigger : public CreatureScript
             void Reset()
             {
                 //_Reset();
-                if (!me->isAlive())
+                if (!me->IsAlive())
                     return;
 
                 me->ResetLootMode();

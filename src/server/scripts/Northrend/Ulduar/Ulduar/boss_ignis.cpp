@@ -512,7 +512,7 @@ class spell_ignis_slag_pot : public SpellScriptLoader
 
             void OnRemove(constAuraEffectPtr /*aurEff*/, AuraEffectHandleModes /*mode*/)
             {
-                if (GetTarget()->isAlive())
+                if (GetTarget()->IsAlive())
                     GetTarget()->CastSpell(GetTarget(), SPELL_SLAG_IMBUED, true);
             }
 
@@ -550,7 +550,7 @@ class achievement_ignis_hot_pocket : public AchievementCriteriaScript
 
         bool OnCheck(Player* source, Unit* /*target*/)
         {
-            return (source && source->isAlive());
+            return (source && source->IsAlive());
         }
 };
 

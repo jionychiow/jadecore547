@@ -515,7 +515,7 @@ void BattlegroundSA::TeleportPlayers()
 
             player->RemoveAurasByType(SPELL_AURA_MOD_FEAR);
 
-            if (!player->isAlive())
+            if (!player->IsAlive())
             {
                 player->ResurrectPlayer(1.0f);
                 player->SpawnCorpseBones();
@@ -943,7 +943,7 @@ void BattlegroundSA::UpdateDemolisherSpawns()
         {
             if (Creature* Demolisher = GetBGCreature(i))
             {
-                if (Demolisher->isDead())
+                if (Demolisher->IsDead())
                 {
                     // Demolisher is not in list
                     if (DemoliserRespawnList.find(i) == DemoliserRespawnList.end())

@@ -459,7 +459,7 @@ void BattlegroundSSM::CheckPlayerNearMineCart(uint32 diff)
         {
             if (Player* player = ObjectAccessor::FindPlayer(itr->first))
             {
-                if (player->isDead()) 
+                if (player->IsDead()) 
                 {
                     UpdateWorldStateForPlayer(SSM_DISPLAY_PROGRESS_BAR, BG_SSM_PROGRESS_BAR_DONT_SHOW, player);
                     continue;

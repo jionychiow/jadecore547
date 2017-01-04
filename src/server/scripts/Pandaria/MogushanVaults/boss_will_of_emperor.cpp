@@ -254,7 +254,7 @@ class boss_jin_qin_xi : public CreatureScript
 
             void Reset()
             {
-                if (!me->isAlive())
+                if (!me->IsAlive())
                     return;
 
                 me->ResetLootMode();
@@ -642,7 +642,7 @@ class boss_jin_qin_xi : public CreatureScript
                             aliveList.clear();
                             GetPlayerListInGrid(plyrList, me, 500.0f);
                             for (auto plyr : plyrList)
-                                if (plyr->isAlive())
+                                if (plyr->IsAlive())
                                     aliveList.push_back(plyr);
 
                             // Scheduling
@@ -947,7 +947,7 @@ class mob_woe_add_generic : public CreatureScript
                                 {
                                     if (Unit* target = ObjectAccessor::FindUnit(targetGuid))
                                     {
-                                        if (!target->isAlive())
+                                        if (!target->IsAlive())
                                             shouldSwitchVictim = true;
                                     }
                                     else
@@ -957,7 +957,7 @@ class mob_woe_add_generic : public CreatureScript
                                 {
                                     if (Unit* target = ObjectAccessor::FindUnit(targetGuid))
                                     {
-                                        if (target->isAlive())
+                                        if (target->IsAlive())
                                         {
                                             targetGuid = target->GetGUID();
                                             AttackStart(target);
@@ -1206,7 +1206,7 @@ class mob_ancient_mogu_machine : public CreatureScript
                         std::list<Player*> players;
                         GetPlayerListInGrid(players, me, 100.0f);
                         for (auto target : players)
-                            if (target->isAlive() && !target->isGameMaster())
+                            if (target->IsAlive() && !target->isGameMaster())
                                 ++count;
 
                         if (count == 0)

@@ -991,7 +991,7 @@ void SmartScript::ProcessAction(SmartScriptHolder& e, Unit* unit, uint32 var0, u
         }
         case SMART_ACTION_DIE:
         {
-            if (me && !me->isDead())
+            if (me && !me->IsDead())
             {
                 me->Kill(me);
                 sLog->outDebug(LOG_FILTER_DATABASE_AI, "SmartScript::ProcessAction: SMART_ACTION_DIE: Creature %u", me->GetGUIDLow());
@@ -1033,7 +1033,7 @@ void SmartScript::ProcessAction(SmartScriptHolder& e, Unit* unit, uint32 var0, u
                 break;
 
             // The AI is only updated if the creature is alive
-            if (me->isAlive())
+            if (me->IsAlive())
             {
                 CAST_AI(SmartAI, me->AI())->SetDespawnTime(e.action.forceDespawn.delay + 1); // Next tick
                 CAST_AI(SmartAI, me->AI())->StartDespawn();

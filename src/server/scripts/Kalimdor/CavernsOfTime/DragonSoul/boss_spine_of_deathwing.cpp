@@ -472,7 +472,7 @@ class npc_spine_of_deathwing_deathwing : public CreatureScript
                     AnyLivePlayerNoGmCheck(WorldObject const* obj, float range, bool withAura = false) : _obj(obj), _range(range), _withAura(withAura) {}
                     bool operator()(Player* u)
                     {
-                        if (!u->isAlive())
+                        if (!u->IsAlive())
                             return false;
 
                         if (!_obj->IsWithinDistInMap(u, _range))
@@ -1357,7 +1357,7 @@ class spell_spine_of_deathwing_blood_corruption : public SpellScriptLoader
                     PlayersCheck(WorldObject const* obj) : _obj(obj) {}
                     bool operator()(Player* u)
                     {
-                        if (!u->isAlive())
+                        if (!u->IsAlive())
                             return false;
 
                         if (u->isGameMaster())

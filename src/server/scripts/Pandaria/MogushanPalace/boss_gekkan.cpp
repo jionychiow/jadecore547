@@ -134,7 +134,7 @@ public:
             {
                 if (Creature* pAdd = ObjectAccessor::GetCreature(*me, guid))
                 {
-                    if (!pAdd->isAlive())
+                    if (!pAdd->IsAlive())
                         pAdd->Respawn();
 
                     pAdd->RemoveAllAuras();
@@ -149,7 +149,7 @@ public:
             for (auto const &guid : m_uilGekkanAdds)
             {
                 auto const pAdd = ObjectAccessor::GetCreature(*me, guid);
-                if (pAdd && pAdd->isAlive())
+                if (pAdd && pAdd->IsAlive())
                     uiTempGuidList.push_back(guid);
             }
 
@@ -168,7 +168,7 @@ public:
             for (auto const &guid : m_uilGekkanAdds)
             {
                 auto const pAdd = ObjectAccessor::GetCreature(*me, guid);
-                if (pAdd && pAdd->isAlive())
+                if (pAdd && pAdd->IsAlive())
                     pAdd->CastSpell(pAdd, SPELL_RECKLESS_INSPIRATION_2, false);
             }
 

@@ -1351,7 +1351,7 @@ class mob_qiang : public CreatureScript
 
                 for (auto sorcererMogu : sorcererMoguList)
                 {
-                    if (sorcererMogu->isAlive() && sorcererMogu != me)
+                    if (sorcererMogu->IsAlive() && sorcererMogu != me)
                         return;
                     else
                     {
@@ -1548,7 +1548,7 @@ class mob_subetai : public CreatureScript
 
                 for (auto mountedMogu : mountedMoguList)
                 {
-                    if (mountedMogu->isAlive() && mountedMogu != me)
+                    if (mountedMogu->IsAlive() && mountedMogu != me)
                         return;
                     else
                     {
@@ -1741,7 +1741,7 @@ class mob_meng : public CreatureScript
 
                 for (auto moguArcher : moguArcherList)
                 {
-                    if (moguArcher->isAlive() && moguArcher != me)
+                    if (moguArcher->IsAlive() && moguArcher != me)
                         return;
                     else
                     {

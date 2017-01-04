@@ -1319,7 +1319,7 @@ class spell_putricide_mutation_init : public SpellScriptLoader
                 if (!professor)
                     return SPELL_FAILED_CANT_DO_THAT_RIGHT_NOW;
 
-                if (professor->AI()->GetData(DATA_PHASE) == PHASE_COMBAT_3 || !professor->isAlive())
+                if (professor->AI()->GetData(DATA_PHASE) == PHASE_COMBAT_3 || !professor->IsAlive())
                 {
                     extendedError = SPELL_CUSTOM_ERROR_ALL_POTIONS_USED;
                     return SPELL_FAILED_CUSTOM_ERROR;

@@ -36,7 +36,7 @@ void ChaseMovementGenerator<Player>::DoInitialize(Player* owner)
     if (!owner)
         return;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     owner->AddUnitState(UNIT_STATE_CHASE | UNIT_STATE_CHASE_MOVE);
@@ -49,7 +49,7 @@ void ChaseMovementGenerator<Creature>::DoInitialize(Creature* owner)
     if (!owner)
         return;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     owner->SetWalk(false);
@@ -192,7 +192,7 @@ bool TargetedMovementGeneratorMedium<T,D>::DoUpdate(T* owner, uint32 diff)
     if (!owner)
         return false;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return false;
 
     if (owner->HasUnitState(UNIT_STATE_NOT_MOVE))
@@ -316,7 +316,7 @@ void FollowMovementGenerator<Creature>::_updateSpeed(Creature* owner)
     if (!owner)
         return;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     // Pet only syncs speed with owner.
@@ -337,7 +337,7 @@ void FollowMovementGenerator<Player>::DoInitialize(Player* owner)
     if (!owner)
         return;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     owner->AddUnitState(UNIT_STATE_FOLLOW | UNIT_STATE_FOLLOW_MOVE);
@@ -352,7 +352,7 @@ void FollowMovementGenerator<Creature>::DoInitialize(Creature* owner)
     if (!owner)
         return;
 
-    if (!owner->isAlive())
+    if (!owner->IsAlive())
         return;
 
     owner->AddUnitState(UNIT_STATE_FOLLOW | UNIT_STATE_FOLLOW_MOVE);

@@ -440,7 +440,7 @@ class spell_hun_stampede : public SpellScriptLoader
                                     if (!pet)
                                         return;
 
-                                    if (!pet->isAlive())
+                                    if (!pet->IsAlive())
                                         pet->setDeathState(ALIVE);
 
                                     // Set pet at full health
@@ -466,7 +466,7 @@ class spell_hun_stampede : public SpellScriptLoader
                                     if (!pet)
                                         return;
 
-                                    if (!pet->isAlive())
+                                    if (!pet->IsAlive())
                                         pet->setDeathState(ALIVE);
 
                                     // Set pet at full health
@@ -1494,7 +1494,7 @@ class spell_hun_kill_command : public SpellScriptLoader
                 Unit* pet = GetCaster()->GetGuardianPet();
                 Unit* petTarget = GetExplTargetUnit();
 
-                if (!pet || pet->isDead())
+                if (!pet || pet->IsDead())
                     return SPELL_FAILED_NO_PET;
 
                 // pet has a target and target is within 5 yards
@@ -1808,7 +1808,7 @@ class spell_hun_masters_call : public SpellScriptLoader
                 {
                     if (Pet* pet = _player->GetPet())
                     {
-                        if (pet->isDead())
+                        if (pet->IsDead())
                             return SPELL_FAILED_NO_PET;
 
                         float x, y, z;

@@ -1346,7 +1346,7 @@ void WorldSession::BuildPartyMemberStatsChangedPacket(Player* player, WorldPacke
             if (player->IsPvP())
                 status |= MEMBER_STATUS_PVP;
 
-            if (player->isDead())
+            if (player->IsDead())
                 status |= MEMBER_STATUS_DEAD;
 
             if (player->HasFlag(PLAYER_FLAGS, PLAYER_FLAGS_GHOST))

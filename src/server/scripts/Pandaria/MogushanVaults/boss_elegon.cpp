@@ -461,7 +461,7 @@ class boss_elegon : public CreatureScript
                                 if (player->isGameMaster())
                                     continue;
 
-                                if (player->isAlive())
+                                if (player->IsAlive())
                                 {
                                     player->CombatStop();
                                     player->CombatStopWithPets(true);
@@ -508,7 +508,7 @@ class boss_elegon : public CreatureScript
                         if (player->isGameMaster())
                             return;
 
-                        if (player->isAlive())
+                        if (player->IsAlive())
                         {
                             player->CastSpell(player, SPELL_TOUCH_OF_THE_TITANS, true);
                             player->AddAura(SPELL_TOUCH_OF_TITANS_VISUAL, player);

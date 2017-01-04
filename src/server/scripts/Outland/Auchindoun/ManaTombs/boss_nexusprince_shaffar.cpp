@@ -258,7 +258,7 @@ public:
         {
             // Send Shaffar to fight
             Creature* Shaffar = me->FindNearestCreature(NPC_SHAFFAR, 100);
-            if (!Shaffar || Shaffar->isDead())
+            if (!Shaffar || Shaffar->IsDead())
             {
                 KillSelf();
                 return;
@@ -280,7 +280,7 @@ public:
             if (Check_Timer <= diff)
             {
                 Creature* Shaffar = me->FindNearestCreature(NPC_SHAFFAR, 100);
-                if (!Shaffar || Shaffar->isDead() || !Shaffar->isInCombat())
+                if (!Shaffar || Shaffar->IsDead() || !Shaffar->isInCombat())
                 {
                     KillSelf();
                     return;

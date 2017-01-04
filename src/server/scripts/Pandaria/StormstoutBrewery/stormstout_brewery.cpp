@@ -361,7 +361,7 @@ class npc_chen_stormstout_entrance : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 
@@ -508,7 +508,7 @@ class npc_ancestral_brewmaster : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 
@@ -599,7 +599,7 @@ class npc_sodden_hozen_brawler : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 
@@ -701,7 +701,7 @@ class npc_inflamed_hozen_brawler : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 
@@ -800,7 +800,7 @@ class npc_hozen_bouncer : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 
@@ -835,7 +835,7 @@ class npc_hozen_bouncer : public CreatureScript
 
             void MovementInform(uint32 type, uint32 id)
             {
-                if (!me->isAlive() || type != POINT_MOTION_TYPE || id != 1)
+                if (!me->IsAlive() || type != POINT_MOTION_TYPE || id != 1)
                     return;
 
                 events.ScheduleEvent(EVENT_BOUNCER_DIE, 200);
@@ -925,7 +925,7 @@ class npc_drunken_sleepy_hozen_brawler : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 
@@ -1020,7 +1020,7 @@ class npc_stout_brew_alemental : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 
@@ -1100,7 +1100,7 @@ class npc_sudsy_brew_alemental : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 
@@ -1217,7 +1217,7 @@ class npc_unruly_alemental : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 
@@ -1300,7 +1300,7 @@ class npc_fizzy_brew_alemental : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 
@@ -1416,7 +1416,7 @@ class npc_bloated_brew_alemental : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 
@@ -1498,7 +1498,7 @@ class npc_bubbling_brew_alemental : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 
@@ -1613,7 +1613,7 @@ class npc_yeasty_brew_alemental : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 
@@ -1686,7 +1686,7 @@ class npc_leaking_beer_barrel : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 
@@ -1722,7 +1722,7 @@ class npc_beer_barrel_bunny : public CreatureScript
 
             void InitializeAI()
             {
-                if (!me->isDead())
+                if (!me->IsDead())
                     Reset();
             }
 

@@ -131,7 +131,7 @@ class SanctumSentrySearcher
 
         bool operator()(Unit* unit)
         {
-            if (!unit->isAlive() || unit->GetEntry() != NPC_SANCTUM_SENTRY || !unit->IsWithinDist(_source, _range, false))
+            if (!unit->IsAlive() || unit->GetEntry() != NPC_SANCTUM_SENTRY || !unit->IsWithinDist(_source, _range, false))
                 return false;
 
             return true;
