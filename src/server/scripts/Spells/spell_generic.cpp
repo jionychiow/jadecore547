@@ -301,7 +301,7 @@ class spell_gen_pet_summoned : public SpellScriptLoader
                         if (newPet->LoadPetFromDB(player, 0, player->GetLastPetNumber(), true))
                         {
                             // revive the pet if it is dead
-                            if (newPet->getDeathState() == DEAD || newPet->getDeathState() == CORPSE)
+                            if (newPet->IsDead)
                                 newPet->setDeathState(ALIVE);
 
                             newPet->ClearUnitState(uint32(UNIT_STATE_ALL_STATE));
