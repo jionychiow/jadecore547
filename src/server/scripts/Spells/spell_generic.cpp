@@ -25,7 +25,6 @@
 #include "ScriptMgr.h"
 #include "SpellScript.h"
 #include "SpellAuraEffects.h"
-#include "SpellHistory.h"
 #include "SkillDiscovery.h"
 #include "Cell.h"
 #include "CellImpl.h"
@@ -3804,7 +3803,7 @@ class spell_gen_jade_tempest : public SpellScriptLoader
                 for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
                 {
                     Unit* target = *itr;
-                    if (!target || !target->isAlive())
+                    if (!target || !target->IsAlive())
                         continue;
                     
                     int32 damage = GetEffectValue();
@@ -3842,7 +3841,7 @@ class spell_gen_molten_fist : public SpellScriptLoader
                 for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
                 {
                     Unit* target = *itr;
-                    if (!target || !target->isAlive())
+                    if (!target || !target->IsAlive())
                         continue;
                     
                     int32 damage = GetEffectValue();
@@ -3880,7 +3879,7 @@ class spell_gen_return_to_stone : public SpellScriptLoader
                 for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
                 {
                     Unit* target = *itr;
-                    if (!target || !target->isAlive())
+                    if (!target || !target->IsAlive())
                         continue;
                     
                     int32 damage = GetEffectValue();
@@ -3918,7 +3917,7 @@ class spell_gen_shadow_volley : public SpellScriptLoader
                 for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
                 {
                     Unit* target = *itr;
-                    if (!target || !target->isAlive())
+                    if (!target || !target->IsAlive())
                         continue;
                     
                     int32 damage = GetEffectValue();
@@ -3956,7 +3955,7 @@ class spell_gen_fracture : public SpellScriptLoader
                 for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
                 {
                     Unit* target = *itr;
-                    if (!target || !target->isAlive())
+                    if (!target || !target->IsAlive())
                         continue;
                     
                     int32 damage = GetEffectValue();
