@@ -3804,7 +3804,7 @@ class spell_gen_jade_tempest : public SpellScriptLoader
                 for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
                 {
                     Unit* target = *itr;
-                    if (!target || !target->IsAlive())
+                    if (!target || !target->isAlive())
                         continue;
                     
                     int32 damage = GetEffectValue();
@@ -3842,7 +3842,7 @@ class spell_gen_molten_fist : public SpellScriptLoader
                 for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
                 {
                     Unit* target = *itr;
-                    if (!target || !target->IsAlive())
+                    if (!target || !target->isAlive())
                         continue;
                     
                     int32 damage = GetEffectValue();
@@ -3880,7 +3880,7 @@ class spell_gen_return_to_stone : public SpellScriptLoader
                 for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
                 {
                     Unit* target = *itr;
-                    if (!target || !target->IsAlive())
+                    if (!target || !target->isAlive())
                         continue;
                     
                     int32 damage = GetEffectValue();
@@ -3918,7 +3918,7 @@ class spell_gen_shadow_volley : public SpellScriptLoader
                 for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
                 {
                     Unit* target = *itr;
-                    if (!target || !target->IsAlive())
+                    if (!target || !target->isAlive())
                         continue;
                     
                     int32 damage = GetEffectValue();
@@ -3956,7 +3956,7 @@ class spell_gen_fracture : public SpellScriptLoader
                 for (std::list<Unit*>::iterator itr = TargetList.begin(); itr != TargetList.end(); ++itr)
                 {
                     Unit* target = *itr;
-                    if (!target || !target->IsAlive())
+                    if (!target || !target->isAlive())
                         continue;
                     
                     int32 damage = GetEffectValue();
