@@ -54,5 +54,5 @@ script:
   - cat sql/updates/world/*_world.sql | mysql -ujadecore -pjadecore world
   - mysql -uroot < sql/create/drop_mysql.sql
   - cd bin
-  - make -j 8 -k && make install
+  - make clean;make -j 8 -k && make install
   - cd check_install/bin
