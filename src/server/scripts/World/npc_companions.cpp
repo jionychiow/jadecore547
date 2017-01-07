@@ -15,6 +15,15 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "Define.h"
+#include "Creature.h"
+#include "CreatureAI.h"
+#include "ScriptMgr.h"
+#include "SpellScript.h"
+#include "SpellAuraEffects.h"
+#include "ScriptedCreature.h"
+#include "Spell.h"
+
 enum CompanionEntries
 {
     // Clockwork Rocket Bot
