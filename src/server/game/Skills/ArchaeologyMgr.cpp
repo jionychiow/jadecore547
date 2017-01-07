@@ -1,6 +1,7 @@
 #include "ArchaeologyMgr.h"
 #include "Common.h"
 #include "Containers.h"
+#include "ObjectMgr.h"
 
 const static uint16 _mapIds[4] = { 0, 1, 530, 571};
 

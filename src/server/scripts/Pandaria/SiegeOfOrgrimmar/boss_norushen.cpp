@@ -24,6 +24,9 @@
  */
 
 
+#include "ScriptMgr.h"
+#include "ScriptedCreature.h"
+#include "ScriptedGossip.h"
 #include "siege_of_orgrimmar.h"  
 #include "MoveSplineInit.h"
 #include "Group.h"

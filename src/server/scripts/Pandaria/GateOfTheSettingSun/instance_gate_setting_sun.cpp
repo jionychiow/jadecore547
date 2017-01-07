@@ -17,11 +17,16 @@
 */
 
 #include "ScriptMgr.h"
+# include "ScriptedCreature.h"
 #include "InstanceScript.h"
 #include "Player.h"
 #include "Unit.h"
 #include "ObjectAccessor.h"
 #include "Group.h"
+#include "GridNotifiers.h"
+
+# include "Vehicle.h"
+# include "Spline.h"
 
 #include "gate_setting_sun.h"
 

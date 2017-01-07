@@ -1,7 +1,12 @@
+#include "ScriptMgr.h"
 #include "ScriptedCreature.h"
 #include "ScriptedEscortAI.h"
+#include "CombatAI.h"
 #include "SpellScript.h"
+#include "GridNotifiers.h"
 #include "GameObjectAI.h"
+#include "GameEventMgr.h"
+#include "CreatureAI.h"
 
 enum DarkmoonFaireRingToss
 {

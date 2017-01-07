@@ -26,6 +26,7 @@
 #include "SpellAuras.h"
 #include "SpellAuraEffects.h"
 #include "Player.h"
+#include "PassiveAI.h"
 
 #include "stormstout_brewery.h"
 

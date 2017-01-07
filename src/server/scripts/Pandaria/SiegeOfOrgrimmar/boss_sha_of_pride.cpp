@@ -1,4 +1,8 @@
 
+#include "ScriptMgr.h"
+#include "ScriptedCreature.h"
+#include "GridNotifiers.h"
+#include "PassiveAI.h"
 #include "GameObjectAI.h"
 #include "siege_of_orgrimmar.h"
 
