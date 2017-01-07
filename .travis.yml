@@ -3,6 +3,14 @@ language: cpp
 git:
   depth: 1
 
+addons:
+  apt:
+    sources:
+      - george-edison55-precise-backports # cmake 3.2.3
+    packages:
+      - cmake
+      - cmake-data
+
 branches:
   only:
     - master
@@ -12,7 +20,6 @@ compiler:
   - gcc ## Uncomment when we are up to full c++11 standards.
 
 before_install:
-  - sudo add-apt-repository ppa:kalakris/cmake -y
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo add-apt-repository 'deb http://llvm.org/apt/precise/ llvm-toolchain-precise-3.7 main'
   - wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key | sudo apt-key add -
@@ -31,7 +38,7 @@ install:
   - mysql -uroot -e 'create database test_mysql;'
   - mkdir bin
   - cd bin
-  - cmake ../ -DSCRIPTS=1 -DTOOLS=1 -DSCRIPTS="dynamic" -DSERVERS=1 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=check_install
+  - cmake ../ -DSCRIPTS=1 -DTOOLS=1 -DWITH_WARNINGS=1 -DWITH_COREDEBUG=0 -DUSE_COREPCH=1 -DUSE_SCRIPTPCH=1 -DSERVERS=1 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=check_install
   - cd ..
 
 script:
