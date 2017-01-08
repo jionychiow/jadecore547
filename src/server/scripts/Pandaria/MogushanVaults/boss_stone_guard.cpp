@@ -19,6 +19,7 @@
 
 #include "ScriptMgr.h"
 #include "ScriptedCreature.h"
+#include "GridNotifiers.h"
 #include "mogu_shan_vaults.h"
 
 enum eSpells

@@ -27,6 +27,7 @@
 #include "SpellAuraEffects.h"
 #include "Player.h"
 #include "MoveSplineInit.h"
+#include "PassiveAI.h"
 
 #include "stormstout_brewery.h"
 

@@ -24,6 +24,11 @@
 #include "MoveSpline.h"
 #include "Player.h"
 
+#include "ObjectAccessor.h"
+#include "ObjectDefines.h"
+#include "SharedDefines.h"
+#include "ObjectMgr.h"
+
 #ifdef MAP_BASED_RAND_GEN
 #define rand_norm() owner.rand_norm()
 #define urand(a, b) owner.urand(a, b)

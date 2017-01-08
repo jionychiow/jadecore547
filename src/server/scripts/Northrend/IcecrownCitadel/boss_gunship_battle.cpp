@@ -16,11 +16,15 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "icecrown_citadel.h"
+#include "ScriptMgr.h"
+#include "ScriptedCreature.h"
+#include "ScriptedGossip.h"
+#include "GridNotifiers.h"
 #include "MapManager.h"
 #include "Transport.h"
 #include "Vehicle.h"
 #include "Group.h"
+#include "icecrown_citadel.h"
 
 enum Achievements
 {

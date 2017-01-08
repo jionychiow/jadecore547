@@ -21,6 +21,7 @@
 #include "ObjectMgr.h"
 #include "ScriptMgr.h"
 #include "ScriptedCreature.h"
+#include "ScriptedGossip.h"
 #include "CreatureTextMgr.h"
 #include "InstanceScript.h"
 #include "SpellInfo.h"

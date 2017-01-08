@@ -4,10 +4,13 @@ Normal: 85%
 Heroic: 70%
 */
 
-#include "siege_of_orgrimmar.h"   
+#include "ScriptMgr.h"
+#include "ScriptedCreature.h"
+#include "GridNotifiers.h"
 #include "AreaTrigger.h"
 #include "Player.h"
 #include "Pet.h"
+#include "siege_of_orgrimmar.h"   
 
 // Current estimated progress: 70%
 enum Spells

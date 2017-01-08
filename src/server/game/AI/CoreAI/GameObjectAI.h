@@ -20,9 +20,11 @@
 #define TRINITY_GAMEOBJECTAI_H
 
 #include "Define.h"
+
 #include <list>
 #include "Object.h"
 #include "GameObject.h"
+#include "ObjectMgr.h"
 #include "CreatureAI.h"
 
 class GameObjectAI

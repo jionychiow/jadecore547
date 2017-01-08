@@ -1,5 +1,6 @@
 #include "ScriptMgr.h"
 #include "ScriptedCreature.h"
+#include "SpellScript.h"
 #include "ScriptedGossip.h"
 #include "ScriptedEscortAI.h"
 

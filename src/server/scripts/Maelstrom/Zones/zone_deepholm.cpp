@@ -21,6 +21,9 @@
  
 #include "ScriptMgr.h"
 #include "ScriptedFollowerAI.h"
+#include "ScriptedCreature.h"
+#include "SpellScript.h"
+#include "ObjectMgr.h"
 
 class npc_elemental_energy_quest : public CreatureScript
 {

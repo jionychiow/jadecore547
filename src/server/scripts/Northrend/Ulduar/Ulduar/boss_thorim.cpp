@@ -17,6 +17,8 @@
 
 #include "ScriptMgr.h"
 #include "ScriptedCreature.h"
+#include "GridNotifiers.h"
+#include "SpellScript.h"
 #include "ulduar.h"
 #include <limits>
 

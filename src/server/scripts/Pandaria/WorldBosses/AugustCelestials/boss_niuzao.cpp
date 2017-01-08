@@ -18,8 +18,8 @@
 
 #include "ScriptMgr.h"
 #include "ScriptedCreature.h"
+#include "SpellScript.h"
 #include "ObjectMgr.h"
-#include "ScriptMgr.h"
 
 
 #define MAX_HEALTH_POINTS 392500000

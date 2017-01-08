@@ -21,7 +21,9 @@
 #define TRINITYSERVER_PACKET_BUILDER_H
 
 #include "Define.h" // for uint32
+#include "Unit.h"
 #include "G3D/Vector3.h"
+
 using G3D::Vector3;
 
 class ByteBuffer;
