@@ -545,8 +545,8 @@ class spell_ignis_activate_construct : public SpellScriptLoader
                     creature->setFaction(GetCaster()->getFaction());
                     creature->SetReactState(REACT_AGGRESSIVE);
                     creature->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_NOT_SELECTABLE | UNIT_FLAG_PACIFIED | UNIT_FLAG_STUNNED | UNIT_FLAG_DISABLE_MOVE);
-                    creature->AddThreat(GetCaster()->GetVictim(), float(GetEffectValue()));
-                    creature->AI()->AttackStart(GetCaster()->GetVictim());
+                    creature->AddThreat(GetCaster()->getVictim()(), float(GetEffectValue()));
+                    creature->AI()->AttackStart(GetCaster()->getVictim()());
                     creature->AI()->DoZoneInCombat();
                 }
             }
@@ -594,6 +594,7 @@ void AddSC_boss_ignis()
     new npc_iron_construct();
     new npc_scorch_ground();
     new spell_ignis_slag_pot();
+    new spell_ignis_activate_construct();
     new achievement_ignis_shattered();
     new achievement_ignis_hot_pocket();
 
