@@ -529,6 +529,40 @@ class spell_ignis_slag_pot : public SpellScriptLoader
         }
 };
 
+class spell_ignis_activate_construct : public SpellScriptLoader
+{
+    public:
+        spell_ignis_activate_construct() : SpellScriptLoader("spell_ignis_activate_construct") { }
+
+        class spell_ignis_activate_construct_SpellScript : public SpellScript
+        {
+            PrepareSpellScript(spell_ignis_activate_construct_SpellScript);
+
+            void HandleScript(SpellEffIndex /*effIndex*/)
+            {
+                if (Creature* creature = GetHitCreature())
+                {
+                    creature->setFaction(GetCaster()->getFaction());
+                    creature->SetReactState(REACT_AGGRESSIVE);
+                    creature->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_NOT_SELECTABLE | UNIT_FLAG_PACIFIED | UNIT_FLAG_STUNNED | UNIT_FLAG_DISABLE_MOVE);
+                    creature->AddThreat(GetCaster()->GetVictim(), float(GetEffectValue()));
+                    creature->AI()->AttackStart(GetCaster()->GetVictim());
+                    creature->AI()->DoZoneInCombat();
+                }
+            }
+
+            void Register()
+            {
+                OnEffectHitTarget += SpellEffectFn(spell_ignis_activate_construct_SpellScript::HandleScript, EFFECT_0, SPELL_EFFECT_SCRIPT_EFFECT);
+            }
+        };
+
+        SpellScript* GetSpellScript() const
+        {
+            return new spell_ignis_activate_construct_SpellScript();
+        }
+};
+
 class achievement_ignis_shattered : public AchievementCriteriaScript
 {
     public:
