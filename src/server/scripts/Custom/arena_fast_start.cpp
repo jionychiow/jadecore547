@@ -19,7 +19,7 @@ class FastArenaCrystal : public GameObjectScript
         }
 };
 
-void AddSC_fast_arena_start()
+void AddSC_arena_fast_start()
 {
     new FastArenaCrystal();
 }

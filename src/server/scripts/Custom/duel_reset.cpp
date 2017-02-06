@@ -285,7 +285,7 @@ class duel_reset : public PlayerScript
         }
 };
 
-void AddSC_DuelReset()
+void AddSC_duel_reset()
 {
     new duel_reset();
 }
