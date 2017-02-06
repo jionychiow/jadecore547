@@ -4,6 +4,9 @@
 
 enum eSpells
 {
+    // Christmas Hat
+    SPELL_WEAR_CHRISTMAS_HAT    = 61400,
+
     // Stances
     SPELL_BATTLE_STANCE         = 143589,
     SPELL_BERSERKER_STANCE      = 143594,
@@ -52,7 +55,8 @@ enum eSpells
 
 enum Enum
 {
-    GLOBAL_COOLDOWN = 1,
+    GLOBAL_COOLDOWN             = 1,
+    GAME_EVENT_WINTER_VEIL      = 2,
 };
 
 enum Say
@@ -185,6 +189,9 @@ class boss_general_nazgrim : public CreatureScript
                     pInstance->SendEncounterUnit(ENCOUNTER_FRAME_DISENGAGE, me);
 
                 me->setFaction(16);
+
+				if (sGameEventMgr->IsActiveEvent(GAME_EVENT_WINTER_VEIL) && !me->HasAura(SPELL_WEAR_CHRISTMAS_HAT))
+					me->AddAura(SPELL_WEAR_CHRISTMAS_HAT, me);
 
                 // Damage
                 const CreatureTemplate* cinfo = me->GetCreatureTemplate();
