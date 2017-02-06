@@ -252,12 +252,12 @@ class boss_general_nazgrim : public CreatureScript
                 }
 
                 events.ScheduleEvent(EVENT_BATTLE_STANCE, 0);
-                events.ScheduleEvent(EVENT_SUMMON_ADDS_ONE, 45000);
-                events.ScheduleEvent(EVENT_SUNDERING_BLOW, 10000);
-                events.ScheduleEvent(EVENT_BONECRACKER, 30000);
+                events.ScheduleEvent(EVENT_SUMMON_ADDS_ONE, 45 * IN_MILLISECONDS);
+                events.ScheduleEvent(EVENT_SUNDERING_BLOW, 10 * IN_MILLISECONDS);
+                events.ScheduleEvent(EVENT_BONECRACKER, 30 * IN_MILLISECONDS);
 
                 if (me->GetMap()->IsHeroic())
-                    events.ScheduleEvent(EVENT_EXECUTE, 15000);
+                    events.ScheduleEvent(EVENT_EXECUTE, 15 * IN_MILLISECONDS);
 
                 if (TeamIdInInstance == TEAM_ALLIANCE)
                 {
@@ -309,7 +309,7 @@ class boss_general_nazgrim : public CreatureScript
                 if (me->HasAura(SPELL_DEFENSIVE_STANCE) && attacker->HasAura(SPELL_SUNDERING_BLOW))
                     return;
                 else if (me->HasAura(SPELL_DEFENSIVE_STANCE) && !attacker->HasAura(SPELL_SUNDERING_BLOW))
-                    events.ScheduleEvent(EVENT_DAMAGE_TAKEN, 1000); // Made it as event because rage gain can occur only once per second
+                    events.ScheduleEvent(EVENT_DAMAGE_TAKEN, 1 * IN_MILLISECONDS); // Made it as event because rage gain can occur only once per second
             }
 
             void UpdateAI(uint32 const diff) override
@@ -367,8 +367,8 @@ class boss_general_nazgrim : public CreatureScript
                             me->RemoveAura(SPELL_DEFENSIVE_STANCE);
 
                         DoCast(me, SPELL_BATTLE_STANCE);
-                        events.ScheduleEvent(EVENT_BATTLE_STANCE_RAGE, 1000);
-                        events.ScheduleEvent(EVENT_BERSERKER_STANCE, 60000);
+                        events.ScheduleEvent(EVENT_BATTLE_STANCE_RAGE, 1 * IN_MILLISECONDS);
+                        events.ScheduleEvent(EVENT_BERSERKER_STANCE, 60 * IN_MILLISECONDS);
                         break;
                     }
 
@@ -377,7 +377,7 @@ class boss_general_nazgrim : public CreatureScript
                         if (me->HasAura(SPELL_BATTLE_STANCE))
                         {
                             AddRage(me, 10, me->GetGUID());
-                            events.ScheduleEvent(EVENT_BATTLE_STANCE_RAGE, 1000);
+                            events.ScheduleEvent(EVENT_BATTLE_STANCE_RAGE, 1 * IN_MILLISECONDS);
                         }
 
                         break;
@@ -386,14 +386,14 @@ class boss_general_nazgrim : public CreatureScript
                     case EVENT_BERSERKER_STANCE:
                     {
                         DoCast(me, SPELL_BERSERKER_STANCE);
-                        events.ScheduleEvent(EVENT_DEFFENSIVE_STANCE, 60000);
+                        events.ScheduleEvent(EVENT_DEFFENSIVE_STANCE, 60 * IN_MILLISECONDS);
                         break;
                     }
 
                     case EVENT_DEFFENSIVE_STANCE:
                     {
                         DoCast(me, SPELL_DEFENSIVE_STANCE);
-                        events.ScheduleEvent(EVENT_BATTLE_STANCE, 60000);
+                        events.ScheduleEvent(EVENT_BATTLE_STANCE, 60 * IN_MILLISECONDS);
                         break;
                     }
 
@@ -416,7 +416,7 @@ class boss_general_nazgrim : public CreatureScript
                             me->GetMotionMaster()->MoveJump(posX, posY, posZ, 30.0f, 15.0f);
                         }
 
-                        events.ScheduleEvent(EVENT_HEROIC_SHOCKWAVE, 1000);
+                        events.ScheduleEvent(EVENT_HEROIC_SHOCKWAVE, 1 * IN_MILLISECONDS);
                         RemoveRage(me, 300, me->GetGUID());
                         break;
                     }
@@ -524,7 +524,7 @@ class boss_general_nazgrim : public CreatureScript
                             me->SummonCreature(CREATURE_KORKRON_SNIPERS, pos[2], TEMPSUMMON_MANUAL_DESPAWN);
 
                         Talk(SAY_SUMMON);
-                        events.ScheduleEvent(EVENT_CREATURE_CHECK, 5000);
+                        events.ScheduleEvent(EVENT_CREATURE_CHECK, 5 * IN_MILLISECONDS);
                         break;
                     }
 
@@ -538,19 +538,19 @@ class boss_general_nazgrim : public CreatureScript
                             me->GetCreatureListWithEntryInGrid(summonList, CREATURE_KORKRON_ASSASSINS, 50.0f);
                             if (!summonList.empty())
                             {
-                                events.ScheduleEvent(EVENT_SUMMON_ADD_ARC_WAR, 40000);
+                                events.ScheduleEvent(EVENT_SUMMON_ADD_ARC_WAR, 40 * IN_MILLISECONDS);
                             }
 
                             me->GetCreatureListWithEntryInGrid(summonList, CREATURE_KORKRON_ARCWEAVER, 50.0f);
                             if (!summonList.empty())
                             {
-                                events.ScheduleEvent(EVENT_SUMMON_ADD_ASS_WAR, 40000);
+                                events.ScheduleEvent(EVENT_SUMMON_ADD_ASS_WAR, 40 * IN_MILLISECONDS);
                             }
 
                             me->GetCreatureListWithEntryInGrid(summonList, CREATURE_KORKRON_WARSHAMAN, 50.0f);
                             if (!summonList.empty())
                             {
-                                events.ScheduleEvent(EVENT_SUMMON_ADD_ARC_ASS, 40000);
+                                events.ScheduleEvent(EVENT_SUMMON_ADD_ARC_ASS, 40 * IN_MILLISECONDS);
                             }
                         }
 
@@ -561,19 +561,19 @@ class boss_general_nazgrim : public CreatureScript
                             me->GetCreatureListWithEntryInGrid(summonList, CREATURE_KORKRON_IRONBLADE, 50.0f);
                             if (!summonList.empty())
                             {
-                                events.ScheduleEvent(EVENT_SUMMON_ADD_IRO_ASS, 40000);
+                                events.ScheduleEvent(EVENT_SUMMON_ADD_IRO_ASS, 40 * IN_MILLISECONDS);
                             }
 
                             me->GetCreatureListWithEntryInGrid(summonList, CREATURE_KORKRON_ARCWEAVER, 50.0f);
                             if (!summonList.empty())
                             {
-                                events.ScheduleEvent(EVENT_SUMMON_ADD_ARC_ASS, 40000);
+                                events.ScheduleEvent(EVENT_SUMMON_ADD_ARC_ASS, 40 * IN_MILLISECONDS);
                             }
 
                             me->GetCreatureListWithEntryInGrid(summonList, CREATURE_KORKRON_WARSHAMAN, 50.0f);
                             if (!summonList.empty())
                             {
-                                events.ScheduleEvent(EVENT_SUMMON_ADD_ASS_WAR, 40000);
+                                events.ScheduleEvent(EVENT_SUMMON_ADD_ASS_WAR, 40 * IN_MILLISECONDS);
                             }
                         }
 
@@ -584,19 +584,19 @@ class boss_general_nazgrim : public CreatureScript
                             me->GetCreatureListWithEntryInGrid(summonList, CREATURE_KORKRON_IRONBLADE, 50.0f);
                             if (!summonList.empty())
                             {
-                                events.ScheduleEvent(EVENT_SUMMON_ADD_IRO_ARC, 40000);
+                                events.ScheduleEvent(EVENT_SUMMON_ADD_IRO_ARC, 40 * IN_MILLISECONDS);
                             }
 
                             me->GetCreatureListWithEntryInGrid(summonList, CREATURE_KORKRON_ASSASSINS, 50.0f);
                             if (!summonList.empty())
                             {
-                                events.ScheduleEvent(EVENT_SUMMON_ADD_ARC_ASS, 40000);
+                                events.ScheduleEvent(EVENT_SUMMON_ADD_ARC_ASS, 40 * IN_MILLISECONDS);
                             }
 
                             me->GetCreatureListWithEntryInGrid(summonList, CREATURE_KORKRON_WARSHAMAN, 50.0f);
                             if (!summonList.empty())
                             {
-                                events.ScheduleEvent(EVENT_SUMMON_ADD_ARC_WAR, 40000);
+                                events.ScheduleEvent(EVENT_SUMMON_ADD_ARC_WAR, 40 * IN_MILLISECONDS);
                             }
                         }
 
@@ -607,19 +607,19 @@ class boss_general_nazgrim : public CreatureScript
                             me->GetCreatureListWithEntryInGrid(summonList, CREATURE_KORKRON_IRONBLADE, 50.0f);
                             if (!summonList.empty())
                             {
-                                events.ScheduleEvent(EVENT_SUMMON_ADD_IRO_WAR, 40000);
+                                events.ScheduleEvent(EVENT_SUMMON_ADD_IRO_WAR, 40 * IN_MILLISECONDS);
                             }
 
                             me->GetCreatureListWithEntryInGrid(summonList, CREATURE_KORKRON_ASSASSINS, 50.0f);
                             if (!summonList.empty())
                             {
-                                events.ScheduleEvent(EVENT_SUMMON_ADD_ASS_WAR, 40000);
+                                events.ScheduleEvent(EVENT_SUMMON_ADD_ASS_WAR, 40 * IN_MILLISECONDS);
                             }
 
                             me->GetCreatureListWithEntryInGrid(summonList, CREATURE_KORKRON_ARCWEAVER, 50.0f);
                             if (!summonList.empty())
                             {
-                                events.ScheduleEvent(EVENT_SUMMON_ADD_ARC_WAR, 40000);
+                                events.ScheduleEvent(EVENT_SUMMON_ADD_ARC_WAR, 40 * IN_MILLISECONDS);
                             }
                         }
 
@@ -632,7 +632,7 @@ class boss_general_nazgrim : public CreatureScript
                         me->SummonCreature(CREATURE_KORKRON_WARSHAMAN, pos[1], TEMPSUMMON_MANUAL_DESPAWN);
 
                         Talk(SAY_SUMMON);
-                        events.ScheduleEvent(EVENT_SUMMON_ADD_IRO_ASS, 45000);
+                        events.ScheduleEvent(EVENT_SUMMON_ADD_IRO_ASS, 45 * IN_MILLISECONDS);
                         break;
                     }
 
@@ -642,7 +642,7 @@ class boss_general_nazgrim : public CreatureScript
                         me->SummonCreature(CREATURE_KORKRON_ASSASSINS, pos[1], TEMPSUMMON_MANUAL_DESPAWN);
 
                         Talk(SAY_SUMMON);
-                        events.ScheduleEvent(EVENT_SUMMON_ADD_ARC_WAR, 45000);
+                        events.ScheduleEvent(EVENT_SUMMON_ADD_ARC_WAR, 45 * IN_MILLISECONDS);
                         break;
                     }
 
@@ -652,7 +652,7 @@ class boss_general_nazgrim : public CreatureScript
                         me->SummonCreature(CREATURE_KORKRON_WARSHAMAN, pos[1], TEMPSUMMON_MANUAL_DESPAWN);
 
                         Talk(SAY_SUMMON);
-                        events.ScheduleEvent(EVENT_SUMMON_ADD_IRO_ARC, 45000);
+                        events.ScheduleEvent(EVENT_SUMMON_ADD_IRO_ARC, 45 * IN_MILLISECONDS);
                         break;
                     }
 
@@ -662,7 +662,7 @@ class boss_general_nazgrim : public CreatureScript
                         me->SummonCreature(CREATURE_KORKRON_ARCWEAVER, pos[1], TEMPSUMMON_MANUAL_DESPAWN);
 
                         Talk(SAY_SUMMON);
-                        events.ScheduleEvent(EVENT_SUMMON_ADD_ASS_WAR, 45000);
+                        events.ScheduleEvent(EVENT_SUMMON_ADD_ASS_WAR, 45 * IN_MILLISECONDS);
                         break;
                     }
 
@@ -672,7 +672,7 @@ class boss_general_nazgrim : public CreatureScript
                         me->SummonCreature(CREATURE_KORKRON_ARCWEAVER, pos[1], TEMPSUMMON_MANUAL_DESPAWN);
 
                         Talk(SAY_SUMMON);
-                        events.ScheduleEvent(EVENT_SUMMON_ADD_IRO_WAR, 45000);
+                        events.ScheduleEvent(EVENT_SUMMON_ADD_IRO_WAR, 45 * IN_MILLISECONDS);
                         break;
                     }
 
@@ -680,7 +680,7 @@ class boss_general_nazgrim : public CreatureScript
                     {
                         DoCastVictim(SPELL_SUNDERING_BLOW);
 
-                        events.ScheduleEvent(EVENT_SUNDERING_BLOW, urand(5000, 10000));
+                        events.ScheduleEvent(EVENT_SUNDERING_BLOW, urand(5 * IN_MILLISECONDS, 10 * IN_MILLISECONDS));
                         break;
                     }
 
@@ -691,7 +691,7 @@ class boss_general_nazgrim : public CreatureScript
                             DoCast(target, SPELL_BONECRACKER);
                         }
 
-                        events.ScheduleEvent(EVENT_BONECRACKER, 30000);
+                        events.ScheduleEvent(EVENT_BONECRACKER, 30 * IN_MILLISECONDS);
                         break;
                     }
 
@@ -699,7 +699,7 @@ class boss_general_nazgrim : public CreatureScript
                     {
                         DoCastVictim(SPELL_EXECUTE);
 
-                        events.ScheduleEvent(EVENT_EXECUTE, 15000);
+                        events.ScheduleEvent(EVENT_EXECUTE, 15 * IN_MILLISECONDS);
                         break;
                     }
                 }
@@ -848,7 +848,7 @@ class mob_korkron_ironblade : public CreatureScript
                 }
 
                 me->setFaction(16);
-                events.ScheduleEvent(EVENT_IRONSTORM, 10000);
+                events.ScheduleEvent(EVENT_IRONSTORM, 10 * IN_MILLISECONDS);
                 me->SetInCombatWithZone();
             }
 
@@ -877,7 +877,7 @@ class mob_korkron_ironblade : public CreatureScript
                     case EVENT_IRONSTORM:
                     {
                         DoCast(me, SPELL_IRONSTORM);
-                        events.ScheduleEvent(EVENT_IRONSTORM, 30000);
+                        events.ScheduleEvent(EVENT_IRONSTORM, 30 * IN_MILLISECONDS);
                         break;
                     }
 
@@ -974,9 +974,9 @@ class mob_korkron_arcweaver : public CreatureScript
                 }
 
                 me->setFaction(16);
-                events.ScheduleEvent(EVENT_ARCANE_SHOCK, urand(5000,8000));
-                events.ScheduleEvent(EVENT_MAGISTRIKE, 20000);
-                events.ScheduleEvent(EVENT_UNSTABLE_BLINK, 10000);
+                events.ScheduleEvent(EVENT_ARCANE_SHOCK, urand(5 * IN_MILLISECONDS, 8 * IN_MILLISECONDS));
+                events.ScheduleEvent(EVENT_MAGISTRIKE, 20 * IN_MILLISECONDS);
+                events.ScheduleEvent(EVENT_UNSTABLE_BLINK, 10 * IN_MILLISECONDS);
                 me->SetInCombatWithZone();
             }
 
@@ -1000,7 +1000,7 @@ class mob_korkron_arcweaver : public CreatureScript
                         for (std::list<Unit*>::const_iterator i = targets.begin(); i != targets.end(); ++i)
                             DoCast(*i,SPELL_ARCANE_SHOCK);
 
-                        events.ScheduleEvent(EVENT_ARCANE_SHOCK, urand(5000, 8000));
+                        events.ScheduleEvent(EVENT_ARCANE_SHOCK, urand(5 * IN_MILLISECONDS, 8 * IN_MILLISECONDS));
                         break;
                     }
 
@@ -1008,7 +1008,7 @@ class mob_korkron_arcweaver : public CreatureScript
                     {
                         DoCastVictim(SPELL_MAGISTRIKE);
                         
-                        events.ScheduleEvent(EVENT_MAGISTRIKE, 20000);
+                        events.ScheduleEvent(EVENT_MAGISTRIKE, 20 * IN_MILLISECONDS);
                         break;
                     }
 
@@ -1016,7 +1016,7 @@ class mob_korkron_arcweaver : public CreatureScript
                     {
                         DoCast(SPELL_UNSTABLE_BLINK);
 
-                        events.ScheduleEvent(EVENT_UNSTABLE_BLINK, 10000);
+                        events.ScheduleEvent(EVENT_UNSTABLE_BLINK, 10 * IN_MILLISECONDS);
                         break;
                     }
                 }
@@ -1112,8 +1112,8 @@ class mob_korkron_assassin : public CreatureScript
                 me->SetInt32Value(UNIT_FIELD_POWER1, 100);
                 me->SetMaxPower(POWER_ENERGY, 100);
                 me->SetInt32Value(UNIT_FIELD_MAXPOWER1, 100);
-                events.ScheduleEvent(EVENT_BACKSTAB, 5000);
-                events.ScheduleEvent(EVENT_ASSASSINS_MARK, 1000);
+                events.ScheduleEvent(EVENT_BACKSTAB, 5 * IN_MILLISECONDS);
+                events.ScheduleEvent(EVENT_ASSASSINS_MARK, 1 * IN_MILLISECONDS);
                 if (Unit* target = SelectTarget(SelectAggroTarget::SELECT_TARGET_RANDOM, 0, 40.0f, true))
                     DoCast(target, SPELL_ASSASSINS_MARK);
                 me->SetInCombatWithZone();
@@ -1147,7 +1147,7 @@ class mob_korkron_assassin : public CreatureScript
                     {
                         DoCastVictim(SPELL_BACKSTAB);
 
-                        events.ScheduleEvent(EVENT_BACKSTAB, 5000);
+                        events.ScheduleEvent(EVENT_BACKSTAB, 5 * IN_MILLISECONDS);
                         break;
                     }
                 }
@@ -1237,9 +1237,9 @@ class mob_korkron_warshaman : public CreatureScript
                 }
 
                 me->setFaction(16);
-                events.ScheduleEvent(EVENT_EARTH_SHIELD, urand(10000,15000));
-                events.ScheduleEvent(EVENT_CHAIN_HEAL, urand(6000, 9000));
-                events.ScheduleEvent(EVENT_HEALING_TIDE_TOTEM, urand(18500, 20500));
+                events.ScheduleEvent(EVENT_EARTH_SHIELD, urand(10 * IN_MILLISECONDS, 15 * IN_MILLISECONDS));
+                events.ScheduleEvent(EVENT_CHAIN_HEAL, urand(6 * IN_MILLISECONDS, 9 * IN_MILLISECONDS));
+                events.ScheduleEvent(EVENT_HEALING_TIDE_TOTEM, urand(18.5 * IN_MILLISECONDS, 20.5 * IN_MILLISECONDS));
                 me->SetInCombatWithZone();
             }
 
@@ -1260,8 +1260,8 @@ class mob_korkron_warshaman : public CreatureScript
                         if (Unit* target = DoSelectLowestHpFriendly(50.0f))
                             DoCast(target, SPELL_EARTH_SHIELD);
 
-                        events.ScheduleEvent(EVENT_EARTH_SHIELD, urand(10000, 15000), GLOBAL_COOLDOWN);
-                        events.DelayEvents(2000, GLOBAL_COOLDOWN);
+                        events.ScheduleEvent(EVENT_EARTH_SHIELD, urand(10 * IN_MILLISECONDS, 15 * IN_MILLISECONDS), GLOBAL_COOLDOWN);
+                        events.DelayEvents(2 * IN_MILLISECONDS, GLOBAL_COOLDOWN);
                         break;
                     }
 
@@ -1270,8 +1270,8 @@ class mob_korkron_warshaman : public CreatureScript
                         if (Unit* target = DoSelectLowestHpFriendly(50.0f))
                             DoCast(target, SPELL_EMPOWERED_CHAIN_HEAL);
 
-                        events.ScheduleEvent(EVENT_CHAIN_HEAL, urand(6000, 9000), GLOBAL_COOLDOWN);
-                        events.DelayEvents(2000, GLOBAL_COOLDOWN);
+                        events.ScheduleEvent(EVENT_CHAIN_HEAL, urand(6 * IN_MILLISECONDS, 9 * IN_MILLISECONDS), GLOBAL_COOLDOWN);
+                        events.DelayEvents(2 * IN_MILLISECONDS, GLOBAL_COOLDOWN);
                         break;
                     }
 
@@ -1279,8 +1279,8 @@ class mob_korkron_warshaman : public CreatureScript
                     {
                         DoCast(me,SPELL_HEALING_TIDE_TOTEM);
 
-                        events.ScheduleEvent(EVENT_HEALING_TIDE_TOTEM, urand(18500, 20500), GLOBAL_COOLDOWN);
-                        events.DelayEvents(2000, GLOBAL_COOLDOWN);
+                        events.ScheduleEvent(EVENT_HEALING_TIDE_TOTEM, urand(18.5 * IN_MILLISECONDS, 20.5 * IN_MILLISECONDS), GLOBAL_COOLDOWN);
+                        events.DelayEvents(2 * IN_MILLISECONDS, GLOBAL_COOLDOWN);
                         break;
                     }
                 }
@@ -1370,9 +1370,9 @@ class mob_korkron_sniper : public CreatureScript
                 }
 
                 me->setFaction(16);
-                events.ScheduleEvent(EVENT_HUNTERS_MARK, 1000);
-                events.ScheduleEvent(EVENT_SHOOT, 1500);
-                events.ScheduleEvent(EVENT_MULTI_SHOT, 12000);
+                events.ScheduleEvent(EVENT_HUNTERS_MARK, 1 * IN_MILLISECONDS);
+                events.ScheduleEvent(EVENT_SHOOT, 1.5 * IN_MILLISECONDS);
+                events.ScheduleEvent(EVENT_MULTI_SHOT, 12 * IN_MILLISECONDS);
                 me->SetInCombatWithZone();
             }
 
@@ -1407,7 +1407,7 @@ class mob_korkron_sniper : public CreatureScript
                     {
                         DoCastVictim(SPELL_SHOOT);
                         
-                        events.ScheduleEvent(EVENT_SHOOT, 2000);
+                        events.ScheduleEvent(EVENT_SHOOT, 2 * IN_MILLISECONDS);
                         break;
                     }
 
@@ -1415,7 +1415,7 @@ class mob_korkron_sniper : public CreatureScript
                     {
                         DoCastVictim(SPELL_MULTI_SHOT);
 
-                        events.ScheduleEvent(EVENT_MULTI_SHOT, 10000);
+                        events.ScheduleEvent(EVENT_MULTI_SHOT, 10 * IN_MILLISECONDS);
                         break;
                     }
                 }
