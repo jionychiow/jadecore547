@@ -312,7 +312,7 @@ class boss_general_nazgrim : public CreatureScript
                     events.ScheduleEvent(EVENT_DAMAGE_TAKEN, 1000); // Made it as event because rage gain can occur only once per second
             }
 
-            void UpdateAI(uint32 diff) override
+            void UpdateAI(uint32 const diff) override
             {
                 if (!UpdateVictim())
                     return;
@@ -752,7 +752,7 @@ class mob_orgrimmar_faithful : public CreatureScript
                 me->setFaction(16);
             }
 
-            void UpdateAI(uint32 diff) override
+            void UpdateAI(uint32 const diff) override
             {
                 if (!UpdateVictim())
                     return;
@@ -852,7 +852,7 @@ class mob_korkron_ironblade : public CreatureScript
                 me->SetInCombatWithZone();
             }
 
-            void UpdateAI(uint32 diff) override
+            void UpdateAI(uint32 const diff) override
             {
                 if (!UpdateVictim())
                     return;
@@ -980,7 +980,7 @@ class mob_korkron_arcweaver : public CreatureScript
                 me->SetInCombatWithZone();
             }
 
-            void UpdateAI(uint32 diff) override
+            void UpdateAI(uint32 const diff) override
             {
                 if (!UpdateVictim())
                     return;
@@ -1120,7 +1120,7 @@ class mob_korkron_assassin : public CreatureScript
             }
 
 
-            void UpdateAI(uint32 diff) override
+            void UpdateAI(uint32 const diff) override
             {
                 if (!UpdateVictim())
                     return;
@@ -1243,7 +1243,7 @@ class mob_korkron_warshaman : public CreatureScript
                 me->SetInCombatWithZone();
             }
 
-            void UpdateAI(uint32 diff) override
+            void UpdateAI(uint32 const diff) override
             {
                 if (!UpdateVictim())
                     return;
@@ -1376,7 +1376,7 @@ class mob_korkron_sniper : public CreatureScript
                 me->SetInCombatWithZone();
             }
 
-            void UpdateAI(uint32 diff) override
+            void UpdateAI(uint32 const diff) override
             {
                 if (!UpdateVictim())
                     return;
@@ -1516,7 +1516,7 @@ class mob_korkron_banner : public CreatureScript
                 me->AddUnitMovementFlag(MOVEMENTFLAG_ROOT);
             }
 
-            void UpdateAI(uint32 diff) override
+            void UpdateAI(uint32 const diff) override
             {
                 if (!UpdateVictim())
                     return;
