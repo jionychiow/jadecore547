@@ -381,6 +381,9 @@ public:
 					me->SetFullHealth();
 					me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);
 
+                    if (Creature* lorewalkerCho = ObjectAccessor::GetCreature(*me, instance->GetData64(DATA_LOREWALKER_CHO)))
+                        lorewalkerCho->GetAI()->DoAction(ACTION_TALK_AFTER_IMMERSEUS);
+
 					attacker->SummonGameObject(GO_TEARS_OF_THE_VALE, 1458.48f, 716.72f, 246.84f, 5.22f, 0.0f, 0.0f, 0.0f, 0.0f, RESPAWN_IMMEDIATELY, 0);
 				}
 			}

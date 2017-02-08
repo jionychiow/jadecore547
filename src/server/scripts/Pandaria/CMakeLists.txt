@@ -102,6 +102,7 @@ set(scripts_STAT_SRCS
   Pandaria/SiegeOfOrgrimmar/instance_siege_of_orgrimmar.cpp
   Pandaria/SiegeOfOrgrimmar/siege_of_orgrimmar.cpp
   Pandaria/SiegeOfOrgrimmar/siege_of_orgrimmar.h
+  Pandaria/SiegeOfOrgrimmar/npc_lorewalker_cho.cpp
   Pandaria/SiegeOfOrgrimmar/boss_immerseus.cpp
   Pandaria/SiegeOfOrgrimmar/boss_fallen_protectors.cpp
   Pandaria/SiegeOfOrgrimmar/boss_norushen.cpp

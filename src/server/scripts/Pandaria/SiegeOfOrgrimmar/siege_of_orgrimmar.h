@@ -57,34 +57,47 @@ enum Data
 // GUID retrieval
 enum Data64
 {
-    // First part
+    // Immerseus
     DATA_IMMERSEUS                      = 0,
 
+    // Fallen Protectors
     DATA_FALLEN_PROTECTOR_1             = 1,
     DATA_FALLEN_PROTECTOR_2             = 2,
     DATA_FALLEN_PROTECTOR_3             = 3,
 
+    // Norushen
     DATA_NORUSHEN                       = 4,
     DATA_AMALGAM_OF_CORRUPTION          = 5,
+
+    // Sha of Pride
     DATA_SHA_OF_PRIDE                   = 6,
 
-    // Second part
+    // Galakras
     DATA_GALAKRAS                       = 7,
+
+    // Iron Juggernaut
     DATA_IRON_JUGGERNAUT                = 8,
 
+    // Kor'kron Dark Shamans
     DATA_KORKRON_DARK_SHAMAN_1          = 9,
     DATA_KORKRON_DARK_SHAMAN_2          = 10,
 
+    // General Nazgrim
     DATA_GENERAL_NAZGRIM                = 11,
 
-    // Third part
+    // Malkorok
     DATA_MALKOROK                       = 12,
+
+    // Spoils of Pandaria
     DATA_SPOILS_OF_PANDARIA             = 13,
+
+    // Thok the Bloodthirsty
     DATA_THOK_THE_BLOODTHIRSTY          = 14,
 
-    // Last part
+    // Siegecrafter Blackfuse
     DATA_SIEGECRAFTER_BLACKFUSE         = 15,
 
+    // Paragons of the Klaxxi
     DATA_PARAGONS_OF_THE_KLAX_1         = 16,
     DATA_PARAGONS_OF_THE_KLAX_2         = 17,
     DATA_PARAGONS_OF_THE_KLAX_3         = 18,
@@ -103,11 +116,15 @@ enum Data64
     DATA_NORUSHEN_ENTRANCE              = 29,
     DATA_PRIDE_ENTRANCE                 = 30,
 
+    // Garrosh Hellscream
     DATA_GARROSH_HELLSCREAM             = 31,
     DATA_THRALL                         = 32,
     DATA_GARROSH_HEART_OF_YSHAARAJ      = 33,
     DATA_RIGHT_DOOR_GARROSH             = 34,
     DATA_LEFT_DOOR_GARROSH              = 35,
+
+    // Lorewalker Cho
+    DATA_LOREWALKER_CHO                 = 36
 };
 
 enum CreatureIds
@@ -208,6 +225,11 @@ enum CreatureIds
     NPC_SIEGE_ENGINEER                  = 71984,
 	NPC_WARBRINGER_KORKRON              = 71979,
 	NPC_WOLF_RIDER_FARSEER              = 71983
+};
+
+enum MiscActions
+{
+    ACTION_TALK_AFTER_IMMERSEUS = 2, // Lorewalker cho TALK_9
 };
 
 // 3 Fallen Protectors.

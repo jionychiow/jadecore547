@@ -190,8 +190,8 @@ class boss_general_nazgrim : public CreatureScript
 
                 me->setFaction(16);
 
-				if (sGameEventMgr->IsActiveEvent(GAME_EVENT_WINTER_VEIL) && !me->HasAura(SPELL_WEAR_CHRISTMAS_HAT))
-					me->AddAura(SPELL_WEAR_CHRISTMAS_HAT, me);
+                if (sGameEventMgr->IsActiveEvent(GAME_EVENT_WINTER_VEIL) && !me->HasAura(SPELL_WEAR_CHRISTMAS_HAT))
+                    me->AddAura(SPELL_WEAR_CHRISTMAS_HAT, me);
 
                 // Damage
                 const CreatureTemplate* cinfo = me->GetCreatureTemplate();
