@@ -101,7 +101,7 @@ class npc_lorewalker_cho_SoO : public CreatureScript
                 }
             }
             
-            void UpdateAI(uint32 diff) override
+            void UpdateAI(uint32 const diff) override
             {
                 if (!me->GetMotionMaster()->GetMotionSlot(MOTION_SLOT_ACTIVE))
                     if (Player* nearest = me->FindNearestPlayer(60.0f, true))

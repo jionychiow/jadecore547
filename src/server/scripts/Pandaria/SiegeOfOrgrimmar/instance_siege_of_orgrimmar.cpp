@@ -159,10 +159,10 @@ class instance_siege_of_orgrimmar : public InstanceMapScript
                     case DATA_IRON_JUGGERNAUT:
                         ironJuggernautGUID = creature->GetGUID();
                         break;
-                    case DATA_KORKRON_DARK_SHAMAN_1:
+                    case DATA_EARTHBREAKER_HAROMM:
                         korkronDarkShamansGUID[EARTHBREAKER_HAROMM] = creature->GetGUID();
                         break;
-                    case DATA_KORKRON_DARK_SHAMAN_2:
+                    case DATA_WAVEBINDER_KARDRIS:
                         korkronDarkShamansGUID[WAVEBINDER_KARDIS] = creature->GetGUID();
                         break;
                     case DATA_GENERAL_NAZGRIM:
@@ -287,9 +287,9 @@ class instance_siege_of_orgrimmar : public InstanceMapScript
                         return galakrasGUID;
                     case DATA_IRON_JUGGERNAUT:
                         return ironJuggernautGUID;
-                    case DATA_KORKRON_DARK_SHAMAN_1:
+                    case DATA_EARTHBREAKER_HAROMM:
                         return korkronDarkShamansGUID[EARTHBREAKER_HAROMM];
-                    case DATA_KORKRON_DARK_SHAMAN_2:
+                    case DATA_WAVEBINDER_KARDRIS:
                         return korkronDarkShamansGUID[WAVEBINDER_KARDIS];
                     case DATA_GENERAL_NAZGRIM:
                         return generalNazgrimGUID;

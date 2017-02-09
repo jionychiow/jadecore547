@@ -79,8 +79,8 @@ enum Data64
     DATA_IRON_JUGGERNAUT                = 8,
 
     // Kor'kron Dark Shamans
-    DATA_KORKRON_DARK_SHAMAN_1          = 9,
-    DATA_KORKRON_DARK_SHAMAN_2          = 10,
+    DATA_EARTHBREAKER_HAROMM            = 9,
+    DATA_WAVEBINDER_KARDRIS             = 10,
 
     // General Nazgrim
     DATA_GENERAL_NAZGRIM                = 11,
