@@ -1,4 +1,3 @@
-
 #include "ScriptMgr.h"
 #include "ScriptedCreature.h"
 #include "GridNotifiers.h"
@@ -7,7 +6,6 @@
 #include "siege_of_orgrimmar.h"
 
 /*
-#include "siege_of_orgrimmar.h"
 #include "MoveSplineInit.h"
 /*
 General Information: (Icy-veins.com):
